@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: 84799993c41df9f4889ffe9767522a40
+timeCreated: 1517259730
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: debris01
+    100004: debris02
+    100006: debris03
+    100008: detail0
+    100010: eyepoint01
+    100012: gunbank01
+    100014: gunbank01-01
+    100016: gunbank01-02
+    100018: gunbank02
+    100020: gunbank02-01
+    100022: gunbank02-02
+    100024: helper
+    100026: missilebank01
+    100028: missilebank01-01
+    100030: missilebank01-02
+    100032: missilebank01-03
+    100034: missilebank01-04
+    100036: missilebank01-05
+    100038: missilebank01-06
+    100040: missilebank01-07
+    100042: missilebank01-08
+    100044: missilebank01-09
+    100046: missilebank01-10
+    100048: missilebank01-11
+    100050: missilebank01-12
+    100052: missilebank02
+    100054: missilebank02-01
+    100056: missilebank02-02
+    100058: missilebank02-03
+    100060: missilebank02-04
+    100062: missilebank02-05
+    100064: missilebank02-06
+    100066: missilebank02-07
+    100068: missilebank02-08
+    100070: missilebank02-09
+    100072: missilebank02-10
+    100074: missilebank02-11
+    100076: missilebank02-12
+    100078: missilebank02-13
+    100080: missilebank02-14
+    100082: missilebank02-15
+    100084: missilebank02-16
+    100086: Path01-01
+    100088: Path01-02
+    100090: Path01-03
+    100092: shield
+    100094: thruster
+    100096: thruster.001
+    100098: thruster.002
+    100100: thruster01a
+    100102: thruster02a
+    100104: thruster03a
+    100106: thrusters
+    100108: debris_01
+    100110: debris_02
+    100112: debris_03
+    100114: detail
+    100116: gunbank_01
+    100118: gunbank_02
+    100120: missilebank_01
+    100122: missilebank_02
+    100124: thruster_01
+    100126: thruster_02
+    100128: thruster_03
+    100130: eyepoint
+    100132: thrustervfx_01
+    100134: thrustervfx_02
+    100136: thrustervfx_03
+    400000: //RootNode
+    400002: debris01
+    400004: debris02
+    400006: debris03
+    400008: detail0
+    400010: eyepoint01
+    400012: gunbank01
+    400014: gunbank01-01
+    400016: gunbank01-02
+    400018: gunbank02
+    400020: gunbank02-01
+    400022: gunbank02-02
+    400024: helper
+    400026: missilebank01
+    400028: missilebank01-01
+    400030: missilebank01-02
+    400032: missilebank01-03
+    400034: missilebank01-04
+    400036: missilebank01-05
+    400038: missilebank01-06
+    400040: missilebank01-07
+    400042: missilebank01-08
+    400044: missilebank01-09
+    400046: missilebank01-10
+    400048: missilebank01-11
+    400050: missilebank01-12
+    400052: missilebank02
+    400054: missilebank02-01
+    400056: missilebank02-02
+    400058: missilebank02-03
+    400060: missilebank02-04
+    400062: missilebank02-05
+    400064: missilebank02-06
+    400066: missilebank02-07
+    400068: missilebank02-08
+    400070: missilebank02-09
+    400072: missilebank02-10
+    400074: missilebank02-11
+    400076: missilebank02-12
+    400078: missilebank02-13
+    400080: missilebank02-14
+    400082: missilebank02-15
+    400084: missilebank02-16
+    400086: Path01-01
+    400088: Path01-02
+    400090: Path01-03
+    400092: shield
+    400094: thruster
+    400096: thruster.001
+    400098: thruster.002
+    400100: thruster01a
+    400102: thruster02a
+    400104: thruster03a
+    400106: thrusters
+    400108: debris_01
+    400110: debris_02
+    400112: debris_03
+    400114: detail
+    400116: gunbank_01
+    400118: gunbank_02
+    400120: missilebank_01
+    400122: missilebank_02
+    400124: thruster_01
+    400126: thruster_02
+    400128: thruster_03
+    400130: eyepoint
+    400132: thrustervfx_01
+    400134: thrustervfx_02
+    400136: thrustervfx_03
+    2300000: debris01
+    2300002: debris02
+    2300004: debris03
+    2300006: detail0
+    2300008: shield
+    2300010: thruster01a
+    2300012: thruster02a
+    2300014: thruster03a
+    2300016: debris_01
+    2300018: debris_02
+    2300020: debris_03
+    2300022: detail
+    2300024: thrustervfx_01
+    2300026: thrustervfx_02
+    2300028: thrustervfx_03
+    3300000: debris01
+    3300002: debris02
+    3300004: debris03
+    3300006: detail0
+    3300008: shield
+    3300010: thruster01a
+    3300012: thruster02a
+    3300014: thruster03a
+    3300016: debris_01
+    3300018: debris_02
+    3300020: debris_03
+    3300022: detail
+    3300024: thrustervfx_01
+    3300026: thrustervfx_02
+    3300028: thrustervfx_03
+    4300000: shield
+    4300002: debris03
+    4300004: debris02
+    4300006: debris01
+    4300008: detail0
+    4300010: thruster03a
+    4300012: thruster02a
+    4300014: thruster01a
+    4300016: debris_03
+    4300018: debris_02
+    4300020: debris_01
+    4300022: detail
+    4300024: thrustervfx_03
+    4300026: thrustervfx_02
+    4300028: thrustervfx_01
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9a64741a2037a0843a381a4b1883323c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: damage-mat
+    second: {fileID: 2100000, guid: b05b5125cfe9a184ab85752f94ae10b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thruster01-mat
+    second: {fileID: 2100000, guid: ceb1b20911a2c414285e7311d0d09457, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valkdhb-mat
+    second: {fileID: 2100000, guid: cb30aa9c9ada16e4ab4e3274a1286dd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valkdhk-mat
+    second: {fileID: 2100000, guid: 88c242206939e46448f006563b6c5061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valkdhs-mat
+    second: {fileID: 2100000, guid: 95e5ea2ce684e304396aa516461d5964, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valkdht-mat
+    second: {fileID: 2100000, guid: ccf28b2dbaebdcc4f9f55eddc5b8363c, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

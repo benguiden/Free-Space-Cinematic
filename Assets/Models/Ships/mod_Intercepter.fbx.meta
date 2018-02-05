@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 704f0f38e11b99e4389c56aeaafb3813
+timeCreated: 1517834503
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: debris01
+    100002: debris02
+    100004: debris03
+    100006: debris04
+    100008: detail0
+    100010: gunbank01
+    100012: gunbank01-01
+    100014: gunbank01-02
+    100016: missilebank01
+    100018: missilebank01-01
+    100020: missilebank01-02
+    100022: missilebank01-03
+    100024: missilebank01-04
+    100026: missilebank01-05
+    100028: missilebank01-06
+    100030: missilebank01-07
+    100032: missilebank01-08
+    100034: missilebank02
+    100036: missilebank02-01
+    100038: missilebank02-02
+    100040: missilebank02-03
+    100042: missilebank02-04
+    100044: //RootNode
+    100046: shield
+    100048: thruster
+    100050: thruster.001
+    100052: thrusters
+    400000: debris01
+    400002: debris02
+    400004: debris03
+    400006: debris04
+    400008: detail0
+    400010: gunbank01
+    400012: gunbank01-01
+    400014: gunbank01-02
+    400016: missilebank01
+    400018: missilebank01-01
+    400020: missilebank01-02
+    400022: missilebank01-03
+    400024: missilebank01-04
+    400026: missilebank01-05
+    400028: missilebank01-06
+    400030: missilebank01-07
+    400032: missilebank01-08
+    400034: missilebank02
+    400036: missilebank02-01
+    400038: missilebank02-02
+    400040: missilebank02-03
+    400042: missilebank02-04
+    400044: //RootNode
+    400046: shield
+    400048: thruster
+    400050: thruster.001
+    400052: thrusters
+    2300000: debris01
+    2300002: debris02
+    2300004: debris03
+    2300006: debris04
+    2300008: detail0
+    2300010: shield
+    3300000: debris01
+    3300002: debris02
+    3300004: debris03
+    3300006: debris04
+    3300008: detail0
+    3300010: shield
+    4300000: shield
+    4300002: debris04
+    4300004: debris03
+    4300006: debris02
+    4300008: debris01
+    4300010: detail0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 77042dbac7acf8641b83c3ede8e3c9ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bektint-mat.001
+    second: {fileID: 2100000, guid: 1c1f9b9d1f4289842a32146c79a9ee14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: damage-mat.001
+    second: {fileID: 2100000, guid: 353cd23362cf2344bb429b5fda43dd4a, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

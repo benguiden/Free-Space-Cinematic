@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 1b5889cbd76373b49a6c5f364684d1a0
+timeCreated: 1517840593
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: debris01
+    100002: debris02
+    100004: debris03
+    100006: debris04
+    100008: debris05
+    100010: detail0
+    100012: gunbank01
+    100014: gunbank01-01
+    100016: gunbank01-02
+    100018: gunbank01-03
+    100020: gunbank01-04
+    100022: gunbank02
+    100024: gunbank02-01
+    100026: gunbank02-02
+    100028: gunbank02-03
+    100030: gunbank02-04
+    100032: missilebank01
+    100034: missilebank01-01
+    100036: missilebank01-02
+    100038: missilebank01-03
+    100040: missilebank01-04
+    100042: missilebank01-05
+    100044: missilebank01-06
+    100046: missilebank01-07
+    100048: missilebank01-08
+    100050: missilebank01-09
+    100052: missilebank01-10
+    100054: missilebank01-11
+    100056: missilebank01-12
+    100058: missilebank02
+    100060: missilebank02-01
+    100062: missilebank02-02
+    100064: missilebank02-03
+    100066: missilebank02-04
+    100068: missilebank02-05
+    100070: missilebank02-06
+    100072: missilebank03
+    100074: missilebank03-01
+    100076: missilebank03-02
+    100078: missilebank03-03
+    100080: missilebank03-04
+    100082: missilebank03-05
+    100084: //RootNode
+    100086: shield
+    100088: thruster
+    100090: thruster.001
+    100092: thruster.002
+    100094: thrusters
+    400000: debris01
+    400002: debris02
+    400004: debris03
+    400006: debris04
+    400008: debris05
+    400010: detail0
+    400012: gunbank01
+    400014: gunbank01-01
+    400016: gunbank01-02
+    400018: gunbank01-03
+    400020: gunbank01-04
+    400022: gunbank02
+    400024: gunbank02-01
+    400026: gunbank02-02
+    400028: gunbank02-03
+    400030: gunbank02-04
+    400032: missilebank01
+    400034: missilebank01-01
+    400036: missilebank01-02
+    400038: missilebank01-03
+    400040: missilebank01-04
+    400042: missilebank01-05
+    400044: missilebank01-06
+    400046: missilebank01-07
+    400048: missilebank01-08
+    400050: missilebank01-09
+    400052: missilebank01-10
+    400054: missilebank01-11
+    400056: missilebank01-12
+    400058: missilebank02
+    400060: missilebank02-01
+    400062: missilebank02-02
+    400064: missilebank02-03
+    400066: missilebank02-04
+    400068: missilebank02-05
+    400070: missilebank02-06
+    400072: missilebank03
+    400074: missilebank03-01
+    400076: missilebank03-02
+    400078: missilebank03-03
+    400080: missilebank03-04
+    400082: missilebank03-05
+    400084: //RootNode
+    400086: shield
+    400088: thruster
+    400090: thruster.001
+    400092: thruster.002
+    400094: thrusters
+    2300000: debris01
+    2300002: debris02
+    2300004: debris03
+    2300006: debris04
+    2300008: debris05
+    2300010: detail0
+    2300012: shield
+    3300000: debris01
+    3300002: debris02
+    3300004: debris03
+    3300006: debris04
+    3300008: debris05
+    3300010: detail0
+    3300012: shield
+    4300000: shield
+    4300002: debris05
+    4300004: debris04
+    4300006: debris03
+    4300008: debris02
+    4300010: debris01
+    4300012: detail0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 77042dbac7acf8641b83c3ede8e3c9ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bektUV-mat
+    second: {fileID: 2100000, guid: 66c6b65c7fc9ad44e9d7d67edbf9ab77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: damage-mat
+    second: {fileID: 2100000, guid: 1e55875d396e966468fe3ce2418d1fe3, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

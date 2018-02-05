@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: efb7a80215208ae4691e80c39ea02aa3
+timeCreated: 1517841725
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: debris01
+    100002: debris02
+    100004: debris03
+    100006: debris04
+    100008: debris05
+    100010: debris06
+    100012: debris07
+    100014: debris08
+    100016: debris09
+    100018: debris10
+    100020: debris11
+    100022: detail0
+    100024: gunbank01
+    100026: gunbank01-01
+    100028: gunbank01-02
+    100030: gunbank02
+    100032: gunbank02-01
+    100034: gunbank02-02
+    100036: missilebank01
+    100038: missilebank01-01
+    100040: missilebank01-02
+    100042: missilebank01-03
+    100044: missilebank02
+    100046: missilebank02-01
+    100048: missilebank02-02
+    100050: missilebank02-03
+    100052: //RootNode
+    100054: thruster
+    100056: thruster.001
+    100058: thrusters
+    400000: debris01
+    400002: debris02
+    400004: debris03
+    400006: debris04
+    400008: debris05
+    400010: debris06
+    400012: debris07
+    400014: debris08
+    400016: debris09
+    400018: debris10
+    400020: debris11
+    400022: detail0
+    400024: gunbank01
+    400026: gunbank01-01
+    400028: gunbank01-02
+    400030: gunbank02
+    400032: gunbank02-01
+    400034: gunbank02-02
+    400036: missilebank01
+    400038: missilebank01-01
+    400040: missilebank01-02
+    400042: missilebank01-03
+    400044: missilebank02
+    400046: missilebank02-01
+    400048: missilebank02-02
+    400050: missilebank02-03
+    400052: //RootNode
+    400054: thruster
+    400056: thruster.001
+    400058: thrusters
+    2300000: debris01
+    2300002: debris02
+    2300004: debris03
+    2300006: debris04
+    2300008: debris05
+    2300010: debris06
+    2300012: debris07
+    2300014: debris08
+    2300016: debris09
+    2300018: debris10
+    2300020: debris11
+    2300022: detail0
+    3300000: debris01
+    3300002: debris02
+    3300004: debris03
+    3300006: debris04
+    3300008: debris05
+    3300010: debris06
+    3300012: debris07
+    3300014: debris08
+    3300016: debris09
+    3300018: debris10
+    3300020: debris11
+    3300022: detail0
+    4300000: debris11
+    4300002: debris10
+    4300004: debris09
+    4300006: debris08
+    4300008: debris07
+    4300010: debris06
+    4300012: debris05
+    4300014: debris04
+    4300016: debris03
+    4300018: debris02
+    4300020: debris01
+    4300022: detail0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ProtonMap-mat.001
+    second: {fileID: 2100000, guid: 878ac937fe44642409074828cb2ee3c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: damage-mat.001
+    second: {fileID: 2100000, guid: 353cd23362cf2344bb429b5fda43dd4a, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

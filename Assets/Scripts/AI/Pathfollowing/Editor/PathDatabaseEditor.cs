@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace FreeSpace {
+namespace FreeSpace{
 
-	[CustomEditor(typeof(FreeSpace.PathDatabase))]
-	public class PathDatabaseEditor : Editor {
+    [CustomEditor (typeof (FreeSpace.PathDatabase))]
+    public class PathDatabaseEditor : Editor
+    {
 
-		private int pathIndex = -1;
+        private int pathIndex = -1;
 
-		private PathDatabase database;
+        private PathDatabase database;
 
-        public override void OnInspectorGUI(){
+        public override void OnInspectorGUI() {
             database = (PathDatabase)target;
 
             if (database.paths == null)
@@ -34,9 +35,11 @@ namespace FreeSpace {
                         pathIndex = -1;
                     }
                     EditorGUILayout.EndHorizontal ();
-                    
+
                     if (pathIndex != -1) {
                         database.paths[i].name = EditorGUILayout.TextField (database.paths[i].name, EditorStyles.toolbarTextField);
+
+                        database.paths[i].color = EditorGUILayout.ColorField ("Colour", database.paths[i].color);
 
                         if (database.paths[i].points == null)
                             database.paths[i].points = new List<Vector3> ();
@@ -78,7 +81,9 @@ namespace FreeSpace {
             if ((pathIndex < database.paths.Count) && (pathIndex >= 0)) {
                 if (database.paths[pathIndex] != null) {
                     Path path = database.paths[pathIndex];
-                    
+                    Handles.color = path.color;
+                    //path.points[0] = Handles.PositionHandle (path.points[0], new Quaternion (0f, 0f, 0f, 1f));
+
                     for (int i = 0; i < path.points.Count; i++) {
                         Handles.DrawWireCube (path.points[i], new Vector3 (1f, 1f, 1f));
                         if (i < path.points.Count - 1)
@@ -86,13 +91,13 @@ namespace FreeSpace {
                         else if (i == path.points.Count - 1)
                             Handles.DrawLine (path.points[i], path.points[0]);
                     }
-                    
+
                     database.paths[pathIndex] = path;
                 }
             }
 
         }
 
-        }
-
     }
+
+}

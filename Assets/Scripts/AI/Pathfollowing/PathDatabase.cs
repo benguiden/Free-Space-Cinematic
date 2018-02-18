@@ -15,11 +15,13 @@ namespace FreeSpace{
 	[System.Serializable]
 	public class Path{
         public string name;
+        public Color color;
 		public List<Vector3> points;
 
 		public Path(){
             name = "New Path";
 			points = new List<Vector3> ();
+            color = Color.white;
 		}
 	}
 

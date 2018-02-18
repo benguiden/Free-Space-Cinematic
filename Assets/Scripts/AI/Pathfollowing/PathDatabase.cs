@@ -25,6 +25,13 @@ namespace FreeSpace{
 		}
 	}
 
+    #region Enums
+    public enum PathReference{
+        Index,
+        Name
+    }
+    #endregion
+
 }
 
 

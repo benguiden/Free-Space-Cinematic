@@ -41,17 +41,29 @@ namespace FreeSpace{
 
                         database.paths[i].color = EditorGUILayout.ColorField ("Colour", database.paths[i].color);
 
+                        int newPointIndex = -1;
+
                         if (database.paths[i].points == null)
                             database.paths[i].points = new List<Vector3> ();
                         for (int j = 0; j < database.paths[i].points.Count; j++) {
                             EditorGUILayout.BeginHorizontal ();
                             EditorGUILayout.LabelField (j.ToString (), GUILayout.Width (16));
                             database.paths[i].points[j] = EditorGUILayout.Vector3Field ("", database.paths[i].points[j]);
-                            GUILayout.Button ("x", EditorStyles.toolbarButton, GUILayout.Width (24));
+                            if (GUILayout.Button ("+", EditorStyles.toolbarButton, GUILayout.Width (20))) {
+                                newPointIndex = j;
+                            }
+                            if (GUILayout.Button ("x", EditorStyles.toolbarButton, GUILayout.Width (20))) {
+                                database.paths[i].points.RemoveAt (j);
+                            }
                             EditorGUILayout.EndHorizontal ();
                         }
-                        if (GUILayout.Button ("+", EditorStyles.toolbarButton)) {
-                            database.paths[i].points.Add (new Vector3 ());
+                        if (newPointIndex >= 0) {
+                            database.paths[i].points.Insert (newPointIndex, database.paths[i].points[newPointIndex]);
+                        } else if (GUILayout.Button ("+", EditorStyles.toolbarButton)) {
+                            if (database.paths[i].points.Count == 0)
+                                database.paths[i].points.Add (new Vector3 ());
+                            else
+                                database.paths[i].points.Add (database.paths[i].points[database.paths[i].points.Count - 1]);
                         }
                     }
 
@@ -82,14 +94,16 @@ namespace FreeSpace{
                 if (database.paths[pathIndex] != null) {
                     Path path = database.paths[pathIndex];
                     Handles.color = path.color;
-                    //path.points[0] = Handles.PositionHandle (path.points[0], new Quaternion (0f, 0f, 0f, 1f));
+                    
 
                     for (int i = 0; i < path.points.Count; i++) {
                         Handles.DrawWireCube (path.points[i], new Vector3 (1f, 1f, 1f));
+                        path.points[i] = Handles.PositionHandle (path.points[i], new Quaternion (0f, 0f, 0f, 1f));
                         if (i < path.points.Count - 1)
                             Handles.DrawLine (path.points[i], path.points[i + 1]);
                         else if (i == path.points.Count - 1)
                             Handles.DrawLine (path.points[i], path.points[0]);
+                        Handles.Label (path.points[i], i.ToString ());
                     }
 
                     database.paths[pathIndex] = path;

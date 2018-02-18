@@ -14,12 +14,12 @@ namespace FreeSpace{
 		
 	[System.Serializable]
 	public class Path{
+        public string name;
 		public List<Vector3> points;
 
 		public Path(){
-			Debug.Log ("New Point");
+            name = "New Path";
 			points = new List<Vector3> ();
-			points.Add (new Vector3 ());
 		}
 	}
 

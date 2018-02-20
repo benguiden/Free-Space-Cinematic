@@ -56,6 +56,10 @@ namespace FreeSpace{
                     Gizmos.DrawLine (path.points[lastPoint] + pathPositionOffset, path.points[(int)pointIndex] + pathPositionOffset);
                     Gizmos.color = path.color;
                     Gizmos.DrawWireCube (path.points[(int)pointIndex] + pathPositionOffset, new Vector3 (2f, 2f, 2f));
+
+                    Vector3 lookTarget = path.points[(int)pointIndex] + pathPositionOffset;
+                    lookTarget -= boid.transform.position;
+                    Gizmos.DrawLine (boid.transform.position, boid.transform.position + (lookTarget.normalized * 10f));
                 }
             }
         }
@@ -84,7 +88,10 @@ namespace FreeSpace{
         }
 
         private void LookAtPoint() {
-            boid.transform.LookAt (path.points[(int)pointIndex] + pathPositionOffset);
+            Vector3 lookTarget = path.points[(int)pointIndex] + pathPositionOffset;
+            lookTarget -= boid.transform.position;
+            lookTarget.Normalize ();
+            boid.transform.rotation = Quaternion.Lerp (boid.transform.rotation, Quaternion.LookRotation (lookTarget), 0.25f * Time.deltaTime * 15f);
         }
 
         private void MoveTowardsPoint() {

@@ -19,6 +19,7 @@ namespace FreeSpace{
             if (database.paths == null)
                 database.paths = new List<Path> ();
 
+            bool valueChanged = false;
             for (int i = 0; i < database.paths.Count; i++) {
 
                 GUI.backgroundColor = new Color (0.6f, 0.6f, 0.5f, 1f);
@@ -33,13 +34,18 @@ namespace FreeSpace{
                     } else if (GUILayout.Button ("x", EditorStyles.toolbarButton, GUILayout.Width (24))) {
                         database.paths.RemoveAt (i);
                         pathIndex = -1;
+                        valueChanged = true;
                     }
                     EditorGUILayout.EndHorizontal ();
 
                     if (pathIndex != -1) {
+                        EditorGUI.BeginChangeCheck ();
                         database.paths[i].name = EditorGUILayout.TextField (database.paths[i].name, EditorStyles.toolbarTextField);
 
                         database.paths[i].color = EditorGUILayout.ColorField ("Colour", database.paths[i].color);
+                        if (EditorGUI.EndChangeCheck ()) {
+                            valueChanged = true;
+                        }
 
                         int newPointIndex = -1;
 
@@ -48,12 +54,18 @@ namespace FreeSpace{
                         for (int j = 0; j < database.paths[i].points.Count; j++) {
                             EditorGUILayout.BeginHorizontal ();
                             EditorGUILayout.LabelField (j.ToString (), GUILayout.Width (16));
+                            EditorGUI.BeginChangeCheck ();
                             database.paths[i].points[j] = EditorGUILayout.Vector3Field ("", database.paths[i].points[j]);
+                            if (EditorGUI.EndChangeCheck ()) {
+                                valueChanged = true;
+                            }
                             if (GUILayout.Button ("+", EditorStyles.toolbarButton, GUILayout.Width (20))) {
                                 newPointIndex = j;
+                                valueChanged = true;
                             }
                             if (GUILayout.Button ("x", EditorStyles.toolbarButton, GUILayout.Width (20))) {
                                 database.paths[i].points.RemoveAt (j);
+                                valueChanged = true;
                             }
                             EditorGUILayout.EndHorizontal ();
                         }
@@ -64,6 +76,7 @@ namespace FreeSpace{
                                 database.paths[i].points.Add (new Vector3 ());
                             else
                                 database.paths[i].points.Add (database.paths[i].points[database.paths[i].points.Count - 1]);
+                            valueChanged = true;
                         }
                     }
 
@@ -75,7 +88,15 @@ namespace FreeSpace{
             }
             if (GUILayout.Button ("+", EditorStyles.toolbarButton)) {
                 database.paths.Add (new Path ());
+                valueChanged = true;
             }
+
+            if (valueChanged) {
+                AssetDatabase.Refresh ();
+                EditorUtility.SetDirty (database);
+                AssetDatabase.SaveAssets ();
+            }
+
         }
 
         void OnEnable() {

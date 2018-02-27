@@ -95,7 +95,7 @@ namespace FreeSpace{
         }
 
         private void MoveTowardsPoint() {
-            boid.AddForwardAcceleration (followSpeed);
+			boid.AddForwardAcceleration (followSpeed);
         }
         #endregion
 

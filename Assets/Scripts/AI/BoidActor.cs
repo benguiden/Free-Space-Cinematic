@@ -20,9 +20,10 @@ namespace FreeSpace{
         [Header ("Behaviours")]
         public PathFollower pathFollowing;
 
+
         //Excluded for the time being until more behaviours are developed
         #if MULTIPLE_BEHAVIOURS
-        public List<BoidBehaviour> behaviours;
+        public BoidBehaviour[] behaviours;
         #endif
         #endregion
         //////////

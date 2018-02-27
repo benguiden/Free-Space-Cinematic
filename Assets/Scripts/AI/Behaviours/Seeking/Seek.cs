@@ -37,10 +37,10 @@ namespace FreeSpace {
             Vector3 desiredForward = (target.position - boid.transform.position).normalized;
             boid.SpinToTargetForward(desiredForward, 0.05f);
 
-
-            Debug.Log(Vector3.Dot(target.position.normalized, boid.transform.position.normalized));
-            float newSpeed = desiredSpeed * Vector3.Dot(target.position.normalized, boid.transform.position.normalized);
-            boid.SetForwardSpeed(desiredSpeed);
+            
+            float dot = Vector3.Dot(boid.transform.forward, desiredForward);
+            float newSpeed = desiredSpeed * dot;
+            boid.AddForwardAcceleration(newSpeed);
         }
 
         private Vector3 DesiredVelocityToAcceleration() {

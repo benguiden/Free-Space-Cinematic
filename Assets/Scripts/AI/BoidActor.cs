@@ -19,7 +19,7 @@ namespace FreeSpace{
 
         [Header ("Behaviours")]
         public PathFollower pathFollowing;
-
+        public Seek seek;
 
         //Excluded for the time being until more behaviours are developed
         #if MULTIPLE_BEHAVIOURS
@@ -36,6 +36,7 @@ namespace FreeSpace{
         #region Mono Methods
         private void Awake() {
             pathFollowing.SetBoidActor (this);
+            seek.SetBoidActor(this);
 
             AwakeBehaviours ();
         }
@@ -66,11 +67,16 @@ namespace FreeSpace{
 
             #if MULTIPLE_BEHAVIOURS
             for (int i=0; i<behaviours.Count; i++) {
-                behaviours[i].Update ();
+            if (behaviours[i].enabled)
+                behaviours[i].Awake ();
             }
             #endif
 
-            pathFollowing.Awake ();
+            if (pathFollowing.enabled)
+                pathFollowing.Awake();
+
+            if (seek.enabled)
+                seek.Awake();
         }
 
         private void UpdateBehaviours() {
@@ -78,27 +84,38 @@ namespace FreeSpace{
             //Excluded for the time being until more behaviours are developed
             #if MULTIPLE_BEHAVIOURS
             for (int i=0; i<behaviours.Count; i++) {
-                behaviours[i].Update ();
+                if (behaviours[i].enabled)
+                    behaviours[i].Update ();
             }
             #endif
             //////////
 
-            pathFollowing.Update ();
+            if (pathFollowing.enabled)
+                pathFollowing.Update();
+
+            if (seek.enabled)
+                seek.Update();
 
         }
 
         private void GizmosBehaviours() {
             #if MULTIPLE_BEHAVIOURS
             for (int i=0; i<behaviours.Count; i++) {
-                behaviours[i].Update ();
+                if (behaviours[i].enabled)
+                    behaviours[i].OnDrawGizmos ();
             }
             #endif
 
-            pathFollowing.OnDrawGizmos ();
+            if (pathFollowing.enabled)
+                pathFollowing.OnDrawGizmos();
+
+            if (seek.enabled)
+                seek.OnDrawGizmos();
         }
         #endregion
 
         #region Physics Methods
+        #region Displacement Forces
         public void AddForwardForce(float forwardForce) {
             acceleration += transform.forward * forwardForce * Time.deltaTime;
         }
@@ -111,6 +128,17 @@ namespace FreeSpace{
         public void AddAcceleration(Vector3 addedAcceleration) {
             acceleration += addedAcceleration * Time.deltaTime;
         }
+        public void SetForwardSpeed(float newSpeed) {
+            velocity = transform.forward * newSpeed;
+        }
+        #endregion
+
+        #region Angular Forces
+        //Has to be improved in the future
+        public void SpinToTargetForward(Vector3 targetForward, float speed) {
+            transform.forward = Vector3.Lerp(transform.forward, targetForward, speed);
+        }
+        #endregion
 
         private void UpdatePhysics() {
             velocity += acceleration;

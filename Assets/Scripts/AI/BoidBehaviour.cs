@@ -7,6 +7,10 @@ namespace FreeSpace{
     [System.Serializable]
     public class BoidBehaviour{
 
+        #region Public Variables
+        public bool enabled = true;
+        #endregion
+
         #region Protected Variables
         protected BoidActor boid;
         #endregion

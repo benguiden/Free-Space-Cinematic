@@ -16,21 +16,36 @@ namespace FreeSpace{
         public Vector3 velocity;
         public Vector3 acceleration;
         public float maxSpeed = 10f;
+        public float maxAcceleration = 10f;
+
+        [Header ("Banking")]
+        public float bankingAmount = 0.5f;
+        public float bankingSpeed = 0.2f;
 
         [Header ("Behaviours")]
         public PathFollower pathFollowing;
         public Seek seek;
 
+        
+
         //Excluded for the time being until more behaviours are developed
         #if MULTIPLE_BEHAVIOURS
         public BoidBehaviour[] behaviours;
         #endif
-        #endregion
         //////////
+        #endregion
 
         #region Public Hidden Variables
-        //[HideInInspector]
-        
+        public float speed{
+            get {
+                return GetNetVelocity ().magnitude;
+            }
+        }
+        #endregion
+
+        #region Private Variables
+        private Vector3 lastForward; //For Banking
+        private Vector3 desiredForward;
         #endregion
 
         #region Mono Methods
@@ -38,12 +53,15 @@ namespace FreeSpace{
             pathFollowing.SetBoidActor (this);
             seek.SetBoidActor(this);
 
+            lastForward = transform.forward;
+            desiredForward = transform.forward;
+
             AwakeBehaviours ();
         }
 
         private void OnDrawGizmos() {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine (transform.position, transform.position + velocity * 2f);
+            Gizmos.DrawLine (transform.position, transform.position + velocity);
 
             GizmosBehaviours ();
 
@@ -117,35 +135,63 @@ namespace FreeSpace{
         #region Physics Methods
         #region Displacement Forces
         public void AddForwardForce(float forwardForce) {
-            acceleration += transform.forward * forwardForce * Time.deltaTime;
+            acceleration += desiredForward * forwardForce * Time.deltaTime;
         }
         public void AddForce(Vector3 addedForce) {
             acceleration += addedForce * mass * Time.deltaTime;
         }
         public void AddForwardAcceleration(float forwardAcceleration) {
-            acceleration += transform.forward * forwardAcceleration * Time.deltaTime;
+            acceleration += desiredForward * forwardAcceleration * Time.deltaTime;
         }
         public void AddAcceleration(Vector3 addedAcceleration) {
             acceleration += addedAcceleration * Time.deltaTime;
         }
         public void SetForwardSpeed(float newSpeed) {
-            velocity = transform.forward * newSpeed;
+            velocity = desiredForward * newSpeed;
+        }
+
+        public Vector3 GetNetVelocity() {
+            return velocity + Vector3.ClampMagnitude (acceleration, maxAcceleration);
         }
         #endregion
 
         #region Angular Forces
         //Has to be improved in the future
         public void SpinToTargetForward(Vector3 targetForward, float speed) {
-            transform.forward = Vector3.Lerp(transform.forward, targetForward, speed);
+            desiredForward = Vector3.Lerp(desiredForward, targetForward, speed);
         }
         #endregion
 
         private void UpdatePhysics() {
-            velocity += acceleration;
+velocity += Vector3.ClampMagnitude (acceleration, maxAcceleration);
             velocity = Vector3.ClampMagnitude (velocity, maxSpeed);
+
+            ReduceSidewardsDrag ();
+            Bank ();
+
             acceleration = Vector3.zero;
 
+            
+
             transform.position += velocity * Time.deltaTime;
+        }
+
+        private void Bank() {
+            float upXAmount = ((Vector3.Dot (transform.forward, lastForward) / 2f) + 1f) * bankingAmount * 5f;
+            
+            Vector3 newUp = new Vector3 (upXAmount, 1f, 0f).normalized;
+
+            if (speed > float.Epsilon) {
+                transform.up = Vector3.up;
+                transform.LookAt (transform.position + desiredForward, transform.TransformDirection (newUp));
+            }
+            desiredForward = transform.forward;
+        }
+
+        private void ReduceSidewardsDrag() {
+            Vector3 lateralVelocity = transform.InverseTransformDirection (velocity);
+            velocity -= transform.right * lateralVelocity.x * Time.deltaTime;
+            velocity -= transform.up * lateralVelocity.y * Time.deltaTime;
         }
         #endregion
     }

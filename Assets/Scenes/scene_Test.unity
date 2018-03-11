@@ -316,7 +316,7 @@ Prefab:
     - target: {fileID: 114098217803641714, guid: b65d86a19480ed74a8077bf149a3a7e3,
         type: 2}
       propertyPath: bankingAmount
-      value: 0.25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114098217803641714, guid: b65d86a19480ed74a8077bf149a3a7e3,
         type: 2}
@@ -519,7 +519,7 @@ Prefab:
     - target: {fileID: 114583125262376626, guid: 69b54b7763d85c3408eca3ae5c62606f,
         type: 2}
       propertyPath: bankingAmount
-      value: 0.25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1562773890175968, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
       propertyPath: m_Name
@@ -536,6 +536,11 @@ Prefab:
     - target: {fileID: 4499286474984052, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -47.345
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583125262376626, guid: 69b54b7763d85c3408eca3ae5c62606f,
+        type: 2}
+      propertyPath: debug
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
@@ -587,7 +592,7 @@ Prefab:
     - target: {fileID: 114831097250785018, guid: f19574676d8850243b24c2d94cc502d2,
         type: 2}
       propertyPath: bankingAmount
-      value: 0.25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114831097250785018, guid: f19574676d8850243b24c2d94cc502d2,
         type: 2}
@@ -706,15 +711,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4091471838680706, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 557
+      value: -260
       objectReference: {fileID: 0}
     - target: {fileID: 4091471838680706, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 521
+      value: 612
       objectReference: {fileID: 0}
     - target: {fileID: 4091471838680706, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -504
+      value: -1996
       objectReference: {fileID: 0}
     - target: {fileID: 4091471838680706, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -739,7 +744,7 @@ Prefab:
     - target: {fileID: 114831097250785018, guid: f19574676d8850243b24c2d94cc502d2,
         type: 2}
       propertyPath: bankingAmount
-      value: 0.25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114831097250785018, guid: f19574676d8850243b24c2d94cc502d2,
         type: 2}
@@ -874,7 +879,7 @@ Prefab:
     - target: {fileID: 114002828872731304, guid: ff02d640f202fc84884d64240d2ad75c,
         type: 2}
       propertyPath: bankingAmount
-      value: 0.25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114002828872731304, guid: ff02d640f202fc84884d64240d2ad75c,
         type: 2}
@@ -946,7 +951,7 @@ Prefab:
     - target: {fileID: 114583125262376626, guid: 69b54b7763d85c3408eca3ae5c62606f,
         type: 2}
       propertyPath: bankingAmount
-      value: 0.25
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}

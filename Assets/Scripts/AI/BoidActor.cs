@@ -19,13 +19,12 @@ namespace FreeSpace{
         public float maxAcceleration = 10f;
 
         [Header ("Banking")]
-        public float bankingAmount = 0.5f;
+        public float bankingAmount = 15f;
         public float bankingSpeed = 0.2f;
 
         [Header ("Behaviours")]
         public PathFollower pathFollowing;
         public Seek seek;
-
         
 
         //Excluded for the time being until more behaviours are developed
@@ -44,8 +43,10 @@ namespace FreeSpace{
         #endregion
 
         #region Private Variables
-        private Vector3 lastForward; //For Banking
+        //Banking
+        private Vector3 lastForward;
         private Vector3 desiredForward;
+        private float currentBank = 0f;
         #endregion
 
         #region Mono Methods
@@ -64,7 +65,6 @@ namespace FreeSpace{
             Gizmos.DrawLine (transform.position, transform.position + velocity);
 
             GizmosBehaviours ();
-
         }
 
         private void OnValidate() {
@@ -163,7 +163,7 @@ namespace FreeSpace{
         #endregion
 
         private void UpdatePhysics() {
-velocity += Vector3.ClampMagnitude (acceleration, maxAcceleration);
+            velocity += Vector3.ClampMagnitude (acceleration, maxAcceleration);
             velocity = Vector3.ClampMagnitude (velocity, maxSpeed);
 
             ReduceSidewardsDrag ();
@@ -171,21 +171,26 @@ velocity += Vector3.ClampMagnitude (acceleration, maxAcceleration);
 
             acceleration = Vector3.zero;
 
-            
-
             transform.position += velocity * Time.deltaTime;
         }
 
         private void Bank() {
-            float upXAmount = ((Vector3.Dot (transform.forward, lastForward) / 2f) + 1f) * bankingAmount * 5f;
-            
-            Vector3 newUp = new Vector3 (upXAmount, 1f, 0f).normalized;
+            Vector3 desiredForward2D = new Vector3 (desiredForward.x, 0f, desiredForward.z);
+            Vector3 lastForward2D = new Vector3 (lastForward.x, 0f, lastForward.z);
 
+            currentBank = Mathf.Lerp (currentBank,
+                Vector3.SignedAngle (desiredForward2D, lastForward2D, Vector3.up) * (bankingAmount / 20f),
+                Time.deltaTime * 60f * bankingSpeed);
+
+            Vector3 newUp = new Vector3 (-currentBank, 1f, 0f).normalized;
+        
             if (speed > float.Epsilon) {
-                transform.up = Vector3.up;
-                transform.LookAt (transform.position + desiredForward, transform.TransformDirection (newUp));
+                transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, 0f);
+                transform.rotation = Quaternion.LookRotation (desiredForward, transform.TransformDirection (newUp));
             }
+
             desiredForward = transform.forward;
+            lastForward = transform.forward;
         }
 
         private void ReduceSidewardsDrag() {

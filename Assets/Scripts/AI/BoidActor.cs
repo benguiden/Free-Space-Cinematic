@@ -46,7 +46,7 @@ namespace FreeSpace{
         //Banking
         private Vector3 lastForward;
         private Vector3 desiredForward;
-        private float currentBank = 0f;
+        private Vector2 currentBank = Vector2.zero;
         #endregion
 
         #region Mono Methods
@@ -178,12 +178,18 @@ namespace FreeSpace{
             Vector3 desiredForward2D = new Vector3 (desiredForward.x, 0f, desiredForward.z);
             Vector3 lastForward2D = new Vector3 (lastForward.x, 0f, lastForward.z);
 
-            currentBank = Mathf.Lerp (currentBank,
+            currentBank.x = Mathf.Lerp (currentBank.x,
                 Vector3.SignedAngle (desiredForward2D, lastForward2D, Vector3.up) * (bankingAmount / 20f),
                 Time.deltaTime * 60f * bankingSpeed);
 
-            Vector3 newUp = new Vector3 (-currentBank, 1f, 0f).normalized;
-        
+            desiredForward2D = new Vector3 (desiredForward.x, desiredForward.y, 0f);
+            lastForward2D = new Vector3 (lastForward.x, lastForward.y, 0f);
+            currentBank.y = Mathf.Lerp (currentBank.y,
+                Vector3.SignedAngle (desiredForward2D, lastForward2D, Vector3.right) * (bankingAmount / 20f),
+                Time.deltaTime * 60f * bankingSpeed);
+
+            Vector3 newUp = new Vector3 (-currentBank.x, 1f, -currentBank.y).normalized;
+
             if (speed > float.Epsilon) {
                 transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, 0f);
                 transform.rotation = Quaternion.LookRotation (desiredForward, transform.TransformDirection (newUp));

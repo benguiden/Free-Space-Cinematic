@@ -574,8 +574,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419696791476122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12.5}
+  m_LocalRotation: {x: -0, y: -0, z: 0.41169187, w: 0.9113231}
+  m_LocalPosition: {x: -260, y: 612, z: -1996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4066863736922588}
@@ -587,7 +587,7 @@ Transform:
   - {fileID: 4614515320125556}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 48.622}
 --- !u!4 &4102305771708334
 Transform:
   m_ObjectHideFlags: 1
@@ -1469,10 +1469,12 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   maxSpeed: 300
   maxAcceleration: 100
+  bankingAmount: 20
+  bankingSpeed: 0.05
   pathFollowing:
     enabled: 1
     pathDatabase: {fileID: 11400000, guid: 3d77830d128e6f944a559e1d7bfcdf12, type: 2}
-    pathIndex: 0
+    pathIndex: 2
     pathPositionOffset: {x: 0, y: 0, z: 0}
     pointIndex: 0
     followSpeed: 150

@@ -1,4 +1,4 @@
-﻿//#define MULTIPLE_BEHAVIOURS
+﻿#define MULTIPLE_BEHAVIOURS
 
 using System.Collections;
 using System.Collections.Generic;
@@ -25,13 +25,9 @@ namespace FreeSpace{
         [Header ("Behaviours")]
         public PathFollower pathFollowing;
         public Seek seek;
-        
 
-        //Excluded for the time being until more behaviours are developed
-        #if MULTIPLE_BEHAVIOURS
-        public BoidBehaviour[] behaviours;
-        #endif
-        //////////
+        //[HideInInspector]
+        public List<BoidBehaviour> behaviours = new List<BoidBehaviour>();
         #endregion
 
         #region Public Hidden Variables

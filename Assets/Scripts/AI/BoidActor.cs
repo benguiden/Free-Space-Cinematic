@@ -1,4 +1,4 @@
-﻿#define MULTIPLE_BEHAVIOURS
+﻿//#define MULTIPLE_BEHAVIOURS
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace FreeSpace{
 
+    [System.Serializable]
     public class BoidActor : MonoBehaviour {
 
         #region Public Visible Variables
@@ -15,19 +16,12 @@ namespace FreeSpace{
         public float mass = 1f;
         public Vector3 velocity;
         public Vector3 acceleration;
-        public float maxSpeed = 10f;
+        public float maxSpeed = 30f;
         public float maxAcceleration = 10f;
 
         [Header ("Banking")]
         public float bankingAmount = 15f;
         public float bankingSpeed = 0.2f;
-
-        [Header ("Behaviours")]
-        public PathFollower pathFollowing;
-        public Seek seek;
-
-        //[HideInInspector]
-        public List<BoidBehaviour> behaviours = new List<BoidBehaviour>();
         #endregion
 
         #region Public Hidden Variables
@@ -36,6 +30,9 @@ namespace FreeSpace{
                 return GetNetVelocity ().magnitude;
             }
         }
+
+        [HideInInspector]
+        public List<BoidBehaviour> behaviours;
         #endregion
 
         #region Private Variables
@@ -47,13 +44,8 @@ namespace FreeSpace{
 
         #region Mono Methods
         private void Awake() {
-            pathFollowing.SetBoidActor (this);
-            seek.SetBoidActor(this);
-
             lastForward = transform.forward;
             desiredForward = transform.forward;
-
-            AwakeBehaviours ();
         }
 
         private void OnDrawGizmos() {
@@ -77,22 +69,6 @@ namespace FreeSpace{
         #endregion
 
         #region Behaviour Methods
-        private void AwakeBehaviours() {
-
-            #if MULTIPLE_BEHAVIOURS
-            for (int i=0; i<behaviours.Count; i++) {
-            if (behaviours[i].enabled)
-                behaviours[i].Awake ();
-            }
-            #endif
-
-            if (pathFollowing.enabled)
-                pathFollowing.Awake();
-
-            if (seek.enabled)
-                seek.Awake();
-        }
-
         private void UpdateBehaviours() {
 
             //Excluded for the time being until more behaviours are developed
@@ -104,12 +80,6 @@ namespace FreeSpace{
             #endif
             //////////
 
-            if (pathFollowing.enabled)
-                pathFollowing.Update();
-
-            if (seek.enabled)
-                seek.Update();
-
         }
 
         private void GizmosBehaviours() {
@@ -119,12 +89,6 @@ namespace FreeSpace{
                     behaviours[i].OnDrawGizmos ();
             }
             #endif
-
-            if (pathFollowing.enabled)
-                pathFollowing.OnDrawGizmos();
-
-            if (seek.enabled)
-                seek.OnDrawGizmos();
         }
         #endregion
 

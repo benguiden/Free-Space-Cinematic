@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace FreeSpace{
 
-    [System.Serializable]
+    [RequireComponent(typeof(BoidActor))]
     public class PathFollower : BoidBehaviour{
-
-        //Change To Job System At Some Point
 
         #region Public Variables
         [Header ("Path")]
@@ -17,8 +15,8 @@ namespace FreeSpace{
 
         [Header ("Movement")]
         public uint pointIndex;
-        public float followSpeed = 5f;
-        public float pointChangeDistance = 5f;
+        public float followSpeed = 20f;
+        public float pointChangeDistance = 40f;
         #endregion
 
         #region Private Variables
@@ -26,18 +24,13 @@ namespace FreeSpace{
         public Path Path { get { return path; } }
         #endregion
 
-        #region Constructors
-        public PathFollower(BoidActor boidActor) : base (boidActor) {
-
-        }
-        #endregion
-
-        #region Boid Methods
-        public override void Awake() {
+        #region Mono Methods
+        protected override void Awake() {
+            base.Awake ();
             RefreshPath ();
         }
 
-        public override void Update() {
+        private void Update() {
             if (path != null) {
                 CheckNextPoint ();
                 LookAtPoint ();
@@ -45,9 +38,12 @@ namespace FreeSpace{
             }
         }
 
-        public override void OnDrawGizmos() {
+        private void OnDrawGizmos() {
             if (path != null) {
                 if (pointIndex < path.points.Count) {
+                    if (boid == null)
+                        boid = GetComponent<BoidActor> ();
+
                     Gizmos.color = new Color (path.color.r, path.color.g, path.color.b, path.color.a / 2f);
                     int lastPoint = (int)pointIndex - 1;
                     if (lastPoint < 0)

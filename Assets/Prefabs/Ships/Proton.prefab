@@ -306,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1490929190633036
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,8 +574,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419696791476122}
-  m_LocalRotation: {x: -0, y: -0, z: 0.41169187, w: 0.9113231}
-  m_LocalPosition: {x: -260, y: 612, z: -1996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4066863736922588}
@@ -1471,20 +1471,7 @@ MonoBehaviour:
   maxAcceleration: 100
   bankingAmount: 20
   bankingSpeed: 0.05
-  pathFollowing:
-    enabled: 1
-    pathDatabase: {fileID: 11400000, guid: 3d77830d128e6f944a559e1d7bfcdf12, type: 2}
-    pathIndex: 2
-    pathPositionOffset: {x: 0, y: 0, z: 0}
-    pointIndex: 0
-    followSpeed: 150
-    pointChangeDistance: 100
-  seek:
-    enabled: 0
-    target: {fileID: 0}
-    cruiseSpeed: 10
-    desiredArriveSpeed: 0
-    nearingDistance: 0
+  behaviours: []
 --- !u!198 &198369164747506608
 ParticleSystem:
   m_ObjectHideFlags: 1

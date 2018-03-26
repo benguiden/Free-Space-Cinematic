@@ -4,35 +4,22 @@ using UnityEngine;
 
 namespace FreeSpace{
 
-    [System.Serializable]
-    public abstract class BoidBehaviour{
-
-        #region Public Variables
-        public bool enabled = true;
-        #endregion
+    [RequireComponent (typeof (BoidActor))]
+    public abstract class BoidBehaviour : MonoBehaviour{
 
         #region Protected Variables
         protected BoidActor boid;
         #endregion
 
-        #region Constructors
-        public BoidBehaviour(BoidActor boidActor) {
-            boid = boidActor;
-        }
-        #endregion
-
-        #region Data Methods
-        public void SetBoidActor(BoidActor boidActor) {
-            boid = boidActor;
+        #region Mono Methods
+        protected virtual void Awake() {
+            boid = GetComponent<BoidActor> ();
+            boid.behaviours.Add (this);
         }
         #endregion
 
         #region Boid Methods
-        public virtual void Awake() { }
-        public virtual void Start() { }
-        public virtual void Update() { }
-        public virtual void OnDrawGizmos() { }
-        public virtual void OnValidate() { }
+        public virtual void UpdateCalculations() { }
         #endregion
 
     }

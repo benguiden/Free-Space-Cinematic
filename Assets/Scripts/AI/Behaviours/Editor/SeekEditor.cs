@@ -5,38 +5,50 @@ using UnityEditor;
 
 namespace FreeSpace {
 
-    /*[CustomPropertyDrawer(typeof(Seek))]
-    public class SeekEditor:PropertyDrawer {
-
-        bool foldOut = false;
-
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
-            SerializedProperty enabled = property.FindPropertyRelative("enabled");
-            SerializedProperty target = property.FindPropertyRelative("target");
-            SerializedProperty cruiseSpeed = property.FindPropertyRelative("cruiseSpeed");
-            SerializedProperty desiredArriveSpeed = property.FindPropertyRelative("desiredArriveSpeed");
-            SerializedProperty nearingDistance = property.FindPropertyRelative("nearingDistance");
-
-            EditorGUILayout.BeginHorizontal();
-            foldOut = EditorGUILayout.Foldout(foldOut, "Seek");
-            enabled.boolValue = EditorGUILayout.Toggle(enabled.boolValue, GUILayout.Width(32f));
-            EditorGUILayout.EndHorizontal();
-
-            if (foldOut) {
-                EditorGUILayout.LabelField("Seeking", EditorStyles.boldLabel);
-                EditorGUILayout.ObjectField(target, typeof(Transform));
-
-                EditorGUILayout.Space();
-                EditorGUILayout.LabelField("Movement", EditorStyles.boldLabel);
-                cruiseSpeed.floatValue = EditorGUILayout.FloatField("Cruise Speed", cruiseSpeed.floatValue);
-                desiredArriveSpeed.floatValue = EditorGUILayout.FloatField("Desired Arrive Speed", desiredArriveSpeed.floatValue);
-                nearingDistance.floatValue = EditorGUILayout.FloatField("Nearing Distance", nearingDistance.floatValue);
+    public class BoidBehaviourEditor {
+        public static BoidBehaviour InspectorGUI(BoidBehaviour behaviour) {
+            System.Type behaviourType = behaviour.GetType ();
+            if (behaviourType == typeof (Seek)) {
+                return InspectorGUI ((Seek)behaviour);
+            }else if (behaviourType == typeof (PathFollower)) {
+                return InspectorGUI ((PathFollower)behaviour);
             }
+            return behaviour;
         }
 
-    }*/
-    public abstract class BoidBehaviourEditor {
-        public 
+        public static Seek InspectorGUI(Seek seek) {
+            EditorGUILayout.LabelField ("Seek", EditorStyles.boldLabel);
+            seek.target = (Transform)EditorGUILayout.ObjectField (seek.target, typeof (Transform), true);
+
+            EditorGUILayout.Space ();
+            EditorGUILayout.LabelField ("Movement", EditorStyles.boldLabel);
+            seek.cruiseSpeed = EditorGUILayout.FloatField ("Cruise Speed", seek.cruiseSpeed);
+            seek.desiredArriveSpeed = EditorGUILayout.FloatField ("Desired Arrive Speed", seek.desiredArriveSpeed);
+            seek.nearingDistance = EditorGUILayout.FloatField ("Nearing Distance", seek.nearingDistance);
+
+            EditorGUILayout.Space ();
+            return seek;
+        }
+
+        public static PathFollower InspectorGUI(PathFollower pathfollower) {
+            EditorGUILayout.LabelField ("PathFollower", EditorStyles.boldLabel);
+
+            EditorGUILayout.Space ();
+            return pathfollower;
+        }
+
+        public static string GetTypeString(System.Type behaviourType) {
+            if (behaviourType == typeof (Seek)) {
+                return "Seek";
+            }else if (behaviourType == typeof (PathFollower)) {
+                return "Path Follower";
+            }
+            return "";
+        }
     }
+
+
+
+
 
 }

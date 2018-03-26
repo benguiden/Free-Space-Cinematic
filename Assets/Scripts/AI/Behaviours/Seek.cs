@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FreeSpace {
 
-    [System.Serializable]
+    [RequireComponent (typeof (BoidActor))]
     public class Seek : BoidBehaviour {
 
         #region Public Variables
@@ -12,24 +12,21 @@ namespace FreeSpace {
         public Transform target;
 
         [Header ("Movement")]
-        public float cruiseSpeed = 5f;
-        public float desiredArriveSpeed = 5f;
-        public float nearingDistance = 2f;
+        public float cruiseSpeed = 20f;
+        public float desiredArriveSpeed = 20f;
+        public float nearingDistance = 0f;
         #endregion
 
-        #region Private Variables
-
-        #endregion
-
-        #region Constructors
-        public Seek(BoidActor boidActor) : base(boidActor) {
-
+        #region Mono Methods
+        protected override void Awake() {
+            base.Awake ();
         }
-        #endregion
 
-        #region Boid Methods
-        public override void OnDrawGizmos() {
+        private void OnDrawGizmos() {
             if (Application.isPlaying) {
+                if (boid == null)
+                    boid = GetComponent<BoidActor> ();
+
                 float timeToDesired = (boid.speed - desiredArriveSpeed) / boid.maxAcceleration;
                 float radius = timeToDesired * boid.speed;
                 Gizmos.color = Color.blue;
@@ -37,7 +34,7 @@ namespace FreeSpace {
             }
         }
 
-        public override void Update() {
+        private void Update() {
             MoveTowardTarget();
         }
         #endregion

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace FreeSpace{
 
     [System.Serializable]
-    public class BoidBehaviour{
+    public abstract class BoidBehaviour{
 
         #region Public Variables
         public bool enabled = true;

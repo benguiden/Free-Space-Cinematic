@@ -89,9 +89,10 @@ namespace FreeSpace{
 
         private void LookAtPoint() {
             Vector3 lookTarget = path.points[(int)pointIndex] + pathPositionOffset;
-            lookTarget -= boid.transform.position;
+            /*lookTarget -= boid.transform.position;
             lookTarget.Normalize ();
-            boid.transform.rotation = Quaternion.Lerp (boid.transform.rotation, Quaternion.LookRotation (lookTarget), 0.25f * Time.deltaTime * 15f);
+            boid.transform.rotation = Quaternion.Lerp (boid.transform.rotation, Quaternion.LookRotation (lookTarget), 0.25f * Time.deltaTime * 15f);*/
+            boid.SpinToTargetForward ((lookTarget - boid.transform.position).normalized, 0.25f * Time.deltaTime * 15f);
         }
 
         private void MoveTowardsPoint() {

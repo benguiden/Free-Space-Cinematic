@@ -11,8 +11,10 @@ namespace FreeSpace {
         [Header("Seeking")]
         public Transform target;
 
-        [Header("Movement")]
-        public float desiredSpeed;
+        [Header ("Movement")]
+        public float cruiseSpeed = 5f;
+        public float desiredArriveSpeed = 5f;
+        public float nearingDistance = 2f;
         #endregion
 
         #region Private Variables
@@ -26,6 +28,15 @@ namespace FreeSpace {
         #endregion
 
         #region Boid Methods
+        public override void OnDrawGizmos() {
+            if (Application.isPlaying) {
+                float timeToDesired = (boid.speed - desiredArriveSpeed) / boid.maxAcceleration;
+                float radius = timeToDesired * boid.speed;
+                Gizmos.color = Color.blue;
+                Gizmos.DrawWireSphere (target.position, radius);
+            }
+        }
+
         public override void Update() {
             MoveTowardTarget();
         }
@@ -34,18 +45,31 @@ namespace FreeSpace {
         #region Seek Methods
         
         private void MoveTowardTarget() {
+            float distanceToTarget = Vector3.Distance (boid.transform.position, target.position);
+
             Vector3 desiredForward = (target.position - boid.transform.position).normalized;
-            boid.SpinToTargetForward(desiredForward, 0.05f);
+            if (distanceToTarget > 1f)
+                boid.SpinToTargetForward (desiredForward, 0.25f * Time.deltaTime * 15f);
 
+            
+            float arriveTime = (boid.speed - desiredArriveSpeed) / boid.maxAcceleration;
+            float arriveRadius = arriveTime * boid.speed;
 
-            Debug.Log(Vector3.Dot(target.position.normalized, boid.transform.position.normalized));
-            float newSpeed = desiredSpeed * Vector3.Dot(target.position.normalized, boid.transform.position.normalized);
-            boid.SetForwardSpeed(desiredSpeed);
-        }
+            float desiredSpeed = cruiseSpeed;
+            if (distanceToTarget <= arriveRadius + nearingDistance) {
+                desiredSpeed = 0f;
+            } else if (distanceToTarget <= arriveRadius) {
+                desiredSpeed *= distanceToTarget / (arriveRadius + nearingDistance);
+            }
 
-        private Vector3 DesiredVelocityToAcceleration() {
+            float dot = 1f;
+            if (boid.speed > 0f)
+                dot = Vector3.Dot (boid.GetNetVelocity ().normalized, desiredForward.normalized);
+            float newSpeed = Mathf.Abs ((desiredSpeed * dot) - boid.speed);
+            if (desiredSpeed < boid.speed)
+                newSpeed = -boid.speed * dot;
 
-            return Vector3.zero;
+            boid.AddForwardAcceleration(newSpeed);
         }
         #endregion
 

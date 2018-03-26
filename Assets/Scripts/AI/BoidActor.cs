@@ -1,6 +1,4 @@
-﻿//#define MULTIPLE_BEHAVIOURS
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,8 +49,6 @@ namespace FreeSpace{
         private void OnDrawGizmos() {
             Gizmos.color = Color.red;
             Gizmos.DrawLine (transform.position, transform.position + velocity);
-
-            GizmosBehaviours ();
         }
 
         private void OnValidate() {
@@ -70,25 +66,11 @@ namespace FreeSpace{
 
         #region Behaviour Methods
         private void UpdateBehaviours() {
-
-            //Excluded for the time being until more behaviours are developed
-            #if MULTIPLE_BEHAVIOURS
             for (int i=0; i<behaviours.Count; i++) {
                 if (behaviours[i].enabled)
-                    behaviours[i].Update ();
+                    behaviours[i].UpdateBehaviour ();
             }
-            #endif
-            //////////
 
-        }
-
-        private void GizmosBehaviours() {
-            #if MULTIPLE_BEHAVIOURS
-            for (int i=0; i<behaviours.Count; i++) {
-                if (behaviours[i].enabled)
-                    behaviours[i].OnDrawGizmos ();
-            }
-            #endif
         }
         #endregion
 

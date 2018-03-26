@@ -30,7 +30,8 @@ namespace FreeSpace{
             RefreshPath ();
         }
 
-        private void Update() {
+        public override void UpdateBehaviour() {
+            base.UpdateBehaviour ();
             if (path != null) {
                 CheckNextPoint ();
                 LookAtPoint ();

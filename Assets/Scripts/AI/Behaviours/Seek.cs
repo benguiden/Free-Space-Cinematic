@@ -17,6 +17,11 @@ namespace FreeSpace {
         public float nearingDistance = 0f;
         #endregion
 
+        #region Private Variables
+        private Vector3 desiredForward = new Vector3 ();
+        private float deltaSpeed;
+        #endregion
+
         #region Mono Methods
         protected override void Awake() {
             base.Awake ();
@@ -34,21 +39,26 @@ namespace FreeSpace {
             }
         }
 
-        private void Update() {
-            MoveTowardTarget();
+        public override void UpdateBehaviour() {
+            MoveTowardTarget ();
         }
         #endregion
 
         #region Seek Methods
-        
+
         private void MoveTowardTarget() {
             float distanceToTarget = Vector3.Distance (boid.transform.position, target.position);
 
-            Vector3 desiredForward = (target.position - boid.transform.position).normalized;
+            desiredForward = (target.position - boid.transform.position).normalized;
             if (distanceToTarget > 1f)
                 boid.SpinToTargetForward (desiredForward, 0.25f * Time.deltaTime * 15f);
 
-            
+            boid.AddForwardAcceleration(deltaSpeed);
+        }
+
+        protected override void Calculate() {
+            float distanceToTarget = Vector3.Distance (boid.transform.position, target.position);
+
             float arriveTime = (boid.speed - desiredArriveSpeed) / boid.maxAcceleration;
             float arriveRadius = arriveTime * boid.speed;
 
@@ -62,11 +72,9 @@ namespace FreeSpace {
             float dot = 1f;
             if (boid.speed > 0f)
                 dot = Vector3.Dot (boid.GetNetVelocity ().normalized, desiredForward.normalized);
-            float newSpeed = Mathf.Abs ((desiredSpeed * dot) - boid.speed);
+            deltaSpeed = Mathf.Abs ((desiredSpeed * dot) - boid.speed);
             if (desiredSpeed < boid.speed)
-                newSpeed = -boid.speed * dot;
-
-            boid.AddForwardAcceleration(newSpeed);
+                deltaSpeed = -boid.speed * dot;
         }
         #endregion
 

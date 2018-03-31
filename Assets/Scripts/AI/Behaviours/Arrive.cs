@@ -6,33 +6,34 @@ namespace FreeSpace
 {
 
     [RequireComponent (typeof (BoidActor))]
-    public class Pursue : BoidBehaviour{
+    public class Arrive : BoidBehaviour
+    {
 
         #region Public Variables
-        [Header ("Pursuing")]
-        public BoidActor target;
+        [Header ("Arrive")]
+        public Transform target;
+        public Vector3 targetPosition;
 
         [Header ("Movement")]
-        public float desiredDistance = 50f;
+        public float cruiseSpeed = 20f;
+        public float nearingDistance = 0f;
         #endregion
 
         #region Private Variables
         private Vector3 desiredPosition;
-        public float desiredSpeed;
+        private float desiredSpeed;
         #endregion
 
         #region Mono Methods
-        protected override void Awake() {
-            base.Awake ();
-        }
-
         private void OnDrawGizmos() {
             if (Application.isPlaying) {
                 if (boid == null)
                     boid = GetComponent<BoidActor> ();
 
+                float arriveTime = boid.speed / boid.maxAcceleration;
+                float arriveRadius = arriveTime * boid.speed;
                 Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere (desiredPosition, 2.5f);
+                Gizmos.DrawWireSphere (target.position, arriveRadius);
             }
         }
 
@@ -43,10 +44,12 @@ namespace FreeSpace
 
         #region Seek Methods
         protected override void Calculate() {
-            desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, true);
+            if (target != null)
+                desiredPosition = target.position;
+            else
+                desiredPosition = targetPosition;
 
-            float timeToTarget = Vector3.Distance (transform.position, target.transform.position) / desiredSpeed;
-            desiredPosition = target.transform.position + (timeToTarget * target.velocity);
+            desiredSpeed = boid.GetArriveSpeed (desiredPosition, nearingDistance, 0f, false);
         }
         #endregion
 

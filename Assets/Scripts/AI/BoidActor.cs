@@ -11,15 +11,16 @@ namespace FreeSpace{
 
         #region Public Visible Variables
         [Header ("Physics")]
-        public float mass = 1f;
+        public float mass = 1f; //Find Use
         public Vector3 velocity;
         public Vector3 acceleration;
         public float maxSpeed = 30f;
         public float maxAcceleration = 10f;
 
         [Header ("Banking")]
-        public float bankingAmount = 15f;
-        public float bankingSpeed = 0.2f;
+        public float bankingAmount = 10f;
+        public float bankingSpeed = 1f;
+        public float rotationSpeed = 1f;
         #endregion
 
         #region Public Hidden Variables
@@ -33,19 +34,7 @@ namespace FreeSpace{
         public List<BoidBehaviour> behaviours;
         #endregion
 
-        #region Private Variables
-        //Banking
-        private Vector3 lastForward;
-        private Vector3 desiredForward;
-        private Vector2 currentBank = Vector2.zero;
-        #endregion
-
         #region Mono Methods
-        private void Awake() {
-            lastForward = transform.forward;
-            desiredForward = transform.forward;
-        }
-
         private void OnDrawGizmos() {
             Gizmos.color = Color.red;
             Gizmos.DrawLine (transform.position, transform.position + velocity);
@@ -68,83 +57,82 @@ namespace FreeSpace{
         private void UpdateBehaviours() {
             for (int i=0; i<behaviours.Count; i++) {
                 if (behaviours[i].enabled)
-                    behaviours[i].UpdateBehaviour ();
+                    acceleration += behaviours[i].UpdateForce ();
             }
 
         }
         #endregion
 
         #region Physics Methods
-        #region Displacement Forces
-        public void AddForwardForce(float forwardForce) {
-            acceleration += desiredForward * forwardForce * Time.deltaTime;
-        }
-        public void AddForce(Vector3 addedForce) {
-            acceleration += addedForce * mass * Time.deltaTime;
-        }
-        public void AddForwardAcceleration(float forwardAcceleration) {
-            acceleration += desiredForward * forwardAcceleration * Time.deltaTime;
-        }
-        public void AddAcceleration(Vector3 addedAcceleration) {
-            acceleration += addedAcceleration * Time.deltaTime;
-        }
-        public void SetForwardSpeed(float newSpeed) {
-            velocity = desiredForward * newSpeed;
-        }
-
         public Vector3 GetNetVelocity() {
             return velocity + Vector3.ClampMagnitude (acceleration, maxAcceleration);
         }
-        #endregion
 
-        #region Angular Forces
-        //Has to be improved in the future
-        public void SpinToTargetForward(Vector3 targetForward, float speed) {
-            desiredForward = Vector3.Lerp(desiredForward, targetForward, speed);
+        public Vector3 SeekForce(Vector3 targetPosition, float speed) {
+            Vector3 difference = targetPosition - transform.position;
+            difference.Normalize ();
+            Vector3 desiredVelocity = difference * speed;
+            return desiredVelocity - velocity;
         }
-        #endregion
+
+        public float GetArriveSpeed(Vector3 targetPosition, float desiredDistance, float desiredSpeed, bool slowDownToDistance) {
+            /* This method returns the desired speed of a boid, by slowing down the boid gradually when the boid is within 1 & 1/5th of the way there.
+             * This also allows for the boid to arrive at a desired speed, for instance a pursue behaviour target's speed.
+             * It also allows for the boid to slow down when too close to the target so it can get back to it's desired distance, again good for the pursue behaviour.
+             * But if slowDownToDistance is false, well then the boid will just stay at it's desired speed, for instance having a desired speed of zero and stopping a bit away from the target for the arrive behaviour.
+             */
+
+            float distanceToTarget = Vector3.Distance (transform.position, targetPosition);
+            float arriveRadius = ((speed - desiredSpeed) * (speed - desiredSpeed)) / maxAcceleration; //This compensates the distance it will take for the boid to slow down or speed up to it's desired distance so it tends not to overshoot
+
+            float calculatedDistance = desiredDistance + arriveRadius;
+
+            float newSpeed = maxSpeed;
+
+            if (distanceToTarget < calculatedDistance * 1.2f) {
+                //Slowing down to desired speed when close to desired distance
+                if (distanceToTarget >= calculatedDistance) {
+                    float sigmoid = (distanceToTarget - calculatedDistance) / (calculatedDistance * 0.2f);
+                    newSpeed = desiredSpeed + ((maxSpeed - desiredSpeed) * sigmoid);
+                } else {
+                    if (slowDownToDistance) //Slowing down below desired speed when to close to target and ahead of desired distance
+                        newSpeed = desiredSpeed * (distanceToTarget / calculatedDistance);
+                    else
+                        newSpeed = desiredSpeed;
+                }
+            }
+
+            return newSpeed;
+        }
 
         private void UpdatePhysics() {
-            velocity += Vector3.ClampMagnitude (acceleration, maxAcceleration);
+            velocity += Vector3.ClampMagnitude (acceleration, maxAcceleration) * Time.deltaTime;
             velocity = Vector3.ClampMagnitude (velocity, maxSpeed);
 
-            ReduceSidewardsDrag ();
-            Bank ();
-
+            Vector3 newUp = Bank ();
+            if (speed > 0.01f)
+                transform.LookAt (transform.position + LerpForward().normalized, newUp);
+            
+            velocity *= (1.0f - (1f/*damping*/ * Time.deltaTime));
             acceleration = Vector3.zero;
 
             transform.position += velocity * Time.deltaTime;
         }
 
-        private void Bank() {
-            Vector3 desiredForward2D = new Vector3 (desiredForward.x, 0f, desiredForward.z);
-            Vector3 lastForward2D = new Vector3 (lastForward.x, 0f, lastForward.z);
-
-            currentBank.x = Mathf.Lerp (currentBank.x,
-                Vector3.SignedAngle (desiredForward2D, lastForward2D, Vector3.up) * (bankingAmount / 20f),
-                Time.deltaTime * 60f * bankingSpeed);
-
-            desiredForward2D = new Vector3 (desiredForward.x, desiredForward.y, 0f);
-            lastForward2D = new Vector3 (lastForward.x, lastForward.y, 0f);
-            currentBank.y = Mathf.Lerp (currentBank.y,
-                Vector3.SignedAngle (desiredForward2D, lastForward2D, Vector3.right) * (bankingAmount / 20f),
-                Time.deltaTime * 60f * bankingSpeed);
-
-            Vector3 newUp = new Vector3 (-currentBank.x, 1f, -currentBank.y).normalized;
-
-            if (speed > float.Epsilon) {
-                transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, 0f);
-                transform.rotation = Quaternion.LookRotation (desiredForward, transform.TransformDirection (newUp));
-            }
-
-            desiredForward = transform.forward;
-            lastForward = transform.forward;
+        private Vector3 Bank() {
+            Vector3 globalUp = new Vector3 (0f, 0.2f, 0f);
+            Vector3 accelUp = acceleration * bankingAmount * 0.01f;
+            Vector3 bankUp = accelUp + globalUp;
+            Vector3 tempUp = transform.up;
+            tempUp = Vector3.Lerp (tempUp, bankUp, Time.deltaTime * bankingSpeed);
+            return tempUp;
         }
 
-        private void ReduceSidewardsDrag() {
-            Vector3 lateralVelocity = transform.InverseTransformDirection (velocity);
-            velocity -= transform.right * lateralVelocity.x * Time.deltaTime;
-            velocity -= transform.up * lateralVelocity.y * Time.deltaTime;
+        private Vector3 LerpForward() {
+            Quaternion currentRotation = Quaternion.LookRotation (transform.forward);
+            Quaternion desiredRotation = Quaternion.LookRotation (velocity.normalized);
+            desiredRotation = Quaternion.Lerp (currentRotation, desiredRotation, Time.deltaTime * rotationSpeed);
+            return desiredRotation * Vector3.forward;
         }
         #endregion
     }

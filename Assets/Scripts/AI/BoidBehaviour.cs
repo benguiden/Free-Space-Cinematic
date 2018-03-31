@@ -42,7 +42,9 @@ namespace FreeSpace{
         #endregion
 
         #region Boid Methods
-        public virtual void UpdateBehaviour() { }
+        public virtual Vector3 UpdateForce() {
+            return Vector3.zero;
+        }
 
         protected virtual IEnumerator UpdateCalculations() {
             while (enabled) {

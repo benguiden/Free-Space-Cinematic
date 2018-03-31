@@ -30,13 +30,12 @@ namespace FreeSpace{
             RefreshPath ();
         }
 
-        public override void UpdateBehaviour() {
-            base.UpdateBehaviour ();
+        public override Vector3 UpdateForce() {
             if (path != null) {
                 CheckNextPoint ();
-                LookAtPoint ();
-                MoveTowardsPoint ();
+                return boid.SeekForce (path.points[(int)pointIndex], followSpeed);
             }
+            return Vector3.zero;
         }
 
         private void OnDrawGizmos() {
@@ -82,18 +81,6 @@ namespace FreeSpace{
             if (Vector3.Distance(boid.transform.position, path.points[(int)pointIndex] + pathPositionOffset) <= pointChangeDistance) {
                 pointIndex = (uint)((pointIndex + 1) % path.points.Count);
             }
-        }
-
-        private void LookAtPoint() {
-            Vector3 lookTarget = path.points[(int)pointIndex] + pathPositionOffset;
-            /*lookTarget -= boid.transform.position;
-            lookTarget.Normalize ();
-            boid.transform.rotation = Quaternion.Lerp (boid.transform.rotation, Quaternion.LookRotation (lookTarget), 0.25f * Time.deltaTime * 15f);*/
-            boid.SpinToTargetForward ((lookTarget - boid.transform.position).normalized, 0.25f * Time.deltaTime * 15f);
-        }
-
-        private void MoveTowardsPoint() {
-			boid.AddForwardAcceleration (followSpeed);
         }
         #endregion
 

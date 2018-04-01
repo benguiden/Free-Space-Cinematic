@@ -39,7 +39,7 @@ namespace FreeSpace{
         }
 
         private void OnDrawGizmos() {
-            if (path != null) {
+            if ((path != null) && (enabled)) {
                 if (pointIndex < path.points.Count) {
                     if (boid == null)
                         boid = GetComponent<BoidActor> ();

@@ -75,7 +75,7 @@ namespace FreeSpace{
             return desiredVelocity - velocity;
         }
 
-        public float GetArriveSpeed(Vector3 targetPosition, float desiredDistance, float desiredSpeed, bool slowDownToDistance) {
+        public float GetArriveSpeed(Vector3 targetPosition, float desiredDistance, float desiredSpeed, float catchUpSpeed,bool slowDownToDistance) {
             /* This method returns the desired speed of a boid, by slowing down the boid gradually when the boid is within 1 & 1/5th of the way there.
              * This also allows for the boid to arrive at a desired speed, for instance a pursue behaviour target's speed.
              * It also allows for the boid to slow down when too close to the target so it can get back to it's desired distance, again good for the pursue behaviour.
@@ -87,7 +87,7 @@ namespace FreeSpace{
 
             float calculatedDistance = desiredDistance + arriveRadius;
 
-            float newSpeed = maxSpeed;
+            float newSpeed = Mathf.Max (catchUpSpeed, desiredSpeed);
 
             if (distanceToTarget < calculatedDistance * 1.2f) {
                 //Slowing down to desired speed when close to desired distance

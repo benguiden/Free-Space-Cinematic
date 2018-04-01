@@ -25,11 +25,11 @@ namespace FreeSpace {
         }
 
         private void OnDrawGizmos() {
-            if (Application.isPlaying) {
+            if ((Application.isPlaying) && (enabled)) {
                 if (boid == null)
                     boid = GetComponent<BoidActor> ();
 
-                Gizmos.color = Color.blue;
+                Gizmos.color = new Color (0f, 0f, 1f, 0.5f);
                 Gizmos.DrawWireSphere (desiredPosition, 2.5f);
             }
         }

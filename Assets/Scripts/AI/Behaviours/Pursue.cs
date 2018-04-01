@@ -27,23 +27,23 @@ namespace FreeSpace
         }
 
         private void OnDrawGizmos() {
-            if (Application.isPlaying) {
+            if ((Application.isPlaying) && (enabled)) {
                 if (boid == null)
                     boid = GetComponent<BoidActor> ();
 
-                Gizmos.color = Color.blue;
+                Gizmos.color = new Color (0f, 0f, 1f, 0.5f);
                 Gizmos.DrawWireSphere (desiredPosition, 2.5f);
             }
-        }
-
-        public override Vector3 UpdateForce() {
-            return boid.SeekForce (desiredPosition, desiredSpeed);
         }
         #endregion
 
         #region Seek Methods
+        public override Vector3 UpdateForce() {
+            return boid.SeekForce (desiredPosition, desiredSpeed);
+        }
+
         protected override void Calculate() {
-            desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, true);
+            desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, boid.maxSpeed, true);
 
             float timeToTarget = Vector3.Distance (transform.position, target.transform.position) / desiredSpeed;
             desiredPosition = target.transform.position + (timeToTarget * target.velocity);

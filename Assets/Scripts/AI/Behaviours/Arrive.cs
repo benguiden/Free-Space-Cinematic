@@ -26,13 +26,13 @@ namespace FreeSpace
 
         #region Mono Methods
         private void OnDrawGizmos() {
-            if (Application.isPlaying) {
+            if ((Application.isPlaying) && (enabled)) {
                 if (boid == null)
                     boid = GetComponent<BoidActor> ();
 
                 float arriveTime = boid.speed / boid.maxAcceleration;
                 float arriveRadius = arriveTime * boid.speed;
-                Gizmos.color = Color.blue;
+                Gizmos.color = Gizmos.color = new Color (0f, 0f, 1f, 0.5f);
                 Gizmos.DrawWireSphere (target.position, arriveRadius);
             }
         }
@@ -49,7 +49,7 @@ namespace FreeSpace
             else
                 desiredPosition = targetPosition;
 
-            desiredSpeed = boid.GetArriveSpeed (desiredPosition, nearingDistance, 0f, false);
+            desiredSpeed = boid.GetArriveSpeed (desiredPosition, nearingDistance, 0f, cruiseSpeed, false);
         }
         #endregion
 

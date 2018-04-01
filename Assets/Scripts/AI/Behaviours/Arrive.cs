@@ -5,6 +5,7 @@ using UnityEngine;
 namespace FreeSpace
 {
 
+    [AddComponentMenu ("Boid Behaviours/Arrive")]
     [RequireComponent (typeof (BoidActor))]
     public class Arrive : BoidBehaviour
     {

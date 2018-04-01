@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace FreeSpace {
 
+    [AddComponentMenu ("Boid Behaviours/Seek")]
     [RequireComponent (typeof (BoidActor))]
     public class Seek : BoidBehaviour {
 
@@ -33,13 +34,13 @@ namespace FreeSpace {
                 Gizmos.DrawWireSphere (desiredPosition, 2.5f);
             }
         }
-
-        public override Vector3 UpdateForce() {
-            return boid.SeekForce (desiredPosition, cruiseSpeed);
-        }
         #endregion
 
         #region Seek Methods
+        public override Vector3 UpdateForce() {
+            return boid.SeekForce (desiredPosition, cruiseSpeed);
+        }
+
         protected override void Calculate() {
             desiredPosition = target.position;
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 namespace FreeSpace
 {
 
+    [AddComponentMenu ("Boid Behaviours/Offset Persue")]
     [RequireComponent(typeof(BoidActor))]
     public class OffsetPursue : BoidBehaviour{
 

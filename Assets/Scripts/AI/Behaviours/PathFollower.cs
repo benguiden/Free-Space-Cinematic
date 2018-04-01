@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace FreeSpace{
 
+    [AddComponentMenu ("Boid Behaviours/Path Follower")]
     [RequireComponent(typeof(BoidActor))]
     public class PathFollower : BoidBehaviour{
 

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 namespace FreeSpace{
 
+    [AddComponentMenu ("Boid Behaviours/Boid Actor")]
     [System.Serializable]
     public class BoidActor : MonoBehaviour {
 
@@ -30,7 +29,7 @@ namespace FreeSpace{
             }
         }
 
-        //[HideInInspector]
+        [HideInInspector]
         public List<BoidBehaviour> behaviours = new List<BoidBehaviour> ();
         #endregion
 
@@ -122,10 +121,10 @@ namespace FreeSpace{
             velocity = Vector3.ClampMagnitude (velocity, maxSpeed);
 
             Vector3 newUp = Bank ();
-            if (speed > 0.01f)
+            if (speed > 0.1f)
                 transform.LookAt (transform.position + LerpForward().normalized, newUp);
             
-            velocity *= (1.0f - (1f/*damping*/ * Time.deltaTime));
+            velocity *= (1.0f - (0.1f/*damping*/ * Time.deltaTime));
 
             transform.position += velocity * Time.deltaTime;
         }
@@ -140,10 +139,14 @@ namespace FreeSpace{
         }
 
         private Vector3 LerpForward() {
-            Quaternion currentRotation = Quaternion.LookRotation (transform.forward);
-            Quaternion desiredRotation = Quaternion.LookRotation (velocity.normalized);
-            desiredRotation = Quaternion.Lerp (currentRotation, desiredRotation, Time.deltaTime * rotationSpeed);
-            return desiredRotation * Vector3.forward;
+            if (velocity.magnitude > 0.1f) {
+                Quaternion currentRotation = Quaternion.LookRotation (transform.forward);
+                Quaternion desiredRotation = Quaternion.LookRotation (velocity.normalized);
+                desiredRotation = Quaternion.Lerp (currentRotation, desiredRotation, Time.deltaTime * rotationSpeed);
+                return desiredRotation * Vector3.forward;
+            } else {
+                return transform.forward;
+            }
         }
         #endregion
     }

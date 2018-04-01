@@ -11,6 +11,7 @@ namespace FreeSpace {
         #region Public Variables
         [Header("Seeking")]
         public Transform target;
+        public Vector3 seekDirection;
 
         [Header ("Movement")]
         public float cruiseSpeed = 20f;
@@ -42,7 +43,10 @@ namespace FreeSpace {
         }
 
         protected override void Calculate() {
-            desiredPosition = target.position;
+            if (target != null)
+                desiredPosition = target.position;
+            else
+                desiredPosition = transform.position + seekDirection.normalized;
         }
         #endregion
 

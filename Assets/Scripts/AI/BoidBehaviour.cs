@@ -10,6 +10,7 @@ namespace FreeSpace{
         #region Public Variables
         [Range (0.1f, 1f)]
         public float calculationUpdateSpeed = 1f;
+        public float weight = 1f;
         #endregion
 
         #region Protected Variables

@@ -52,16 +52,22 @@ namespace FreeSpace
         }
 
         public override Vector3 UpdateForce() {
-            return boid.SeekForce (desiredPosition, desiredSpeed);
+            if (leader != null) {
+                return boid.SeekForce (desiredPosition, desiredSpeed);
+            } else {
+                return Vector3.zero;
+            }
         }
 
         protected override void Calculate() {
-            desiredSpeed = boid.GetArriveSpeed (leader.transform.position, leaderOffset.magnitude, leader.speed, boid.maxSpeed, true);
+            if (leader != null) {
+                desiredSpeed = boid.GetArriveSpeed (leader.transform.position, leaderOffset.magnitude, leader.speed, boid.maxSpeed, true);
 
-            desiredPosition = leader.transform.TransformPoint (leaderOffset);
+                desiredPosition = leader.transform.TransformPoint (leaderOffset);
 
-            float timeToTarget = Vector3.Distance (transform.position, leader.transform.position) / desiredSpeed;
-            desiredPosition = desiredPosition + (timeToTarget * leader.velocity);
+                float timeToTarget = Vector3.Distance (transform.position, leader.transform.position) / desiredSpeed;
+                desiredPosition = desiredPosition + (timeToTarget * leader.velocity);
+            }
         }
         #endregion
 

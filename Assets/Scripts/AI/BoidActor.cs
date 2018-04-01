@@ -30,8 +30,8 @@ namespace FreeSpace{
             }
         }
 
-        [HideInInspector]
-        public List<BoidBehaviour> behaviours;
+        //[HideInInspector]
+        public List<BoidBehaviour> behaviours = new List<BoidBehaviour> ();
         #endregion
 
         #region Mono Methods
@@ -55,11 +55,23 @@ namespace FreeSpace{
 
         #region Behaviour Methods
         private void UpdateBehaviours() {
+            acceleration = Vector3.zero;
+
             for (int i=0; i<behaviours.Count; i++) {
-                if (behaviours[i].enabled)
-                    acceleration += behaviours[i].UpdateForce ();
+                if (behaviours[i].enabled) {
+                    Vector3 behaviourAcceleration = behaviours[i].UpdateForce () * behaviours[i].weight;
+                    if (AccumulateAcceleration (ref acceleration, behaviourAcceleration))
+                        break;
+                }
             }
 
+        }
+
+        private bool AccumulateAcceleration(ref Vector3 totalAcceleration, Vector3 addedAcceleration) {
+            float remainingAcceleration = maxAcceleration - totalAcceleration.magnitude;
+            Vector3 clampedAcceleration = Vector3.ClampMagnitude (addedAcceleration, remainingAcceleration);
+            totalAcceleration += clampedAcceleration;
+            return (addedAcceleration.magnitude >= remainingAcceleration);
         }
         #endregion
 
@@ -114,7 +126,6 @@ namespace FreeSpace{
                 transform.LookAt (transform.position + LerpForward().normalized, newUp);
             
             velocity *= (1.0f - (1f/*damping*/ * Time.deltaTime));
-            acceleration = Vector3.zero;
 
             transform.position += velocity * Time.deltaTime;
         }

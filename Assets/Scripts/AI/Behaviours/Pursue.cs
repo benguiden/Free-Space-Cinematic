@@ -19,7 +19,7 @@ namespace FreeSpace
 
         #region Private Variables
         private Vector3 desiredPosition;
-        public float desiredSpeed;
+        private float desiredSpeed;
         #endregion
 
         #region Mono Methods
@@ -40,14 +40,20 @@ namespace FreeSpace
 
         #region Seek Methods
         public override Vector3 UpdateForce() {
-            return boid.SeekForce (desiredPosition, desiredSpeed);
+            if (target != null) {
+                return boid.SeekForce (desiredPosition, desiredSpeed);
+            } else {
+                return Vector3.zero;
+            }
         }
 
         protected override void Calculate() {
-            desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, boid.maxSpeed, true);
+            if (target != null) {
+                desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, boid.maxSpeed, true);
 
-            float timeToTarget = Vector3.Distance (transform.position, target.transform.position) / desiredSpeed;
-            desiredPosition = target.transform.position + (timeToTarget * target.velocity);
+                float timeToTarget = Vector3.Distance (transform.position, target.transform.position) / desiredSpeed;
+                desiredPosition = target.transform.position + (timeToTarget * target.velocity);
+            }
         }
         #endregion
 

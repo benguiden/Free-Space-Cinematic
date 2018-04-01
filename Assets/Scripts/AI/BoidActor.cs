@@ -34,6 +34,10 @@ namespace FreeSpace{
         #endregion
 
         #region Mono Methods
+        private void Awake() {
+            BoidManager.Main ().boidActors.Add (this);
+        }
+
         private void OnDrawGizmos() {
             Gizmos.color = Color.red;
             Gizmos.DrawLine (transform.position, transform.position + velocity);

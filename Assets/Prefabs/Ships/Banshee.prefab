@@ -898,8 +898,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987087096712412}
-  m_LocalRotation: {x: -0.38920438, y: 0, z: 0, w: 0.9211514}
-  m_LocalPosition: {x: -1125, y: 226, z: 679}
+  m_LocalRotation: {x: -0.07613226, y: 0.9053596, z: -0.18370381, w: 0.37520772}
+  m_LocalPosition: {x: -979.1, y: 169.2, z: 544.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4492691070575076}
@@ -914,7 +914,7 @@ Transform:
   - {fileID: 4431438973717166}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -45.81, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.992001, y: 132.621, z: -16.667002}
 --- !u!4 &4120446037574946
 Transform:
   m_ObjectHideFlags: 1
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   pathIndex: 0
   pathPositionOffset: {x: 0, y: 0, z: 0}
   pointIndex: 0
-  followSpeed: 50
+  followSpeed: 150
   pointChangeDistance: 150
 --- !u!114 &114571533695411754
 MonoBehaviour:

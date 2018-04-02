@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
+  weight: 1
   leader: {fileID: 1440429702}
   leaderOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &24112294 stripped
@@ -227,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
+  weight: 1
   leader: {fileID: 1440429702}
   leaderOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &305409945
@@ -384,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
+  weight: 1
   leader: {fileID: 1440429702}
   leaderOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &905293200
@@ -476,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
+  weight: 1
   leader: {fileID: 1440429702}
   leaderOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &985506483
@@ -590,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
+  weight: 1
   target: {fileID: 1818465862}
   targetPosition: {x: 0, y: 0, z: 0}
   cruiseSpeed: 50
@@ -737,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
+  weight: 1
   leader: {fileID: 1440429702}
   leaderOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1818465858

@@ -14,7 +14,8 @@ namespace FreeSpace
         [Range(float.Epsilon, 1f)]
         public float angularSpeed = 0.25f;
 
-        [Header("Shooting")]
+        [Header ("Shooting")]
+        public float accuracy = 0.75f;
         public float shootingRange = 600f;
         public float reloadTime = 1f;
         public float refreshTime = 0.5f;
@@ -22,7 +23,7 @@ namespace FreeSpace
         [Header ("Projectiles")]
         public Object projectile;
         public float projectileSpeed = 5000f;
-        public float damage = 100f;
+        public float damage = 25f;
         #endregion
 
         #region Private Variables
@@ -109,8 +110,28 @@ namespace FreeSpace
 
         private void Shoot() {
             Transform projectileTransform = ((GameObject)Instantiate (projectile)).transform;
-            projectileTransform.position = transform.position;
-            projectileTransform.forward = transform.up;
+
+            switch (barrelDirection) {
+                case BarrelDirection.Forward:
+                    projectileTransform.forward = transform.forward;
+                    break;
+                case BarrelDirection.nForward:
+                    projectileTransform.forward = -transform.forward;
+                    break;
+                case BarrelDirection.Up:
+                    projectileTransform.forward = transform.up;
+                    break;
+                case BarrelDirection.nUp:
+                    projectileTransform.forward = -transform.up;
+                    break;
+            }
+
+            projectileTransform.position = transform.position + projectileTransform.forward * projectileSpeed * Time.deltaTime;
+
+            Projectile newProjectile = projectileTransform.GetComponent<Projectile> ();
+            newProjectile.speed = projectileSpeed;
+            newProjectile.damage = damage;
+
             canShoot = false;
             if (reloadCo == null)
                 reloadCo = StartCoroutine (IReload ());
@@ -118,8 +139,13 @@ namespace FreeSpace
         #endregion
 
         #region Movement Methods
-        private void LookAtTarget() { 
-            Quaternion newRotation = Quaternion.LookRotation (targetPosition - transform.position);
+        private void LookAtTarget() {
+            Vector3 accuracyOffset = Vector3.zero;
+            float accuracyK = 20f / accuracy;
+            if (accuracy > 0f)
+                accuracyOffset = new Vector3 (Random.Range (-accuracyK, accuracyK), Random.Range (-accuracyK, accuracyK), Random.Range (-accuracyK, accuracyK));
+
+            Quaternion newRotation = Quaternion.LookRotation (targetPosition - transform.position + accuracyOffset);
             Vector3 newEulerRotation = newRotation.eulerAngles;
             switch (barrelDirection) {
                 case BarrelDirection.Forward:
@@ -135,7 +161,7 @@ namespace FreeSpace
                     break;
             }
             newRotation = Quaternion.Euler (newEulerRotation);
-            transform.rotation = Quaternion.Lerp (transform.rotation, newRotation, angularSpeed * Time.deltaTime * 10f);
+            transform.rotation =  Quaternion.Lerp (transform.rotation, newRotation, angularSpeed * Time.deltaTime * 50f);
         }
 
         private bool ClampRotation() { //Returns true if the turret can look at the taret within it's rotational clamps

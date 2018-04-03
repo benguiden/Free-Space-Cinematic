@@ -10612,13 +10612,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleRange: {x: 90, y: 180, z: 90}
   barrelDirection: 2
-  angularSpeed: 0.25
+  angularSpeed: 0.5
   shootingRange: 1000
   reloadTime: 1
   refreshTime: 0.5
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
-  damage: 100
+  damage: 25
 --- !u!114 &114346070810842736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10632,13 +10632,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleRange: {x: 90, y: 180, z: 90}
   barrelDirection: 2
-  angularSpeed: 0.25
+  angularSpeed: 0.5
   shootingRange: 1000
   reloadTime: 1
   refreshTime: 0.5
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
-  damage: 100
+  damage: 25
 --- !u!114 &114863455376479092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10668,13 +10668,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleRange: {x: 90, y: 180, z: 90}
   barrelDirection: 2
-  angularSpeed: 0.25
+  angularSpeed: 0.5
   shootingRange: 1000
   reloadTime: 1
   refreshTime: 0.5
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
-  damage: 100
+  damage: 25
 --- !u!114 &114964080317070212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10688,13 +10688,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleRange: {x: 90, y: 180, z: 90}
   barrelDirection: 2
-  angularSpeed: 0.25
+  angularSpeed: 0.5
   shootingRange: 1000
   reloadTime: 1
   refreshTime: 0.5
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
-  damage: 100
+  damage: 25
 --- !u!198 &198008173576602338
 ParticleSystem:
   m_ObjectHideFlags: 1

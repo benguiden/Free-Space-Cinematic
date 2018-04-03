@@ -24,7 +24,7 @@ namespace FreeSpace
 
         #region Mono Methods
         private void Update() {
-            if (lifetime > -1000000f) {
+            if (lifetime > 0f) {
                 lifetime -= Time.deltaTime;
                 transform.position += transform.forward * speed * Time.deltaTime;
                 transform.localScale = new Vector3 (sizeK, sizeK, (speed * Time.deltaTime) / lengthK);

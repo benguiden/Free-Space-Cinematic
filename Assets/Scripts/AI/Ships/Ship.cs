@@ -15,9 +15,14 @@ namespace FreeSpace
 
         [Header ("References")]
         public ShipCollider shipCollider, shieldCollider;
+        public GameObject mainMesh;
+        public GameObject[] debrisObjects;
         #endregion
 
         #region Hidden Variables
+        //References
+        [HideInInspector]
+        public BoidActor boid;
         #endregion
 
         #region Private Variables
@@ -29,20 +34,22 @@ namespace FreeSpace
                 shipCollider.Initalise (this);
             if (shieldCollider != null)
                 shieldCollider.Initalise (this);
+
+            boid = GetComponent<BoidActor> ();
         }
         #endregion
 
         #region Battle Interaction Methods
-        public void Damage(float damage) {
+        public void Damage(float damageInflicted) {
             Debug.Log ("Damage Dealt to " + gameObject.name);
             if (shieldHealth > 0f) {
-                shieldHealth -= damage;
+                shieldHealth -= damageInflicted;
                 if (shieldHealth <= 0f) {
                     shieldHealth = 0f;
                     //Deactivate Shield
                 }
             } else {
-                hullHealth -= damage;
+                hullHealth -= damageInflicted;
                 if (hullHealth <= 0f) {
                     hullHealth = 0f;
                     Kill ();
@@ -51,7 +58,18 @@ namespace FreeSpace
         }
 
         protected void Kill() {
-            gameObject.SetActive (false);
+            foreach(BoidBehaviour behaviour in boid.behaviours) {
+                behaviour.enabled = false;
+            }
+            Camera.main.transform.SetParent (null);
+
+            if (mainMesh != null)
+                mainMesh.SetActive (false);
+
+            foreach(GameObject debris in debrisObjects) {
+                debris.SetActive (true);
+                debris.AddComponent<Rigidbody> ().AddExplosionForce (1000f, debris.transform.position, 20f);
+            }
         }
         #endregion
 

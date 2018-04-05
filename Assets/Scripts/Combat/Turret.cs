@@ -126,7 +126,7 @@ namespace FreeSpace
                     break;
             }
 
-            projectileTransform.position = transform.position + projectileTransform.forward * projectileSpeed * Time.deltaTime;
+            projectileTransform.position = transform.position + (projectileTransform.forward * projectileSpeed * Time.deltaTime);
 
             Projectile newProjectile = projectileTransform.GetComponent<Projectile> ();
             newProjectile.speed = projectileSpeed;

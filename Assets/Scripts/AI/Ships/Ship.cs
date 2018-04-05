@@ -13,10 +13,14 @@ namespace FreeSpace
         public float hullHealth = 100f;
         public float shieldHealth = 500f;
 
+        [Header ("Visuals")]
+        public Object destroyVFXPrefab;
+
         [Header ("References")]
         public ShipCollider shipCollider, shieldCollider;
         public GameObject mainMesh;
-        public GameObject[] debrisObjects;
+        public Debris[] debrisObjects;
+        public ParticleSystem[] thrusters;
         #endregion
 
         #region Hidden Variables
@@ -36,12 +40,22 @@ namespace FreeSpace
                 shieldCollider.Initalise (this);
 
             boid = GetComponent<BoidActor> ();
+
+            foreach (Debris debris in debrisObjects) {
+                debris.gameObject.SetActive (false);
+            }
+        }
+
+        private void Update() {
+            if (Input.GetKeyDown (KeyCode.Return)) {
+                Damage (500f);
+            }
         }
         #endregion
 
         #region Battle Interaction Methods
         public void Damage(float damageInflicted) {
-            Debug.Log ("Damage Dealt to " + gameObject.name);
+            Debug.Log (gameObject.name + " Health: " + (shieldHealth + hullHealth).ToString() + ".\n");
             if (shieldHealth > 0f) {
                 shieldHealth -= damageInflicted;
                 if (shieldHealth <= 0f) {
@@ -61,15 +75,26 @@ namespace FreeSpace
             foreach(BoidBehaviour behaviour in boid.behaviours) {
                 behaviour.enabled = false;
             }
-            Camera.main.transform.SetParent (null);
+            boid.velocity = Vector3.zero;
+
+            //Camera.main.transform.SetParent (null);
 
             if (mainMesh != null)
                 mainMesh.SetActive (false);
 
-            foreach(GameObject debris in debrisObjects) {
-                debris.SetActive (true);
-                debris.AddComponent<Rigidbody> ().AddExplosionForce (1000f, debris.transform.position, 20f);
+            foreach (Debris debris in debrisObjects) {
+                debris.gameObject.SetActive (true);
+                debris.transform.SetParent (null);
+                debris.Activate (transform.position, 50f, 10f);
             }
+
+            foreach (ParticleSystem thruster in thrusters) {
+                thruster.gameObject.SetActive (false);
+            }
+
+            Transform destroyVFXTransform = ((GameObject)Instantiate (destroyVFXPrefab, null)).transform;
+            destroyVFXTransform.position = transform.position;
+            destroyVFXTransform.localEulerAngles = transform.localEulerAngles;
         }
         #endregion
 

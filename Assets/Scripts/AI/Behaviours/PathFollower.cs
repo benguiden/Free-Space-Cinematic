@@ -12,6 +12,7 @@ namespace FreeSpace{
         [Header ("Path")]
         public PathDatabase pathDatabase;
         public uint pathIndex = 0;
+        public Transform pathParentOffset;
         public Vector3 pathPositionOffset;
 
         [Header ("Movement")]
@@ -23,6 +24,7 @@ namespace FreeSpace{
         #region Private Variables
         private Path path = null;
         public Path Path { get { return path; } }
+        private Vector3 targetPosition;
         #endregion
 
         #region Mono Methods
@@ -33,8 +35,12 @@ namespace FreeSpace{
 
         public override Vector3 UpdateForce() {
             if (path != null) {
+                targetPosition = path.points[(int)pointIndex] + pathPositionOffset;
+                if (pathParentOffset != null)
+                    targetPosition = pathParentOffset.TransformPoint(targetPosition);
+
                 CheckNextPoint ();
-                return boid.SeekForce (path.points[(int)pointIndex], followSpeed);
+                return boid.SeekForce (targetPosition, followSpeed);
             }
             return Vector3.zero;
         }
@@ -49,12 +55,13 @@ namespace FreeSpace{
                     int lastPoint = (int)pointIndex - 1;
                     if (lastPoint < 0)
                         lastPoint = path.points.Count - 1;
-                    Gizmos.DrawWireCube (path.points[lastPoint] + pathPositionOffset, new Vector3 (2f, 2f, 2f));
-                    Gizmos.DrawLine (path.points[lastPoint] + pathPositionOffset, path.points[(int)pointIndex] + pathPositionOffset);
+                    //Gizmos.DrawWireCube (path.points[lastPoint] + pathPositionOffset, new Vector3 (2f, 2f, 2f));
+                    //Gizmos.DrawLine (path.points[lastPoint] + pathPositionOffset, path.points[(int)pointIndex] + pathPositionOffset);
                     Gizmos.color = path.color;
-                    Gizmos.DrawWireCube (path.points[(int)pointIndex] + pathPositionOffset, new Vector3 (2f, 2f, 2f));
 
-                    Vector3 lookTarget = path.points[(int)pointIndex] + pathPositionOffset;
+                    Gizmos.DrawWireCube (targetPosition, new Vector3 (10f, 10f, 10f));
+
+                    Vector3 lookTarget = targetPosition;
                     lookTarget -= boid.transform.position;
                     Gizmos.DrawLine (boid.transform.position, boid.transform.position + (lookTarget.normalized * 10f));
                 }
@@ -79,12 +86,11 @@ namespace FreeSpace{
         }
 
         private void CheckNextPoint() {
-            if (Vector3.Distance(boid.transform.position, path.points[(int)pointIndex] + pathPositionOffset) <= pointChangeDistance) {
+            if (Vector3.Distance(boid.transform.position, targetPosition) <= pointChangeDistance) {
                 pointIndex = (uint)((pointIndex + 1) % path.points.Count);
             }
         }
         #endregion
-
         
     }
     

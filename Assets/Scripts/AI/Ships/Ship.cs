@@ -24,12 +24,17 @@ namespace FreeSpace
         #endregion
 
         #region Hidden Variables
+        //State Machine
+        [HideInInspector]
+        public ShipStateMachine stateMachine;
+
         //References
         [HideInInspector]
         public BoidActor boid;
         #endregion
 
         #region Private Variables
+        protected uint shipID;
         #endregion
 
         #region Mono Methods
@@ -46,10 +51,9 @@ namespace FreeSpace
             }
         }
 
-        private void Update() {
-            if (Input.GetKeyDown (KeyCode.Return)) {
-                Damage (500f);
-            }
+        private void Start() {
+            if (ShipManager.main.emporer != this)
+                shipID = ShipManager.main.AddShip(this);
         }
         #endregion
 

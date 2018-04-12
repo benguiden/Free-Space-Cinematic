@@ -76,6 +76,15 @@ namespace FreeSpace{
             totalAcceleration += clampedAcceleration;
             return (addedAcceleration.magnitude >= remainingAcceleration);
         }
+
+        public T GetBehaviour<T>() where T : BoidBehaviour {
+            for (int i = 0; i < behaviours.Count; i++) {
+                if (behaviours[i].GetType() == typeof(T)) {
+                    return (T)behaviours[i];
+                }
+            }
+            return null;
+        }
         #endregion
 
         #region Physics Methods

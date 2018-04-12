@@ -756,7 +756,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4120324528758698}
-  - component: {fileID: 114992327103768824}
+  - component: {fileID: 114053036489930160}
   - component: {fileID: 114002828872731304}
   - component: {fileID: 114532981498241384}
   - component: {fileID: 114571533695411754}
@@ -2056,6 +2056,36 @@ MonoBehaviour:
   bankingSpeed: 1
   rotationSpeed: 1
   behaviours: []
+--- !u!114 &114053036489930160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987087096712412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b95c463539ed9439a8b9522766b13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
+  hullHealth: 100
+  shieldHealth: 500
+  destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
+    type: 2}
+  shipCollider: {fileID: 114151178221326060}
+  shieldCollider: {fileID: 114749333934565414}
+  mainMesh: {fileID: 1012523768233898}
+  debrisObjects:
+  - {fileID: 114551097933652132}
+  - {fileID: 114802464249335992}
+  - {fileID: 114650519440735996}
+  thrusters:
+  - {fileID: 198315430521973666}
+  - {fileID: 198945279056402162}
+  - {fileID: 198210729486634572}
+  stateMachine:
+    ship: {fileID: 0}
+  boid: {fileID: 0}
 --- !u!114 &114151178221326060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2165,34 +2195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114992327103768824
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1987087096712412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a762f2c09e499ec458d8425762a3b950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faction: 0
-  hullHealth: 100
-  shieldHealth: 100
-  destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
-    type: 2}
-  shipCollider: {fileID: 114151178221326060}
-  shieldCollider: {fileID: 114749333934565414}
-  mainMesh: {fileID: 1012523768233898}
-  debrisObjects:
-  - {fileID: 114551097933652132}
-  - {fileID: 114802464249335992}
-  - {fileID: 114650519440735996}
-  thrusters:
-  - {fileID: 198315430521973666}
-  - {fileID: 198945279056402162}
-  - {fileID: 198210729486634572}
-  boid: {fileID: 0}
 --- !u!124 &124721693049403362
 Behaviour:
   m_ObjectHideFlags: 1

@@ -59,7 +59,7 @@ namespace FreeSpace{
                     //Gizmos.DrawLine (path.points[lastPoint] + pathPositionOffset, path.points[(int)pointIndex] + pathPositionOffset);
                     Gizmos.color = path.color;
 
-                    Gizmos.DrawWireCube (targetPosition, new Vector3 (10f, 10f, 10f));
+                    Gizmos.DrawWireSphere (targetPosition, 25f);
 
                     Vector3 lookTarget = targetPosition;
                     lookTarget -= boid.transform.position;

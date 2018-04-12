@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 4984183412374252}
   - component: {fileID: 33656380637876298}
   - component: {fileID: 23420080503153306}
+  - component: {fileID: 114478792322382966}
   m_Layer: 0
   m_Name: debris01
   m_TagString: Untagged
@@ -158,6 +159,7 @@ GameObject:
   - component: {fileID: 4541421303855236}
   - component: {fileID: 33784460894655534}
   - component: {fileID: 23780381028118226}
+  - component: {fileID: 114255139105161654}
   m_Layer: 0
   m_Name: debris03
   m_TagString: Untagged
@@ -220,6 +222,7 @@ GameObject:
   - component: {fileID: 4339928021067492}
   - component: {fileID: 33103299588605438}
   - component: {fileID: 23532782031396862}
+  - component: {fileID: 114021236346148740}
   m_Layer: 0
   m_Name: debris05
   m_TagString: Untagged
@@ -237,6 +240,7 @@ GameObject:
   - component: {fileID: 4970991593908950}
   - component: {fileID: 33758750455097054}
   - component: {fileID: 23924699527448688}
+  - component: {fileID: 114799335771484862}
   m_Layer: 0
   m_Name: debris04
   m_TagString: Untagged
@@ -254,6 +258,8 @@ GameObject:
   - component: {fileID: 4972664322826162}
   - component: {fileID: 33356475857549040}
   - component: {fileID: 23811679305966732}
+  - component: {fileID: 114080796619238206}
+  - component: {fileID: 64762523386567782}
   m_Layer: 0
   m_Name: shield
   m_TagString: Untagged
@@ -299,7 +305,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4758712339121954}
+  - component: {fileID: 114528419977668448}
   - component: {fileID: 114098217803641714}
+  - component: {fileID: 114035920453829734}
+  - component: {fileID: 114831607108371670}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Untagged
@@ -427,6 +436,25 @@ GameObject:
   m_Layer: 0
   m_Name: missilebank02-03
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1497835807065150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4366912659430740}
+  - component: {fileID: 20823928325244304}
+  - component: {fileID: 124507945449663492}
+  - component: {fileID: 81731599065353284}
+  - component: {fileID: 114209656669459562}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,6 +634,7 @@ GameObject:
   - component: {fileID: 4845708811721200}
   - component: {fileID: 33907727916867804}
   - component: {fileID: 23480130531982838}
+  - component: {fileID: 114794969545727216}
   m_Layer: 0
   m_Name: debris02
   m_TagString: Untagged
@@ -623,6 +652,8 @@ GameObject:
   - component: {fileID: 4382211465246164}
   - component: {fileID: 33875873368512936}
   - component: {fileID: 23817293664961372}
+  - component: {fileID: 114926300209953424}
+  - component: {fileID: 64417206638859310}
   m_Layer: 0
   m_Name: detail0
   m_TagString: Untagged
@@ -960,6 +991,19 @@ Transform:
   m_Father: {fileID: 4758712339121954}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!4 &4366912659430740
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497835807065150}
+  m_LocalRotation: {x: 0.119963564, y: 0, z: 0, w: 0.9927783}
+  m_LocalPosition: {x: 0, y: 34.2, z: -42.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4758712339121954}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 13.78, y: 0, z: 0}
 --- !u!4 &4382211465246164
 Transform:
   m_ObjectHideFlags: 1
@@ -1210,7 +1254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376703576816340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 204, y: -105, z: -108}
+  m_LocalPosition: {x: 0, y: 0, z: 163.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4984183412374252}
@@ -1226,6 +1270,7 @@ Transform:
   - {fileID: 4669398403769074}
   - {fileID: 4972664322826162}
   - {fileID: 4070576868352944}
+  - {fileID: 4366912659430740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1423,6 +1468,42 @@ Transform:
   m_Father: {fileID: 4070576868352944}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &20823928325244304
+Camera:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497835807065150}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 90
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!23 &23420080503153306
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1722,6 +1803,84 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744623488939214}
   m_Mesh: {fileID: 4300008, guid: 1b5889cbd76373b49a6c5f364684d1a0, type: 3}
+--- !u!64 &64417206638859310
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749270926709106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300012, guid: 1b5889cbd76373b49a6c5f364684d1a0, type: 3}
+--- !u!64 &64762523386567782
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326233110055058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 1b5889cbd76373b49a6c5f364684d1a0, type: 3}
+--- !u!81 &81731599065353284
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497835807065150}
+  m_Enabled: 1
+--- !u!114 &114021236346148740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247165470701786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114035920453829734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376703576816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262acd13d406eb14680d2e017a9db9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculationUpdateSpeed: 1
+  weight: 1
+  wanderType: 2
+  cruiseSpeed: 75
+  distance: 100
+  radius: 50
+  frequency: 0.25
+  amplitude: 75
+  axis: 0
+--- !u!114 &114080796619238206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326233110055058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff4a19af63f2f74b8e717900f94440c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
 --- !u!114 &114098217803641714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1740,20 +1899,136 @@ MonoBehaviour:
   maxAcceleration: 150
   bankingAmount: 20
   bankingSpeed: 0.05
-  pathFollowing:
-    enabled: 0
-    pathDatabase: {fileID: 11400000, guid: 3d77830d128e6f944a559e1d7bfcdf12, type: 2}
-    pathIndex: 0
-    pathPositionOffset: {x: 0, y: 0, z: 0}
-    pointIndex: 0
-    followSpeed: 5
-    pointChangeDistance: 10
-  seek:
-    enabled: 1
-    target: {fileID: 0}
-    cruiseSpeed: 200
-    desiredArriveSpeed: 200
-    nearingDistance: 50
+  rotationSpeed: 1
+  behaviours: []
+--- !u!114 &114209656669459562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497835807065150}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401489bc8dd60dc4ab8b3abb796bd0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smoothness: 0.85
+--- !u!114 &114255139105161654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201636178547910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114478792322382966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196906666429070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114528419977668448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376703576816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a762f2c09e499ec458d8425762a3b950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
+  hullHealth: 100
+  shieldHealth: 500
+  destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
+    type: 2}
+  shipCollider: {fileID: 114926300209953424}
+  shieldCollider: {fileID: 114080796619238206}
+  mainMesh: {fileID: 1749270926709106}
+  debrisObjects:
+  - {fileID: 114478792322382966}
+  - {fileID: 114794969545727216}
+  - {fileID: 114255139105161654}
+  - {fileID: 114799335771484862}
+  - {fileID: 114021236346148740}
+  thrusters:
+  - {fileID: 198179566100987034}
+  - {fileID: 198951068478718192}
+  - {fileID: 198272014227953120}
+  stateMachine:
+    ship: {fileID: 0}
+  boid: {fileID: 0}
+--- !u!114 &114794969545727216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744623488939214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114799335771484862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301189654516852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114831607108371670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376703576816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262acd13d406eb14680d2e017a9db9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculationUpdateSpeed: 1
+  weight: 1
+  wanderType: 2
+  cruiseSpeed: 75
+  distance: 103.56
+  radius: 54.2
+  frequency: 0.3
+  amplitude: 90
+  axis: 1
+--- !u!114 &114926300209953424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749270926709106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff4a19af63f2f74b8e717900f94440c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
+--- !u!124 &124507945449663492
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497835807065150}
+  m_Enabled: 1
 --- !u!198 &198179566100987034
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -29,7 +29,7 @@ namespace FreeSpace{
             }
         }
 
-        [HideInInspector]
+        //[HideInInspector]
         public List<BoidBehaviour> behaviours = new List<BoidBehaviour> ();
         #endregion
 

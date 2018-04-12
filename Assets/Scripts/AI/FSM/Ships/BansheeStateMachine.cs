@@ -10,19 +10,23 @@ namespace FreeSpace {
 
             public Ship emporer;
             public float threatDistance = 3000f;
+            public PathFollower pathFollower;
 
             public BansheeWanderState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
                 emporer = _emporer;
             }
 
             public override void Enter() {
-                if (ship != null)
-                    ship.StartCoroutine(IUpdate());
+                ship.StartCoroutine(IUpdate());
+                updateRefresh = 1f;
+                pathFollower = ship.GetComponent<PathFollower> ();
+                pathFollower.enabled = true;
             }
 
             public override void Update() { }
 
             public override IEnumerator IUpdate() {
+                yield return null;
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
                         Vector3 emporerPosition = ShipManager.main.emporer.transform.position;
@@ -32,7 +36,6 @@ namespace FreeSpace {
 
                         foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {
                             float otherShipDistance = Vector3.Distance(otherShip.Value.transform.position, emporerPosition);
-                            Debug.Log(otherShipDistance);
                             if ((otherShipDistance < closestDistance) && (otherShip.Value != ship)) {
                                 threatShip = otherShip.Value;
                                 closestDistance = otherShipDistance;
@@ -48,7 +51,12 @@ namespace FreeSpace {
                 }
             }
 
-            public override void Exit() { }
+            public override void Exit() {
+                if (pathFollower == null)
+                    pathFollower = ship.boid.GetBehaviour<PathFollower> ();
+
+                pathFollower.enabled = false;
+            }
 
         }
 
@@ -63,7 +71,10 @@ namespace FreeSpace {
             }
 
             public override void Enter() {
-                pursueBehaviour = target.boid.GetBehaviour<Pursue>();
+                pursueBehaviour = ship.boid.GetBehaviour<Pursue>();
+                pursueBehaviour.enabled = true;
+                pursueBehaviour.target = target.boid;
+                pursueBehaviour.desiredDistance = targetDesiredDistance;
                 Debug.LogWarning("Changed State.");
             }
 

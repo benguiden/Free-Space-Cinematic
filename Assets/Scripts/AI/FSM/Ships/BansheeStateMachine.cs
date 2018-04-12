@@ -75,7 +75,11 @@ namespace FreeSpace {
                 pursueBehaviour.enabled = true;
                 pursueBehaviour.target = target.boid;
                 pursueBehaviour.desiredDistance = targetDesiredDistance;
-                Debug.LogWarning("Changed State.");
+
+
+                ship.guns[0].enabled = true;
+
+                ship.StartCoroutine (IUpdate ());
             }
 
             public override void Update() {
@@ -83,7 +87,13 @@ namespace FreeSpace {
             }
 
             public override IEnumerator IUpdate() {
-                return null;
+                yield return null;
+                if (ship != null) {
+                    while ((ship.enabled) && (stateMachine.state == this)) {
+                        ship.guns[0].AttemptShoot ();
+                        yield return null;
+                    }
+                }
             }
 
             public override void Exit() { }

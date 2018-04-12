@@ -16,8 +16,12 @@ namespace FreeSpace
         [Header ("Visuals")]
         public Object destroyVFXPrefab;
 
+        [Space]
+        public Gun[] guns;
+
         [Header ("References")]
-        public ShipCollider shipCollider, shieldCollider;
+        public ShipCollider shipCollider;
+        public ShipCollider shieldCollider;
         public GameObject mainMesh;
         public Debris[] debrisObjects;
         public ParticleSystem[] thrusters;
@@ -49,11 +53,21 @@ namespace FreeSpace
             foreach (Debris debris in debrisObjects) {
                 debris.gameObject.SetActive (false);
             }
+
+            foreach (Gun gun in guns) {
+                gun.ship = this;
+            }
         }
 
         private void Start() {
             if (ShipManager.main.emporer != this)
                 shipID = ShipManager.main.AddShip(this);
+        }
+
+        private void OnEnable() {
+            foreach (Gun gun in guns) {
+                gun.canShoot = this;
+            }
         }
         #endregion
 

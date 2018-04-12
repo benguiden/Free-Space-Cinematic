@@ -16,6 +16,9 @@ namespace FreeSpace
         public float lengthK = 5f;
         public float sizeK = 2f;
         public float lifetime = 1f;
+
+        [HideInInspector]
+        public Ship sourceShip;
         #endregion
 
         #region Private Variables
@@ -36,9 +39,12 @@ namespace FreeSpace
         private void OnTriggerEnter(Collider other) {
             if (canCauseDamage) {
                 if (other.gameObject.tag == "ShipCollider") {
-                    other.GetComponent<ShipCollider> ().ship.Damage (damage);
-                    canCauseDamage = false;
-                    Destroy ();
+                    ShipCollider shipCollider = other.GetComponent<ShipCollider> ();
+                    if (shipCollider.ship != sourceShip) {
+                        shipCollider.ship.Damage (damage);
+                        canCauseDamage = false;
+                        Destroy ();
+                    }
                 }
             }
         }

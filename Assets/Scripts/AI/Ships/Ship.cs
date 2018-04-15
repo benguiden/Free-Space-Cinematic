@@ -16,6 +16,11 @@ namespace FreeSpace
         [Header ("Visuals")]
         public Object destroyVFXPrefab;
 
+        [Header("Audio")]
+        public AudioSource engineAudioSource;
+        [Tooltip ("Put in the range (0,1)")]
+        public AnimationCurve engineVolume, enginePitch;
+
         [Space]
         public Gun[] guns;
 
@@ -62,6 +67,11 @@ namespace FreeSpace
         private void Start() {
             if (ShipManager.main.emporer != this)
                 shipID = ShipManager.main.AddShip(this);
+        }
+
+        private void Update() {
+            if (engineAudioSource != null)
+                UpdateEngineAudio ();
         }
 
         private void OnEnable() {
@@ -113,6 +123,22 @@ namespace FreeSpace
             Transform destroyVFXTransform = ((GameObject)Instantiate (destroyVFXPrefab, null)).transform;
             destroyVFXTransform.position = transform.position;
             destroyVFXTransform.localEulerAngles = transform.localEulerAngles;
+        }
+        #endregion
+
+        #region Audio Methods
+        private void UpdateEngineAudio() {
+            float engineAmount = boid.speed / boid.maxSpeed;
+            engineAudioSource.volume = engineVolume.Evaluate (engineAmount);
+            engineAudioSource.pitch = enginePitch.Evaluate (engineAmount);
+
+            if (engineAudioSource.isPlaying) {
+                if (boid.speed <= 0.01f)
+                    engineAudioSource.Pause ();
+            } else {
+                if (boid.speed > 0.01f)
+                    engineAudioSource.Play ();
+            }
         }
         #endregion
 

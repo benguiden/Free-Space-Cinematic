@@ -23,9 +23,19 @@ namespace FreeSpace
 
         #region Private Variables
         private bool canCauseDamage = true;
+        private AudioSource audioSource;
         #endregion
 
         #region Mono Methods
+        private void Awake() {
+            audioSource = GetComponent<AudioSource> ();
+        }
+
+        private void Start() {
+            if (audioSource != null)
+                audioSource.pitch += Random.Range (-0.05f, 0.05f);
+        }
+
         private void Update() {
             if (lifetime > 0f) {
                 lifetime -= Time.deltaTime;

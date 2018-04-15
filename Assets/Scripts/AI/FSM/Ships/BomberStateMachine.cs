@@ -9,6 +9,8 @@ namespace FreeSpace {
         public class BomberAttackState : ShipState {
 
             public Ship emporer;
+            private Pursue pursueBehaviour;
+            public float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public BomberAttackState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
                 emporer = _emporer;
@@ -16,6 +18,8 @@ namespace FreeSpace {
 
             public override void Enter() {
                 ship.StartCoroutine(IUpdate());
+
+                pursueBehaviour = ship.boid.GetBehaviour<Pursue> ();
             }
 
             public override void Update() { }
@@ -29,7 +33,16 @@ namespace FreeSpace {
 
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        
+                        if (pursueBehaviour != null) {
+                            if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= pursueBehaviour.desiredDistance) {
+                                if (Vector3.Angle (ship.transform.forward, emporer.transform.position - ship.transform.position) <= desiredAccuracy) {
+                                    for (int i=0; i<ship.guns.Length; i++) {
+                                        ship.guns[i].AttemptShoot ();
+                                    }
+                                }
+                            }
+                        }
+                        yield return null;
                     }
                 }
             }

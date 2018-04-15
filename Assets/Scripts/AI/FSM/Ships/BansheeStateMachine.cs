@@ -9,7 +9,7 @@ namespace FreeSpace {
         public class BansheeWanderState : ShipState {
 
             public Ship emporer;
-            public float threatDistance = 3000f;
+            public float threatDistance = 4000f;
             public PathFollower pathFollower;
 
             public BansheeWanderState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
@@ -65,7 +65,7 @@ namespace FreeSpace {
             public Ship target;
             public float targetDesiredDistance = 150f;
             private Pursue pursueBehaviour;
-            public float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            public float desiredAccuracy = 5f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public BansheePersueState(StateMachine _stateMachine, Ship _ship, Ship threat) : base(_stateMachine, _ship) {
                 target = threat;

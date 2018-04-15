@@ -65,6 +65,7 @@ namespace FreeSpace {
             public Ship target;
             public float targetDesiredDistance = 150f;
             private Pursue pursueBehaviour;
+            public float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public BansheePersueState(StateMachine _stateMachine, Ship _ship, Ship threat) : base(_stateMachine, _ship) {
                 target = threat;
@@ -76,6 +77,10 @@ namespace FreeSpace {
                 pursueBehaviour.target = target.boid;
                 pursueBehaviour.desiredDistance = targetDesiredDistance;
 
+                Flee targetFlee = target.boid.GetBehaviour<Flee>();
+
+                if (targetFlee != null)
+                    targetFlee.avoidingBoids.Add(ship.transform);
 
                 ship.guns[0].enabled = true;
 
@@ -90,13 +95,20 @@ namespace FreeSpace {
                 yield return null;
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        ship.guns[0].AttemptShoot ();
+                        if (Vector3.Angle(ship.transform.forward, target.transform.position - ship.transform.position) <= desiredAccuracy) {
+                            ship.guns[0].AttemptShoot();
+                        }
                         yield return null;
                     }
                 }
             }
 
-            public override void Exit() { }
+            public override void Exit() {
+                Flee targetFlee = target.boid.GetBehaviour<Flee>();
+
+                if (targetFlee != null)
+                    targetFlee.avoidingBoids.Remove(ship.transform);
+            }
 
         }
 

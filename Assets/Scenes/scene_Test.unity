@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.116297714, g: 0.05506835, b: 0.024882542, a: 1}
+  m_IndirectSpecularColor: {r: 0.032506213, g: 0.007402111, b: 0.0029051844, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &15066993
 Transform:
   m_ObjectHideFlags: 0
@@ -5676,7 +5676,7 @@ Transform:
   - {fileID: 1880110644}
   - {fileID: 2051214382}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &715352785
 Prefab:
@@ -5742,7 +5742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &734535950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5801,7 +5801,7 @@ Transform:
   - {fileID: 2009342945}
   - {fileID: 493791498}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 12.692, y: 191.443, z: 2.473}
 --- !u!114 &734535953
 MonoBehaviour:
@@ -5818,6 +5818,7 @@ MonoBehaviour:
   hullHealth: 100
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 0}
+  guns: []
   shipCollider: {fileID: 0}
   shieldCollider: {fileID: 0}
   mainMesh: {fileID: 0}
@@ -15262,7 +15263,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114532981498241384, guid: ff02d640f202fc84884d64240d2ad75c,
         type: 2}
@@ -15470,7 +15471,7 @@ Transform:
   - {fileID: 715352786}
   - {fileID: 1483288615}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464687605
 GameObject:
@@ -15859,7 +15860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1598627856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15918,7 +15919,7 @@ Transform:
   - {fileID: 1464687606}
   - {fileID: 1100108433}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 12.692, y: 191.443, z: 2.473}
 --- !u!114 &1598627859
 MonoBehaviour:
@@ -15935,6 +15936,7 @@ MonoBehaviour:
   hullHealth: 100
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 0}
+  guns: []
   shipCollider: {fileID: 0}
   shieldCollider: {fileID: 0}
   mainMesh: {fileID: 0}
@@ -16564,6 +16566,48 @@ Transform:
   m_Father: {fileID: 548837514}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1975821166
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 946.4205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1215.368
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -234.05994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1976770042
 Prefab:
   m_ObjectHideFlags: 0
@@ -16601,7 +16645,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4499286474984052, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114883956890629662, guid: 69b54b7763d85c3408eca3ae5c62606f,
         type: 2}
@@ -16613,6 +16657,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 117334713}
+    - target: {fileID: 1562773890175968, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
   m_IsPrefabParent: 0
@@ -21498,7 +21546,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4808118098563496, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1561182926497452, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_IsActive

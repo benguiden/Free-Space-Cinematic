@@ -305,10 +305,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4758712339121954}
-  - component: {fileID: 114528419977668448}
+  - component: {fileID: 114070148564471564}
   - component: {fileID: 114098217803641714}
-  - component: {fileID: 114035920453829734}
-  - component: {fileID: 114831607108371670}
+  - component: {fileID: 114187812700933958}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Untagged
@@ -458,7 +457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1535970105840808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,7 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114035920453829734
+--- !u!114 &114070148564471564
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1857,18 +1856,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376703576816340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262acd13d406eb14680d2e017a9db9aa, type: 3}
+  m_Script: {fileID: 11500000, guid: db04aec04a0a84d4d905a7afc06b599e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calculationUpdateSpeed: 1
-  weight: 1
-  wanderType: 2
-  cruiseSpeed: 75
-  distance: 100
-  radius: 50
-  frequency: 0.25
-  amplitude: 75
-  axis: 0
+  faction: 0
+  hullHealth: 100
+  shieldHealth: 500
+  destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
+    type: 2}
+  guns: []
+  shipCollider: {fileID: 114926300209953424}
+  shieldCollider: {fileID: 114080796619238206}
+  mainMesh: {fileID: 1749270926709106}
+  debrisObjects:
+  - {fileID: 114478792322382966}
+  - {fileID: 114794969545727216}
+  - {fileID: 114255139105161654}
+  - {fileID: 114799335771484862}
+  - {fileID: 114021236346148740}
+  thrusters:
+  - {fileID: 198179566100987034}
+  - {fileID: 198951068478718192}
+  - {fileID: 198272014227953120}
+  stateMachine:
+    ship: {fileID: 0}
+  boid: {fileID: 0}
 --- !u!114 &114080796619238206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1895,12 +1907,27 @@ MonoBehaviour:
   mass: 1
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  maxSpeed: 350
-  maxAcceleration: 150
-  bankingAmount: 20
-  bankingSpeed: 0.05
-  rotationSpeed: 1
+  maxSpeed: 100
+  maxAcceleration: 10
+  bankingAmount: 5
+  bankingSpeed: 0.01
+  rotationSpeed: 0.2
   behaviours: []
+--- !u!114 &114187812700933958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376703576816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addc59cc23436944e84a395d5b7bf44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculationUpdateSpeed: 1
+  weight: 1
+  target: {fileID: 0}
+  desiredDistance: 500
 --- !u!114 &114209656669459562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1936,38 +1963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114528419977668448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1376703576816340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a762f2c09e499ec458d8425762a3b950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faction: 0
-  hullHealth: 100
-  shieldHealth: 500
-  destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
-    type: 2}
-  shipCollider: {fileID: 114926300209953424}
-  shieldCollider: {fileID: 114080796619238206}
-  mainMesh: {fileID: 1749270926709106}
-  debrisObjects:
-  - {fileID: 114478792322382966}
-  - {fileID: 114794969545727216}
-  - {fileID: 114255139105161654}
-  - {fileID: 114799335771484862}
-  - {fileID: 114021236346148740}
-  thrusters:
-  - {fileID: 198179566100987034}
-  - {fileID: 198951068478718192}
-  - {fileID: 198272014227953120}
-  stateMachine:
-    ship: {fileID: 0}
-  boid: {fileID: 0}
 --- !u!114 &114794969545727216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1990,26 +1985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114831607108371670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1376703576816340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262acd13d406eb14680d2e017a9db9aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  calculationUpdateSpeed: 1
-  weight: 1
-  wanderType: 2
-  cruiseSpeed: 75
-  distance: 103.56
-  radius: 54.2
-  frequency: 0.3
-  amplitude: 90
-  axis: 1
 --- !u!114 &114926300209953424
 MonoBehaviour:
   m_ObjectHideFlags: 1

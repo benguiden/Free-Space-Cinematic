@@ -45,8 +45,8 @@ namespace FreeSpace
                 foreach (Transform gunPoint in gunPoints) {
                     Transform projectileTransform = ((GameObject)Object.Instantiate (projectile)).transform;
 
-                    projectileTransform.position = gunPoint.position + (projectileTransform.forward * projectileSpeed * Time.deltaTime);
                     projectileTransform.forward = gunPoint.forward;
+                    projectileTransform.position = gunPoint.position + (projectileTransform.forward * projectileSpeed * Time.deltaTime);
 
                     Projectile newProjectile = projectileTransform.GetComponent<Projectile> ();
                     newProjectile.speed = projectileSpeed;

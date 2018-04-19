@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4ccaaddc4e17e468c4b21b5c375ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 1433492053254698, guid: e5b61c716b040714d8869c1ecd4f0c4f, type: 2}
   damage: 25
   speed: 5000
   lengthK: 10

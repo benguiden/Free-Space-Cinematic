@@ -8,6 +8,8 @@ namespace FreeSpace
     public class Projectile : MonoBehaviour{
 
         #region Public Variables
+        public Object vfxPrefab;
+
         [Header ("Stats")]
         public float damage = 25f;
 
@@ -58,6 +60,7 @@ namespace FreeSpace
                     if (shipCollider.ship != sourceShip) {
                         shipCollider.ship.Damage (damage);
                         canCauseDamage = false;
+                        ShipHitVFX (other);
                         Destroy ();
                     }
                 }
@@ -76,6 +79,14 @@ namespace FreeSpace
            // Destroy (gameObject);
         }
         #endregion
+
+        protected void ShipHitVFX(Collider other) {
+            Vector3 projectilePoint = transform.position - (transform.forward * speed * Time.deltaTime);
+            Vector3 closestPoint = Physics.ClosestPoint (projectilePoint, other, other.transform.position, other.transform.rotation);
+            Transform vfxTransform = ((GameObject)Instantiate (vfxPrefab)).transform;
+            vfxTransform.SetParent (other.transform);
+            vfxTransform.position = closestPoint;
+        }
 
     }
 }

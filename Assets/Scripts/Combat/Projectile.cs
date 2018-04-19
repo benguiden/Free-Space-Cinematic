@@ -22,21 +22,26 @@ namespace FreeSpace
         #endregion
 
         #region Private Variables
-        private bool canCauseDamage = true;
-        private AudioSource audioSource;
+        protected bool canCauseDamage = true;
+        protected AudioSource audioSource;
         #endregion
 
         #region Mono Methods
-        private void Awake() {
+        protected virtual void Awake() {
             audioSource = GetComponent<AudioSource> ();
+            
+            if ((audioSource != null) && (!enabled)) {
+                audioSource.Stop();
+                audioSource.enabled = false;
+            }
         }
 
-        private void Start() {
+        protected virtual void Start() {
             if (audioSource != null)
                 audioSource.pitch += Random.Range (-0.05f, 0.05f);
         }
 
-        private void Update() {
+        protected virtual void Update() {
             if (lifetime > 0f) {
                 lifetime -= Time.deltaTime;
                 transform.position += transform.forward * speed * Time.deltaTime;
@@ -46,7 +51,7 @@ namespace FreeSpace
             }
         }
 
-        private void OnTriggerEnter(Collider other) {
+        protected virtual void OnTriggerEnter(Collider other) {
             if (canCauseDamage) {
                 if (other.gameObject.tag == "ShipCollider") {
                     ShipCollider shipCollider = other.GetComponent<ShipCollider> ();
@@ -58,11 +63,17 @@ namespace FreeSpace
                 }
             }
         }
+
+        protected virtual void OnEnable() {
+            audioSource.enabled = true;
+            audioSource.time = 0f;
+            audioSource.Play();
+        }
         #endregion
 
         #region Interaction Methods
-        private void Destroy() {
-            Destroy (gameObject);
+        protected virtual void Destroy() {
+           // Destroy (gameObject);
         }
         #endregion
 

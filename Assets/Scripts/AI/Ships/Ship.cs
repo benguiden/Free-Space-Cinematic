@@ -47,7 +47,7 @@ namespace FreeSpace
         #endregion
 
         #region Mono Methods
-        private void Awake() {
+        protected virtual void Awake() {
             if (shipCollider != null)
                 shipCollider.Initalise (this);
             if (shieldCollider != null)

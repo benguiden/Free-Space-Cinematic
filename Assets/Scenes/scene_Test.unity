@@ -5742,7 +5742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &734535950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5818,6 +5818,19 @@ MonoBehaviour:
   hullHealth: 100
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 0}
+  engineAudioSource: {fileID: 0}
+  engineVolume:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enginePitch:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   guns: []
   shipCollider: {fileID: 0}
   shieldCollider: {fileID: 0}
@@ -15235,15 +15248,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 542
+      value: 991
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1149
+      value: 839
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2363
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -15270,6 +15283,19 @@ Prefab:
       propertyPath: pathParentOffset
       value: 
       objectReference: {fileID: 795794128}
+    - target: {fileID: 1967113066405942, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798387168943130, guid: ff02d640f202fc84884d64240d2ad75c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987087096712412, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
   m_IsPrefabParent: 0
@@ -15860,7 +15886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1598627856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15936,6 +15962,19 @@ MonoBehaviour:
   hullHealth: 100
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 0}
+  engineAudioSource: {fileID: 0}
+  engineVolume:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enginePitch:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   guns: []
   shipCollider: {fileID: 0}
   shieldCollider: {fileID: 0}
@@ -16659,7 +16698,7 @@ Prefab:
       objectReference: {fileID: 117334713}
     - target: {fileID: 1562773890175968, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69b54b7763d85c3408eca3ae5c62606f, type: 2}
@@ -21550,19 +21589,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1561182926497452, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1544776453903980, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1768116554086852, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779625870926320, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}

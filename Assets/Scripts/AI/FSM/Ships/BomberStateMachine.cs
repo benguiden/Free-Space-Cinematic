@@ -9,8 +9,8 @@ namespace FreeSpace {
         public class BomberAttackState : ShipState {
 
             public Ship emporer;
-            private Pursue pursueBehaviour;
-            public float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            private Arrive arriveBehaviour;
+            public float desiredAccuracy = 25f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public BomberAttackState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
                 emporer = _emporer;
@@ -19,26 +19,22 @@ namespace FreeSpace {
             public override void Enter() {
                 ship.StartCoroutine(IUpdate());
 
-                pursueBehaviour = ship.boid.GetBehaviour<Pursue> ();
+                arriveBehaviour = ship.boid.GetBehaviour<Arrive> ();
             }
 
             public override void Update() { }
 
             public override IEnumerator IUpdate() {
                 yield return null;
-                Pursue pursue = ship.boid.GetBehaviour<Pursue>();
-
-                if (pursue != null)
-                    pursue.target = ShipManager.main.emporer.boid;
+                if (arriveBehaviour != null)
+                    arriveBehaviour.target = ShipManager.main.emporer.transform;
 
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        if (pursueBehaviour != null) {
-                            if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= pursueBehaviour.desiredDistance) {
+                        if (arriveBehaviour != null) {
+                            if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= arriveBehaviour.nearingDistance) {
                                 if (Vector3.Angle (ship.transform.forward, emporer.transform.position - ship.transform.position) <= desiredAccuracy) {
-                                    for (int i=0; i<ship.guns.Length; i++) {
-                                        ship.guns[i].AttemptShoot ();
-                                    }
+                                    ((BomberShip)ship).missileLauncher.AttemptShoot();
                                 }
                             }
                         }

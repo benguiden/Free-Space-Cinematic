@@ -39,7 +39,7 @@ namespace FreeSpace
             }
         }
 
-        public void Shoot() {
+        public virtual void Shoot() {
             if (enabled) {
 
                 foreach (Transform gunPoint in gunPoints) {
@@ -57,7 +57,7 @@ namespace FreeSpace
         }
         #endregion
 
-        private IEnumerator IReload() {
+        protected IEnumerator IReload() {
             canShoot = false;
             yield return new WaitForSeconds (reloadTime);
             canShoot = true;

@@ -19,6 +19,10 @@ namespace FreeSpace
         public float damage = 25f;
         public float reloadTime = 1f;
 
+        [Header ("Audio")]
+        public AudioSource shootAudioSource;
+        public AudioClip shootAudioClip;
+
         [HideInInspector]
         public Ship ship;
 
@@ -38,6 +42,7 @@ namespace FreeSpace
         public virtual void Shoot() {
             if (enabled) {
 
+                bool firstProjectile = true;
                 foreach (Transform gunPoint in gunPoints) {
                     Transform projectileTransform = ((GameObject)Object.Instantiate (projectile)).transform;
 
@@ -48,7 +53,22 @@ namespace FreeSpace
                     newProjectile.speed = projectileSpeed;
                     newProjectile.damage = damage;
                     newProjectile.sourceShip = ship;
+
+                    if (firstProjectile) {
+                        AudioSource projectileAudioSource = newProjectile.GetComponent<AudioSource> ();
+                        if (projectileAudioSource != null) {
+                            firstProjectile = false;
+                            projectileAudioSource.enabled = false;
+                        }
+                    }
                 }
+
+                if (shootAudioSource != null) {
+                    shootAudioSource.clip = shootAudioClip;
+                    shootAudioSource.time = 0f;
+                    shootAudioSource.Play ();
+                }
+
             }
         }
         #endregion

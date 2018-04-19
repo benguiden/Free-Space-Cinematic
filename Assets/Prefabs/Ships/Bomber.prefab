@@ -4968,7 +4968,9 @@ MonoBehaviour:
     projectile: {fileID: 100000, guid: 69099ccf3dc5b6245ade0eaa5c74484f, type: 3}
     projectileSpeed: 250
     damage: 150
-    reloadTime: 0.25
+    reloadTime: 0.75
+    shootAudioSource: {fileID: 0}
+    shootAudioClip: {fileID: 0}
     ship: {fileID: 0}
     canShoot: 1
     missiles:
@@ -5158,7 +5160,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cruiseSpeed: 100
-  nearingDistance: 1000
+  nearingDistance: 1500
 --- !u!114 &114478792322382966
 MonoBehaviour:
   m_ObjectHideFlags: 1

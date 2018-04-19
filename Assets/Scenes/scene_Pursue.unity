@@ -359,6 +359,8 @@ MonoBehaviour:
     projectileSpeed: 500
     damage: 20
     reloadTime: 0.35
+    shootAudioSource: {fileID: 0}
+    shootAudioClip: {fileID: 0}
     ship: {fileID: 0}
     canShoot: 1
   shipCollider: {fileID: 357453266}
@@ -5280,35 +5282,16 @@ Prefab:
       propertyPath: pathParentOffset
       value: 
       objectReference: {fileID: 1996315328}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -19.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.05477587
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9984987
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288010032136708, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1967113066405942, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82087695158657112, guid: ff02d640f202fc84884d64240d2ad75c,
+        type: 2}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987087096712412, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -6212,6 +6195,8 @@ MonoBehaviour:
     projectileSpeed: 500
     damage: 20
     reloadTime: 0.35
+    shootAudioSource: {fileID: 0}
+    shootAudioClip: {fileID: 0}
     ship: {fileID: 0}
     canShoot: 1
   shipCollider: {fileID: 1959454719}

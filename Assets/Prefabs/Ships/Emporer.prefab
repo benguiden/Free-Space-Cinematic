@@ -2606,6 +2606,8 @@ GameObject:
   - component: {fileID: 4741425228902564}
   - component: {fileID: 33058596085074978}
   - component: {fileID: 23096155188375730}
+  - component: {fileID: 114444480495395102}
+  - component: {fileID: 64905890929004126}
   m_Layer: 0
   m_Name: detail0
   m_TagString: Untagged
@@ -6511,7 +6513,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664076485557562}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.0000019073486, y: -2.8411255, z: 47.24079}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4922482529695450}
@@ -6784,8 +6786,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1812816436295760}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 383, y: -577, z: -1423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 808, y: 0, z: 5381}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4104223162644604}
@@ -6804,7 +6806,7 @@ Transform:
   - {fileID: 4695543178805004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4812495764441974
 Transform:
   m_ObjectHideFlags: 1
@@ -10589,6 +10591,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101134983016876}
   m_Mesh: {fileID: 4300128, guid: 109dafcc95e66e547867aa6e349a6f8e, type: 3}
+--- !u!64 &64905890929004126
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664076485557562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300020, guid: 109dafcc95e66e547867aa6e349a6f8e, type: 3}
 --- !u!114 &114050264726972150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10739,6 +10755,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114444480495395102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664076485557562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff4a19af63f2f74b8e717900f94440c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
 --- !u!114 &114537668181215700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10765,7 +10793,21 @@ MonoBehaviour:
   hullHealth: 1000
   shieldHealth: 5000
   destroyVFXPrefab: {fileID: 0}
-  shipCollider: {fileID: 0}
+  engineAudioSource: {fileID: 0}
+  engineVolume:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enginePitch:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  guns: []
+  shipCollider: {fileID: 114444480495395102}
   shieldCollider: {fileID: 0}
   mainMesh: {fileID: 1664076485557562}
   debrisObjects: []

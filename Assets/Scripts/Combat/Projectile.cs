@@ -52,7 +52,7 @@ namespace FreeSpace
         }
 
         protected virtual void OnTriggerEnter(Collider other) {
-            if (canCauseDamage) {
+            if ((canCauseDamage) && (isActiveAndEnabled)) {
                 if (other.gameObject.tag == "ShipCollider") {
                     ShipCollider shipCollider = other.GetComponent<ShipCollider> ();
                     if (shipCollider.ship != sourceShip) {

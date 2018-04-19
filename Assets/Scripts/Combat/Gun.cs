@@ -26,16 +26,12 @@ namespace FreeSpace
         public bool canShoot = true;
         #endregion
 
-        #region Private Variables
-        private Coroutine reloadCo;
-        #endregion
-
         #region Public Methods
         public void AttemptShoot() {
             if ((canShoot) && (enabled)) {
                 Shoot ();
                 canShoot = false;
-                reloadCo = ship.StartCoroutine (IReload ());
+                ship.StartCoroutine (IReload ());
             }
         }
 

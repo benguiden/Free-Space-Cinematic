@@ -15,7 +15,6 @@ namespace FreeSpace {
                 if (missileIndex <= missiles.Length - 1) {
                     Projectile missile = missiles[missileIndex];
                     missile.enabled = true;
-                    Debug.Log("Enabled");
                     missile.transform.SetParent(null);
                     missile.sourceShip = ship;
                     missileIndex++;

@@ -86,6 +86,7 @@ namespace FreeSpace
             Transform vfxTransform = ((GameObject)Instantiate (vfxPrefab)).transform;
             vfxTransform.SetParent (other.transform);
             vfxTransform.position = closestPoint;
+            Debug.Break();
         }
 
     }

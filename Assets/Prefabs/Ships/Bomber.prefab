@@ -1910,7 +1910,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376703576816340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 362, z: 3198}
+  m_LocalPosition: {x: -1917, y: 622, z: 570}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4984183412374252}
@@ -4997,6 +4997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5046,6 +5047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5063,6 +5065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5104,6 +5107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5121,6 +5125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5138,6 +5143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5160,7 +5166,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cruiseSpeed: 100
-  nearingDistance: 1500
+  nearingDistance: 1000
 --- !u!114 &114478792322382966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5183,6 +5189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5200,6 +5207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5217,6 +5225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5234,6 +5243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5251,6 +5261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5
@@ -5290,6 +5301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006103dcd1824ac4c988518b560408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 0}
   damage: 150
   speed: 250
   lengthK: 5

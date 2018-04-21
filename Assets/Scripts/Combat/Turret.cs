@@ -82,7 +82,7 @@ namespace FreeSpace
             BoidActor newTarget = null;
             float closestDistance = shootingRange;
             foreach (BoidActor boidActor in BoidManager.Main ().boidActors) { //Test which enemy boid is closest to turret
-                if (true) { //Change to isEnemy
+                if ((boidActor != ShipManager.main.emporer.boid) && (boidActor.isActiveAndEnabled)) { //Change to isEnemy
                     Vector3 boidPosition = boidActor.transform.position;
 
                     if ((Mathf.Abs (boidPosition.x - transform.position.x) < shootingRange)      //Calculating the distance to the boid in a box first
@@ -131,6 +131,7 @@ namespace FreeSpace
             Projectile newProjectile = projectileTransform.GetComponent<Projectile> ();
             newProjectile.speed = projectileSpeed;
             newProjectile.damage = damage;
+            newProjectile.sourceShip = ShipManager.main.emporer;
 
             canShoot = false;
             if (reloadCo == null)

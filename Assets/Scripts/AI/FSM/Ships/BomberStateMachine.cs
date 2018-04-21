@@ -32,7 +32,7 @@ namespace FreeSpace {
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
                         if (arriveBehaviour != null) {
-                            if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= arriveBehaviour.nearingDistance) {
+                            if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= arriveBehaviour.nearingDistance * 1.1f) {
                                 if (Vector3.Angle (ship.transform.forward, emporer.transform.position - ship.transform.position) <= desiredAccuracy) {
                                     ((BomberShip)ship).missileLauncher.AttemptShoot();
                                 }

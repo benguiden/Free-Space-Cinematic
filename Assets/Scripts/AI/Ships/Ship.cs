@@ -15,6 +15,7 @@ namespace FreeSpace
 
         [Header ("Visuals")]
         public Object destroyVFXPrefab;
+        public Object shieldDamageVFXPrefab, hullDamageVFXPrefab;
 
         [Header("Audio")]
         public AudioSource engineAudioSource;
@@ -99,6 +100,14 @@ namespace FreeSpace
             }
         }
 
+        public Object GetVFXDamagePrefab() {
+            if (shieldHealth > 0f) {
+                return shieldDamageVFXPrefab;
+            } else {
+                return hullDamageVFXPrefab;
+            }
+        }
+
         protected void Kill() {
             foreach(BoidBehaviour behaviour in boid.behaviours) {
                 behaviour.enabled = false;
@@ -123,6 +132,8 @@ namespace FreeSpace
             Transform destroyVFXTransform = ((GameObject)Instantiate (destroyVFXPrefab, null)).transform;
             destroyVFXTransform.position = transform.position;
             destroyVFXTransform.localEulerAngles = transform.localEulerAngles;
+
+            gameObject.SetActive (false);
         }
         #endregion
 

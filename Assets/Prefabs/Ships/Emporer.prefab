@@ -10671,7 +10671,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300020, guid: 109dafcc95e66e547867aa6e349a6f8e, type: 3}
@@ -10882,7 +10882,12 @@ MonoBehaviour:
   faction: 0
   hullHealth: 1000
   shieldHealth: 5000
-  destroyVFXPrefab: {fileID: 0}
+  destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
+    type: 2}
+  shieldDamageVFXPrefab: {fileID: 1975998929534326, guid: 4e617d586a5ae2947b9c506c1eb6379f,
+    type: 2}
+  hullDamageVFXPrefab: {fileID: 1975998929534326, guid: 4e617d586a5ae2947b9c506c1eb6379f,
+    type: 2}
   engineAudioSource: {fileID: 0}
   engineVolume:
     serializedVersion: 2

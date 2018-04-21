@@ -21,7 +21,7 @@ namespace FreeSpace {
         protected override void Update() {
             if (lifetime > 0f) {
                 lifetime -= Time.deltaTime;
-                transform.position += transform.up * speed * Time.deltaTime;
+                transform.position += -transform.up * speed * Time.deltaTime;
             } else {
                 Destroy(gameObject);
             }

@@ -8,6 +8,8 @@ namespace FreeSpace
     [RequireComponent(typeof(Renderer))]
     public class Debris : MonoBehaviour{
 
+        public Vector3 flyDirection = Vector3.up;
+
         private Coroutine activated;
 
         public void Activate(Vector3 explositionPosition, float velocity, float lifeTime) {
@@ -18,7 +20,8 @@ namespace FreeSpace
         }
 
         private IEnumerator IActivate(Vector3 explositionPosition, float velocity, float lifeTime) {
-            Vector3 newVelocity = (transform.position - explositionPosition).normalized * velocity;
+            Vector3 newVelocity = transform.TransformDirection (flyDirection).normalized * velocity;
+            Debug.Log (newVelocity);
             while ((lifeTime > 0f) && (isActiveAndEnabled)) {
                 transform.position += newVelocity * Time.deltaTime;
 

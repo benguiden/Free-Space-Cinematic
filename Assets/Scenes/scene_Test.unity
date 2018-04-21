@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.032506213, g: 0.007402111, b: 0.0029051844, a: 1}
+  m_IndirectSpecularColor: {r: 0.116297714, g: 0.05506835, b: 0.024882542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5702,6 +5702,8 @@ MonoBehaviour:
   hullHealth: 100
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 0}
+  shieldDamageVFXPrefab: {fileID: 0}
+  hullDamageVFXPrefab: {fileID: 0}
   engineAudioSource: {fileID: 0}
   engineVolume:
     serializedVersion: 2
@@ -15846,6 +15848,8 @@ MonoBehaviour:
   hullHealth: 100
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 0}
+  shieldDamageVFXPrefab: {fileID: 0}
+  hullDamageVFXPrefab: {fileID: 0}
   engineAudioSource: {fileID: 0}
   engineVolume:
     serializedVersion: 2
@@ -16498,31 +16502,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1917
+      value: 582
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 622
+      value: 466
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 570
+      value: 1354
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.97731704
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.2117814
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_RootOrder

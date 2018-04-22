@@ -58,6 +58,10 @@ namespace FreeSpace {
                 pathFollower.enabled = false;
             }
 
+            public override string ToString() {
+                return "Wander";
+            }
+
         }
 
         public class BansheePersueState : ShipState {
@@ -108,6 +112,13 @@ namespace FreeSpace {
 
                 if (targetFlee != null)
                     targetFlee.avoidingBoids.Remove(ship.transform);
+            }
+
+            public override string ToString() {
+                if (target != null)
+                    return "Persue " + target.name;
+                else
+                    return "Persue";
             }
 
         }

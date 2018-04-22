@@ -31,11 +31,14 @@ namespace FreeSpace
         #endregion
 
         #region Public Methods
-        public void AttemptShoot() {
+        public bool AttemptShoot() {
             if ((canShoot) && (enabled)) {
                 Shoot ();
                 canShoot = false;
                 ship.StartCoroutine (IReload ());
+                return true;
+            } else {
+                return false;
             }
         }
 

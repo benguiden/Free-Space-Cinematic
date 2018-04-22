@@ -10,6 +10,11 @@ namespace FreeSpace {
         private int missileIndex = 0;
         public Projectile[] missiles;
 
+        public int MissileIndex
+        {
+            get { return missileIndex; }
+        }
+
         public override void Shoot() {
             if (enabled) {
                 if (missileIndex <= missiles.Length - 1) {

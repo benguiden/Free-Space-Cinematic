@@ -30,7 +30,8 @@ namespace FreeSpace
         }
 
         private void Start() {
-            RefreshOffset();
+            if (leader != null)
+                RefreshOffset ();
         }
 
         private void OnDrawGizmos() {

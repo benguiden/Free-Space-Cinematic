@@ -6,6 +6,7 @@ namespace FreeSpace {
 
     public class BomberShip : Ship {
 
+        [Header("Bomber")]
         public MissileLauncher missileLauncher;
 
         #region Mono Methods

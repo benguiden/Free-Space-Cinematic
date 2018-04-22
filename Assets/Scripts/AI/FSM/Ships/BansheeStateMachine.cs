@@ -6,21 +6,31 @@ namespace FreeSpace {
 
     namespace BansheeStates {
 
-        public class BansheeWanderState : ShipState {
+        public class BansheePatrolState : ShipState {
 
             public Ship emporer;
             public float threatDistance = 4000f;
             public PathFollower pathFollower;
 
-            public BansheeWanderState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
+            public BansheePatrolState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
                 emporer = _emporer;
             }
 
             public override void Enter() {
                 ship.StartCoroutine(IUpdate());
                 updateRefresh = 1f;
-                pathFollower = ship.GetComponent<PathFollower> ();
-                pathFollower.enabled = true;
+                pathFollower = ship.boid.GetBehaviour<PathFollower> ();
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+                Pursue pursueBehaviour = ship.boid.GetBehaviour<Pursue> ();
+
+                if (pathFollower != null)
+                    pathFollower.enabled = true;
+
+                if (wanderBehaviour != null)
+                    wanderBehaviour.enabled = true;
+
+                if (pursueBehaviour != null)
+                    pursueBehaviour.enabled = false;
             }
 
             public override void Update() { }
@@ -35,10 +45,12 @@ namespace FreeSpace {
                         Ship threatShip = null;
 
                         foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {
-                            float otherShipDistance = Vector3.Distance(otherShip.Value.transform.position, emporerPosition);
-                            if ((otherShipDistance < closestDistance) && (otherShip.Value != ship)) {
-                                threatShip = otherShip.Value;
-                                closestDistance = otherShipDistance;
+                            if ((otherShip.Value.faction != ship.faction)) {
+                                float otherShipDistance = Vector3.Distance (otherShip.Value.transform.position, emporerPosition);
+                                if ((otherShipDistance < closestDistance) && (otherShip.Value != ship)) {
+                                    threatShip = otherShip.Value;
+                                    closestDistance = otherShipDistance;
+                                }
                             }
                         }
 
@@ -59,7 +71,62 @@ namespace FreeSpace {
             }
 
             public override string ToString() {
-                return "Wander";
+                return "Patrol";
+            }
+
+        }
+
+        public class BansheeFollowLeader : ShipState
+        {
+            private BoidActor leaderBoid;
+            private OffsetPursue offsetBehaviour;
+
+            public BansheeFollowLeader(StateMachine _stateMachine, Ship _ship, BoidActor _leaderBoid) : base(_stateMachine, _ship) {
+                leaderBoid = _leaderBoid;
+            }
+
+            public override void Enter() {
+                ship.StartCoroutine (IUpdate ());
+
+                PathFollower pathFollower = ship.boid.GetBehaviour<PathFollower> ();
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+                Pursue pursueBehaviour = ship.boid.GetBehaviour<Pursue> ();
+                offsetBehaviour = ship.boid.GetBehaviour<OffsetPursue> ();
+
+                if (pathFollower != null)
+                    pathFollower.enabled = false;
+
+                if (wanderBehaviour != null)
+                    wanderBehaviour.enabled = false;
+
+                if (pursueBehaviour != null)
+                    pursueBehaviour.enabled = false;
+
+                if (offsetBehaviour != null) {
+                    offsetBehaviour.leader = leaderBoid;
+                    offsetBehaviour.enabled = true;
+                }
+            }
+
+            public override void Update() { }
+
+            public override IEnumerator IUpdate() {
+                yield return null;
+                if (ship != null) {
+                    while ((ship.enabled) && (stateMachine.state == this)) {
+                        yield return null;
+                    }
+                }
+            }
+
+            public override void Exit() {
+                if (offsetBehaviour != null) {
+                    offsetBehaviour.enabled = false;
+                }
+            }
+
+            public override string ToString() {
+                return "Follow Leader";
             }
 
         }
@@ -76,6 +143,11 @@ namespace FreeSpace {
             }
 
             public override void Enter() {
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+
+                if (wanderBehaviour != null)
+                    wanderBehaviour.enabled = true;
+
                 pursueBehaviour = ship.boid.GetBehaviour<Pursue>();
                 pursueBehaviour.enabled = true;
                 pursueBehaviour.target = target.boid;
@@ -99,10 +171,14 @@ namespace FreeSpace {
                 yield return null;
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        if (Vector3.Angle(ship.transform.forward, target.transform.position - ship.transform.position) <= desiredAccuracy) {
-                            ship.guns[0].AttemptShoot();
+                        if (target != null) {
+                            if (Vector3.Angle (ship.transform.forward, target.transform.position - ship.transform.position) <= desiredAccuracy) {
+                                ship.guns[0].AttemptShoot ();
+                            }
+                            yield return null;
+                        } else {
+                            stateMachine.ChangeState (new BansheePatrolState (stateMachine, ship, ShipManager.main.emporer));
                         }
-                        yield return null;
                     }
                 }
             }

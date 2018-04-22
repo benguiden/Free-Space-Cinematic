@@ -133,7 +133,12 @@ namespace FreeSpace
             destroyVFXTransform.position = transform.position;
             destroyVFXTransform.localEulerAngles = transform.localEulerAngles;
 
-            gameObject.SetActive (false);
+            DestroyShip ();
+        }
+
+        protected void DestroyShip() {
+            ShipManager.main.ships.Remove (shipID);
+            Destroy (gameObject);
         }
         #endregion
 

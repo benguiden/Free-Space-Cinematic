@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 114070148564471564}
   - component: {fileID: 114098217803641714}
   - component: {fileID: 114438450894187706}
+  - component: {fileID: 114922028980010874}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Untagged
@@ -1910,7 +1911,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376703576816340}
   m_LocalRotation: {x: -0, y: 0.97731704, z: -0, w: -0.2117814}
-  m_LocalPosition: {x: 582, y: 466, z: 1354}
+  m_LocalPosition: {x: 1540, y: 466, z: 3315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4984183412374252}
@@ -2301,7 +2302,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5
     y: 0
     width: 1
     height: 1
@@ -4874,7 +4875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db04aec04a0a84d4d905a7afc06b599e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faction: 0
+  faction: 1
   hullHealth: 250
   shieldHealth: 2000
   destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
@@ -5305,6 +5306,21 @@ MonoBehaviour:
   sizeK: 2
   lifetime: 10
   sourceShip: {fileID: 0}
+--- !u!114 &114922028980010874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376703576816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0724f337972991743b9a3d8958b92e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculationUpdateSpeed: 1
+  weight: 1
+  avoidingBoids: []
+  fleeSpeed: 100
 --- !u!114 &114926300209953424
 MonoBehaviour:
   m_ObjectHideFlags: 1

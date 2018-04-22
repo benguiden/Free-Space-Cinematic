@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FreeSpace {
 
-    namespace BansheeStates {
+    namespace BomberStates {
 
         public class BomberAttackState : ShipState {
 

@@ -18,7 +18,7 @@ namespace FreeSpace {
         private void Start() {
             shipID = ShipManager.main.AddShip(this);
             stateMachine = new ShipStateMachine(this);
-            stateMachine.ChangeState(new BansheeStates.BomberAttackState(stateMachine, this, ShipManager.main.emporer));
+            stateMachine.ChangeState(new BomberStates.BomberAttackState(stateMachine, this, ShipManager.main.emporer));
         }
         #endregion
 

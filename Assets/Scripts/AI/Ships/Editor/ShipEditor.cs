@@ -45,4 +45,17 @@ namespace FreeSpace
         }
     }
 
+    [CustomEditor (typeof (ProtonShip))]
+    public class ProtonShipEditor : Editor
+    {
+        public override void OnInspectorGUI() {
+            base.OnInspectorGUI ();
+            ProtonShip shipScript = (ProtonShip)target;
+
+            if (shipScript.stateMachine != null)
+                if (shipScript.stateMachine.state != null)
+                    EditorGUILayout.TextField ("State", shipScript.stateMachine.state.ToString ());
+        }
+    }
+
 }

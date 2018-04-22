@@ -1095,7 +1095,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 5000
@@ -2009,7 +2009,7 @@ MonoBehaviour:
     gunPoints:
     - {fileID: 4506590657808802}
     - {fileID: 4032233661688222}
-    projectile: {fileID: 1900083126810368, guid: 1a08b033680e8f140bde6d6430deb3f2,
+    projectile: {fileID: 1900083126810368, guid: d3e010395a636cb49b252e49b6676647,
       type: 2}
     projectileSpeed: 400
     damage: 100

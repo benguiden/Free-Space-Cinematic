@@ -19,7 +19,7 @@ namespace FreeSpace {
             if ((leader == null) && (leader != this))
                 stateMachine.ChangeState (new BansheeStates.BansheePatrolState (stateMachine, this, ShipManager.main.emporer));
             else {
-                stateMachine.ChangeState (new BansheeStates.BansheeFollowLeader (stateMachine, this, leader.boid));
+                stateMachine.ChangeState (new BansheeStates.BansheeFollowLeader (stateMachine, this, leader));
                 boid.GetBehaviour<OffsetPursue> ().RefreshOffset ();
             }
         }

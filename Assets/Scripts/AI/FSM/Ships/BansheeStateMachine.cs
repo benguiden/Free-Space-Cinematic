@@ -39,20 +39,7 @@ namespace FreeSpace {
                 yield return null;
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        Vector3 emporerPosition = ShipManager.main.emporer.transform.position;
-
-                        float closestDistance = threatDistance;
-                        Ship threatShip = null;
-
-                        foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {
-                            if ((otherShip.Value.faction != ship.faction)) {
-                                float otherShipDistance = Vector3.Distance (otherShip.Value.transform.position, emporerPosition);
-                                if ((otherShipDistance < closestDistance) && (otherShip.Value != ship)) {
-                                    threatShip = otherShip.Value;
-                                    closestDistance = otherShipDistance;
-                                }
-                            }
-                        }
+                        Ship threatShip = ShipManager.main.BiggestThreat (ShipManager.main.emporer.transform.position, ship.faction, threatDistance);
 
                         if (threatShip != null) {
                             stateMachine.ChangeState(new BansheePersueState(stateMachine, ship, threatShip));
@@ -78,11 +65,12 @@ namespace FreeSpace {
 
         public class BansheeFollowLeader : ShipState
         {
-            private BoidActor leaderBoid;
+            private Ship leaderShip;
             private OffsetPursue offsetBehaviour;
+            private float disperceDistance = 200f;
 
-            public BansheeFollowLeader(StateMachine _stateMachine, Ship _ship, BoidActor _leaderBoid) : base(_stateMachine, _ship) {
-                leaderBoid = _leaderBoid;
+            public BansheeFollowLeader(StateMachine _stateMachine, Ship _ship, Ship _leaderShip) : base(_stateMachine, _ship) {
+                leaderShip = _leaderShip;
             }
 
             public override void Enter() {
@@ -103,7 +91,7 @@ namespace FreeSpace {
                     pursueBehaviour.enabled = false;
 
                 if (offsetBehaviour != null) {
-                    offsetBehaviour.leader = leaderBoid;
+                    offsetBehaviour.leader = leaderShip.boid;
                     offsetBehaviour.enabled = true;
                 }
             }
@@ -114,7 +102,23 @@ namespace FreeSpace {
                 yield return null;
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        yield return null;
+                        if (leaderShip.stateMachine.state.GetType () == typeof (BansheePersueState)) {
+                            BoidActor leaderTarget = leaderShip.boid.GetBehaviour<Pursue> ().target;
+                            if (leaderTarget != null) {
+                                if (Vector3.Distance (leaderShip.transform.position, leaderTarget.transform.position) <= disperceDistance) {
+                                    Ship threatShip = ShipManager.main.BiggestThreat (ship.transform.position, ship.faction, 500f);
+                                    if (threatShip != null) {
+                                        stateMachine.ChangeState (new BansheePersueState (stateMachine, ship, threatShip));
+                                    } else {
+                                        yield return new WaitForSeconds (updateRefresh);
+                                    }
+
+                                }
+                            } else {
+                                stateMachine.ChangeState (new BansheePatrolState (stateMachine, ship, ShipManager.main.emporer));
+                            }
+                        }
+                        yield return new WaitForSeconds (updateRefresh);
                     }
                 }
             }

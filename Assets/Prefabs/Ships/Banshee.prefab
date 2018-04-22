@@ -982,13 +982,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967113066405942}
-  m_LocalRotation: {x: 0.05477587, y: 0, z: 0, w: 0.9984987}
-  m_LocalPosition: {x: -0, y: 6.6, z: -19.14}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 40, z: -133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4120324528758698}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 6.28, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!4 &4291150458798758
 Transform:
   m_ObjectHideFlags: 1
@@ -1480,11 +1480,11 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.05
   far clip plane: 10000
-  field of view: 33
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1754,7 +1754,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967113066405942}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &82087695158657112
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1990,8 +1990,10 @@ MonoBehaviour:
   shieldHealth: 500
   destroyVFXPrefab: {fileID: 1102085962493316, guid: 6326c36b911488d4ca08f4eef6243735,
     type: 2}
-  shieldDamageVFXPrefab: {fileID: 0}
-  hullDamageVFXPrefab: {fileID: 0}
+  shieldDamageVFXPrefab: {fileID: 1878976106071784, guid: f906039be04c84d43a2643ce1a219dff,
+    type: 2}
+  hullDamageVFXPrefab: {fileID: 1878976106071784, guid: f906039be04c84d43a2643ce1a219dff,
+    type: 2}
   engineAudioSource: {fileID: 82900335453768854}
   engineVolume:
     serializedVersion: 2

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4677486108919970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret48-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4988724996469152}
   - component: {fileID: 33488622071927334}
   - component: {fileID: 23103963651632222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret18-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4323732239405144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4135183524316760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret27-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4927490348449014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4123251458977198}
   - component: {fileID: 33459585025059776}
   - component: {fileID: 23397239443672578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4029066247656002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4741599128693300}
   - component: {fileID: 199157604398073764}
   - component: {fileID: 198769250334526464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4032387124284834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret06-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 4925562104630096}
   - component: {fileID: 33520665821099042}
   - component: {fileID: 23333382189060656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret15-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4131221508480504}
   - component: {fileID: 33362859565660966}
   - component: {fileID: 23126467917022746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 4340375240424472}
   - component: {fileID: 33011201305720722}
   - component: {fileID: 23797651871868672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 4939250454024388}
   - component: {fileID: 199767076588399934}
   - component: {fileID: 198188073174661204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4120918633089012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4616691522919618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret02-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4140669209192920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4687420375524648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret47-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4395510098635804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4780013849578718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret42-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 4375605348515228}
   - component: {fileID: 33161025700769748}
   - component: {fileID: 23623984061421168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 4385321038527624}
   - component: {fileID: 33997668217556174}
   - component: {fileID: 23222335725486452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4206086567333232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4393479780230758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4897065659398000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret15-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4285266089065448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret43-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4687747831127826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4179865922081412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret13-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 4479110341267528}
   - component: {fileID: 33768683243510954}
   - component: {fileID: 23204354844968076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret17-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4379711022534260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret03-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 4670586243212296}
   - component: {fileID: 33749737116704210}
   - component: {fileID: 23122177005997514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4226251964546890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4695346509118304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4258661754679518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4565438979994424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret07-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4605114942461232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret23-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4974415121963342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4146405707943656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4359467636850116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 4240053723066918}
   - component: {fileID: 33741095021306936}
   - component: {fileID: 23198640349257710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4805108666901202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 4778692845446760}
   - component: {fileID: 33888927496959246}
   - component: {fileID: 23493712916817606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4526629054225818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret29-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 4598779620676440}
   - component: {fileID: 33554414925283642}
   - component: {fileID: 23163560985718480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4512241602827876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 4338620011607724}
   - component: {fileID: 33045735478448556}
   - component: {fileID: 23448192686583242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret20-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4927065086351256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 4537292751284118}
   - component: {fileID: 33563763966518656}
   - component: {fileID: 23368155101756906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 124561080593946868}
   - component: {fileID: 81510044366338924}
   - component: {fileID: 114448887407652806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4159107071653156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret08-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +790,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4517031586804276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -805,7 +805,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4637036404776356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 4134510507637888}
   - component: {fileID: 33601924416747252}
   - component: {fileID: 23683127654722940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4782324888945550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4673982216201758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret44-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4537011757358466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 4503663976890124}
   - component: {fileID: 33269865041198406}
   - component: {fileID: 23696377080032692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 4147110099663138}
   - component: {fileID: 33417841356468798}
   - component: {fileID: 23581127881481674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4787955215510684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4772964995113032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 4330195424375286}
   - component: {fileID: 199341388997735222}
   - component: {fileID: 198435273028631864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +963,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4727043066705532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4322203738983796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4319426348398840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 4951664797669524}
   - component: {fileID: 33567044518621910}
   - component: {fileID: 23685782608902608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4688326130862546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4230422428256734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1055,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4039465707325068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4056660021787516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1085,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4261725319669136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4833727809081366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 33012189370806746}
   - component: {fileID: 23728994628545322}
   - component: {fileID: 114305815326137504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1133,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4538264678274130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret04-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4021334176277946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thrusters.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4155818913949294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret01-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 4784201160437668}
   - component: {fileID: 33522793880047272}
   - component: {fileID: 23978113799060600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1195,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4146478096336938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret24-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1210,7 +1210,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4119727661899052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 4237050411838506}
   - component: {fileID: 33243814044568050}
   - component: {fileID: 23070514808190286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret13-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1242,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4011201291786452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,7 +1257,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4699674049492070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,7 +1272,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4700239796289984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1287,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4860458704248968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,7 +1302,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4821244237554686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,7 +1317,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4565091736423298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4437868615670694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1347,7 +1347,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4975500531330598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret19-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1362,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4472441582870218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4687893271922916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret05-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4189685532071962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4402238001835972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: 4936979327092882}
   - component: {fileID: 33247299904089214}
   - component: {fileID: 23030068401610360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 33983876300541398}
   - component: {fileID: 23921146082153964}
   - component: {fileID: 114133604104851480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 4484437178489932}
   - component: {fileID: 33156611814924594}
   - component: {fileID: 23448077988926440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret13-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1474,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4233045341904410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1491,7 +1491,7 @@ GameObject:
   - component: {fileID: 4261231739496550}
   - component: {fileID: 33743610674793284}
   - component: {fileID: 23205014691922456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 4610998743942472}
   - component: {fileID: 33719434939484468}
   - component: {fileID: 23867065314797078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 4794184491530814}
   - component: {fileID: 33281567215321564}
   - component: {fileID: 23813669718695690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4427978390123210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,7 +1555,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4761122225925618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret18-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4942525904220640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1587,7 +1587,7 @@ GameObject:
   - component: {fileID: 4853477921984446}
   - component: {fileID: 199528687371098510}
   - component: {fileID: 198612786328481636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 4507706195926598}
   - component: {fileID: 199352477862129066}
   - component: {fileID: 198436705118747896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   - component: {fileID: 4556634046670410}
   - component: {fileID: 33519751616642580}
   - component: {fileID: 23118195509143874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1636,7 +1636,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4338294371713854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1651,7 +1651,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4374032366888772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret36-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1668,7 +1668,7 @@ GameObject:
   - component: {fileID: 4106879141434816}
   - component: {fileID: 33564771998090076}
   - component: {fileID: 23597333849402932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1683,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4032944378880596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1698,7 +1698,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4196975455602190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret35-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1713,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4860810036005648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1728,7 +1728,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4593410419531186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret33-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1743,7 +1743,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4415153912137414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1760,7 +1760,7 @@ GameObject:
   - component: {fileID: 4922482529695450}
   - component: {fileID: 33036281021427878}
   - component: {fileID: 23425163483585352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1775,7 +1775,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4349526223676480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret53-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1793,7 +1793,7 @@ GameObject:
   - component: {fileID: 33898696637144010}
   - component: {fileID: 23354062164751520}
   - component: {fileID: 114179193426974238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1810,7 @@ GameObject:
   - component: {fileID: 4812495764441974}
   - component: {fileID: 33743215348215218}
   - component: {fileID: 23300684411606686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1828,7 +1828,7 @@ GameObject:
   - component: {fileID: 33118301836367200}
   - component: {fileID: 23807800711212070}
   - component: {fileID: 114291185916453784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1843,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4146174702666658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1858,7 +1858,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4047266495528868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret26-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,7 +1873,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4910323209935652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret51-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1890,7 +1890,7 @@ GameObject:
   - component: {fileID: 4360842347696894}
   - component: {fileID: 33860326652931090}
   - component: {fileID: 23525237905443718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret17-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 4648120889838036}
   - component: {fileID: 33728042979211196}
   - component: {fileID: 23648144488418212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1922,7 +1922,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4738559102834850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1937,7 +1937,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4064074891825932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret38-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,7 +1952,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4285680448296618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1969,7 +1969,7 @@ GameObject:
   - component: {fileID: 4868311524530098}
   - component: {fileID: 33729018644149020}
   - component: {fileID: 23805668720672024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1986,7 +1986,7 @@ GameObject:
   - component: {fileID: 4868720532508878}
   - component: {fileID: 199283261321899166}
   - component: {fileID: 198712046075886802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2001,7 +2001,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4060972234267064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2018,7 +2018,7 @@ GameObject:
   - component: {fileID: 4061207588629924}
   - component: {fileID: 33135841292900272}
   - component: {fileID: 23414830034525928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret15-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2035,7 +2035,7 @@ GameObject:
   - component: {fileID: 4392053937264248}
   - component: {fileID: 33943443990611742}
   - component: {fileID: 23797862536215708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2050,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4195652849090430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2067,7 +2067,7 @@ GameObject:
   - component: {fileID: 4479722675245608}
   - component: {fileID: 33825675722093734}
   - component: {fileID: 23764420780245082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,7 +2082,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4077988603534808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2099,7 +2099,7 @@ GameObject:
   - component: {fileID: 4540515208391982}
   - component: {fileID: 33128282620862570}
   - component: {fileID: 23132699237664450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret10-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,7 +2114,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4280005555394850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret45-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2129,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4220350755711392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret49-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2146,7 @@ GameObject:
   - component: {fileID: 4596655419324136}
   - component: {fileID: 33826179989642704}
   - component: {fileID: 23858730141387464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret09-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2161,7 +2161,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4183210410868226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret22-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2176,7 +2176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4683242576581326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret21-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2191,7 +2191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4818136616385298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 4578527602295806}
   - component: {fileID: 33733973898477586}
   - component: {fileID: 23028931639745498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,7 +2223,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4538777966906394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2240,7 +2240,7 @@ GameObject:
   - component: {fileID: 4593091553051716}
   - component: {fileID: 199363510864068114}
   - component: {fileID: 198121044482379374}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2255,7 +2255,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4334375112266124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret17-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,7 +2270,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4393582751793352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2287,7 +2287,7 @@ GameObject:
   - component: {fileID: 4385452968074278}
   - component: {fileID: 199698045663410848}
   - component: {fileID: 198898550577925012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2304,7 +2304,7 @@ GameObject:
   - component: {fileID: 4668227505759520}
   - component: {fileID: 33869023115475272}
   - component: {fileID: 23629223613768570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2319,7 +2319,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4098794345940658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2336,7 +2336,7 @@ GameObject:
   - component: {fileID: 4764914659212934}
   - component: {fileID: 33604576320562188}
   - component: {fileID: 23652725151621332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2351,7 +2351,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4316293563708402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 4162481695285480}
   - component: {fileID: 33425334994792980}
   - component: {fileID: 23744259945651812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret20-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2383,7 +2383,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4990041081136774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2400,7 +2400,7 @@ GameObject:
   - component: {fileID: 4195572981964100}
   - component: {fileID: 33164665814664474}
   - component: {fileID: 23898752872187438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret16-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 33308121167451248}
   - component: {fileID: 23293992707881360}
   - component: {fileID: 114964080317070212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2433,7 +2433,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4257425190773218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2450,7 +2450,7 @@ GameObject:
   - component: {fileID: 4620641333159582}
   - component: {fileID: 33407139216856424}
   - component: {fileID: 23510100487913270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2465,7 +2465,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4624640942141224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2480,7 +2480,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4666321664697758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,7 +2498,7 @@ GameObject:
   - component: {fileID: 33783007726586200}
   - component: {fileID: 23354675336312220}
   - component: {fileID: 114305145136728652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2516,7 +2516,7 @@ GameObject:
   - component: {fileID: 33786046926980650}
   - component: {fileID: 23108372580543270}
   - component: {fileID: 114050264726972150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2531,7 +2531,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4495118415267238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2546,7 +2546,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4436315709958378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret50-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2561,7 +2561,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4179067697569512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2576,7 +2576,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4494292610039508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret28-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2591,7 +2591,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4772923149484710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,7 +2608,7 @@ GameObject:
   - component: {fileID: 4920479042780910}
   - component: {fileID: 199923888321075866}
   - component: {fileID: 198512181275176690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2627,7 +2627,7 @@ GameObject:
   - component: {fileID: 23096155188375730}
   - component: {fileID: 114444480495395102}
   - component: {fileID: 64905890929004126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: detail0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2642,7 +2642,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4232856916682862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret32-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,7 +2657,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4252374740578196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2675,7 +2675,7 @@ GameObject:
   - component: {fileID: 33010207533080168}
   - component: {fileID: 23787654562251996}
   - component: {fileID: 114340963627838274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2692,7 +2692,7 @@ GameObject:
   - component: {fileID: 4643130287041564}
   - component: {fileID: 33541304716364282}
   - component: {fileID: 23071208565715976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2707,7 +2707,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4055219732650528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,7 +2722,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4666873153937720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret41-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2737,7 +2737,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4062085198430258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2755,7 +2755,7 @@ GameObject:
   - component: {fileID: 33614324126685496}
   - component: {fileID: 23561254458988876}
   - component: {fileID: 114747831739628990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,7 +2772,7 @@ GameObject:
   - component: {fileID: 4847013167638506}
   - component: {fileID: 33003058918611122}
   - component: {fileID: 23222759573010148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret19-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2787,7 +2787,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4004259504138292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 4836955073992524}
   - component: {fileID: 33254024154293876}
   - component: {fileID: 23197933388346134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,7 +2822,7 @@ GameObject:
   - component: {fileID: 33565350048381882}
   - component: {fileID: 23320523181236310}
   - component: {fileID: 114914267902397424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2837,7 +2837,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4077820826835980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thrusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2852,7 +2852,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4439492961562716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2869,7 +2869,7 @@ GameObject:
   - component: {fileID: 4671898907561556}
   - component: {fileID: 199179788098881520}
   - component: {fileID: 198660346695191678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2886,7 +2886,7 @@ GameObject:
   - component: {fileID: 4078012306278760}
   - component: {fileID: 199104663201930204}
   - component: {fileID: 198629337972631600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2903,7 +2903,7 @@ GameObject:
   - component: {fileID: 4144290568575932}
   - component: {fileID: 33893563796011374}
   - component: {fileID: 23080113763828970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret16-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2918,7 +2918,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4007720082843634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2933,7 +2933,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4842891362485280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2950,7 +2950,7 @@ GameObject:
   - component: {fileID: 4498302513603200}
   - component: {fileID: 199114819292257368}
   - component: {fileID: 198890399821777278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4078031704513104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2982,7 +2982,7 @@ GameObject:
   - component: {fileID: 4689225788254618}
   - component: {fileID: 33032666049318228}
   - component: {fileID: 23109075195691322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret18-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2999,7 +2999,7 @@ GameObject:
   - component: {fileID: 4710759412938570}
   - component: {fileID: 33417509913308318}
   - component: {fileID: 23476451082619392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3014,7 +3014,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4702438529656100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3029,7 +3029,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4033018330271436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3044,7 +3044,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4069747575841490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3059,7 +3059,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4315595614756556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret31-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3074,7 +3074,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578823998695778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret30-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3091,7 +3091,7 @@ GameObject:
   - component: {fileID: 4367030504411274}
   - component: {fileID: 33513203688186682}
   - component: {fileID: 23861190748457974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret11-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3108,7 +3108,7 @@ GameObject:
   - component: {fileID: 4314655251613704}
   - component: {fileID: 33622225600817834}
   - component: {fileID: 23986621977618366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret12-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3123,7 +3123,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4349697188909474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3140,7 +3140,7 @@ GameObject:
   - component: {fileID: 4363585240771928}
   - component: {fileID: 33272177024784192}
   - component: {fileID: 23163177637775818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3157,7 +3157,7 @@ GameObject:
   - component: {fileID: 4814007650697024}
   - component: {fileID: 33023552011330472}
   - component: {fileID: 23216386966214862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3172,7 +3172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4942296054944920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret37-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3187,7 +3187,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4441980967058002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret54-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,7 +3202,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4154444261313560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3220,7 +3220,7 @@ GameObject:
   - component: {fileID: 114555939708156814}
   - component: {fileID: 114169330899199018}
   - component: {fileID: 114926187391941254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Emporer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3235,7 +3235,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4498804776000286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret52-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4896785853761700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3265,7 +3265,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4209008976792624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret16-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3280,7 +3280,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4630987640413884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret46-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3295,7 +3295,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4735948313854410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3312,7 +3312,7 @@ GameObject:
   - component: {fileID: 4602509405571392}
   - component: {fileID: 33836586477188882}
   - component: {fileID: 23180989849893026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3327,7 +3327,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4695543178805004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thrusters.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3342,7 +3342,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4629964119130722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3357,7 +3357,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4280795653720570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3372,7 +3372,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4111824442035684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret39-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3390,7 +3390,7 @@ GameObject:
   - component: {fileID: 33663762258861530}
   - component: {fileID: 23842104304839908}
   - component: {fileID: 114282292070130458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3405,7 +3405,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4554797831041224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,7 +3422,7 @@ GameObject:
   - component: {fileID: 4242495870493138}
   - component: {fileID: 199603655612322370}
   - component: {fileID: 198008173576602338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3439,7 +3439,7 @@ GameObject:
   - component: {fileID: 4113445452841632}
   - component: {fileID: 33632417752543432}
   - component: {fileID: 23448175394933780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3456,7 +3456,7 @@ GameObject:
   - component: {fileID: 4874434963563322}
   - component: {fileID: 33719685654833122}
   - component: {fileID: 23820964883443194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3471,7 +3471,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4369070112395852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3486,7 +3486,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4001264601244068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret40-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3503,7 +3503,7 @@ GameObject:
   - component: {fileID: 4702039340278470}
   - component: {fileID: 33304239146801436}
   - component: {fileID: 23050685913766710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3518,7 +3518,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4134517727096350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret34-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3533,7 +3533,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4685266646780458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3548,7 +3548,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4184200517716602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3563,7 +3563,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4860192362576158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3581,7 +3581,7 @@ GameObject:
   - component: {fileID: 33727387478437110}
   - component: {fileID: 23805913103355192}
   - component: {fileID: 114537668181215700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3598,7 +3598,7 @@ GameObject:
   - component: {fileID: 4661210627331236}
   - component: {fileID: 33894326051169268}
   - component: {fileID: 23609602435453802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3613,7 +3613,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4654401450395322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3628,7 +3628,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4679727871248956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3643,7 +3643,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4947794608689464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3658,7 +3658,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4362187537928354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3673,7 +3673,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4748504984827672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3690,7 +3690,7 @@ GameObject:
   - component: {fileID: 4863665532363954}
   - component: {fileID: 33759150143000722}
   - component: {fileID: 23790350052821098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret19-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3705,7 +3705,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4387304928857778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret20-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3720,7 +3720,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4398105055500130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 4550862490367144}
   - component: {fileID: 199612778433471032}
   - component: {fileID: 198585900283640086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3752,7 +3752,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4296988437315340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret25-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3767,7 +3767,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4375055900073806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: multifirepoints15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3782,7 +3782,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4100016373047870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helper.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3799,7 +3799,7 @@ GameObject:
   - component: {fileID: 4100339776438946}
   - component: {fileID: 33994364032961046}
   - component: {fileID: 23235506896013342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret14-base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3814,7 +3814,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4038235146804488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoints29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3832,7 +3832,7 @@ GameObject:
   - component: {fileID: 33186680925254084}
   - component: {fileID: 23494123735337634}
   - component: {fileID: 114346070810842736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3847,7 +3847,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4014665297558024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret14-base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3864,7 +3864,7 @@ GameObject:
   - component: {fileID: 4513241200028708}
   - component: {fileID: 33126227444387444}
   - component: {fileID: 23672192338842578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret14-arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3882,7 +3882,7 @@ GameObject:
   - component: {fileID: 33841828513987564}
   - component: {fileID: 23170700453526614}
   - component: {fileID: 114441058974646306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3899,7 +3899,7 @@ GameObject:
   - component: {fileID: 4813112430702490}
   - component: {fileID: 33724616224559216}
   - component: {fileID: 23390581781143374}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turret36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10693,6 +10693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114133604104851480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10704,6 +10705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114169330899199018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10735,6 +10737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114282292070130458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10746,6 +10749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114291185916453784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10757,6 +10761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114305145136728652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10768,6 +10773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114305815326137504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10779,6 +10785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114340963627838274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10832,6 +10839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114444480495395102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10868,6 +10876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114555939708156814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10921,6 +10930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d908d00b06e83b24f8e41d267b183142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyDirection: {x: 0, y: 1, z: 0}
 --- !u!114 &114914267902397424
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -61,7 +61,6 @@ namespace FreeSpace{
         private void UpdateBehaviours() {
             acceleration = Vector3.zero;
 
-            Debug.Log (behaviours[0].ToString ());
             for (int i=0; i<behaviours.Count; i++) {
                 if (behaviours[i].enabled) {
                     Vector3 behaviourAcceleration = behaviours[i].UpdateForce () * behaviours[i].weight;

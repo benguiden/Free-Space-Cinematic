@@ -9,7 +9,7 @@ namespace FreeSpace
     [RequireComponent(typeof(BoidActor))]
     public class OffsetPursue : BoidBehaviour{
 
-        #region Public Variabled
+        #region Public Variables
         [Header ("Pursuing")]
         public BoidActor leader;
         #endregion

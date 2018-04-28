@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4821455799186014}
   - component: {fileID: 199101360071287588}
   - component: {fileID: 198228981676806768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4941641134958140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gunbank01-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4217642251244706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 33586720500176882}
   - component: {fileID: 23760028640478430}
   - component: {fileID: 114424921932339810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4867957242626018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank02-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4138707091006144}
   - component: {fileID: 199467935096225790}
   - component: {fileID: 198443295002568030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thruster.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000464346482196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4882009391040472}
   - component: {fileID: 82727781837384368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EngineAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 33536396754397788}
   - component: {fileID: 23899787039510964}
   - component: {fileID: 114195092007331658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4955034325001310}
   - component: {fileID: 82903171307603530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 33659866508238596}
   - component: {fileID: 23482250566923630}
   - component: {fileID: 114107423108386564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 33438065563709794}
   - component: {fileID: 23764525651978386}
   - component: {fileID: 114554274801532788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 33833623482250358}
   - component: {fileID: 23268524703667152}
   - component: {fileID: 114484923802223462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debris02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4823006464724674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thrusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4843808233286002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 124468737862063116}
   - component: {fileID: 81877847599221802}
   - component: {fileID: 114531890160954234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera (1)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4442031670910810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4939718226379726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4332485980542560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 23806649190532316}
   - component: {fileID: 114809684223139570}
   - component: {fileID: 64448290855722266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: detail0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4785190339497304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank02-03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4024392383807076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank02-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,9 +380,10 @@ GameObject:
   - component: {fileID: 4499286474984052}
   - component: {fileID: 114440603965110814}
   - component: {fileID: 114583125262376626}
+  - component: {fileID: 114906013060175062}
   - component: {fileID: 114883956890629662}
   - component: {fileID: 114754271634050132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Intercepter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +398,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4081713500722178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank02-04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +413,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4842918444145720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +428,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4612060986082166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gunbank01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +443,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4744594205687198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +458,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4288051669654058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +473,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4309905137427840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: missilebank01-07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +488,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636760688562510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gunbank01-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,6 +1659,29 @@ MonoBehaviour:
   weight: 1
   target: {fileID: 0}
   desiredDistance: 300
+--- !u!114 &114906013060175062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562773890175968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56adc4bf7ec713f41851c8fcf4168b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculationUpdateSpeed: 1
+  weight: 10
+  scale: 8
+  forwardFeelerDepth: 45
+  sideFeelerDepth: 30
+  frontFeelerUpdatesPerSecond: 10
+  sideFeelerUpdatesPerSecond: 5
+  feelerRadius: 2
+  forceType: 2
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!124 &124468737862063116
 Behaviour:
   m_ObjectHideFlags: 1

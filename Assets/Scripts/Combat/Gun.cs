@@ -56,6 +56,7 @@ namespace FreeSpace
                     newProjectile.speed = projectileSpeed;
                     newProjectile.damage = damage;
                     newProjectile.sourceShip = ship;
+                    newProjectile.faction = ship.faction;
 
                     if (firstProjectile) {
                         AudioSource projectileAudioSource = newProjectile.GetComponent<AudioSource> ();
@@ -73,6 +74,16 @@ namespace FreeSpace
                 }
 
             }
+        }
+
+        public bool AimingAt(BoidActor targetBoid, float accuracy) {
+            float timeToTarget = Vector3.Distance (targetBoid.transform.position, ship.transform.position) / projectileSpeed;
+            Vector3 targetPosition = targetBoid.transform.position + (targetBoid.velocity * timeToTarget);
+
+            if (Vector3.Angle (ship.transform.forward, targetPosition - ship.transform.position) <= accuracy)
+                return true;
+            else
+                return false;
         }
         #endregion
 

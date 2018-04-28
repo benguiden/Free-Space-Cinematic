@@ -27,7 +27,7 @@ namespace FreeSpace
 
         #region Mono Methods
         private void OnDrawGizmos() {
-            if ((Application.isPlaying) && (enabled)) {
+            if ((Application.isPlaying) && (enabled) && (target != null)) {
                 if (boid == null)
                     boid = GetComponent<BoidActor> ();
 

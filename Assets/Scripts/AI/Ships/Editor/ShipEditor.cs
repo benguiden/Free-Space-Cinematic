@@ -58,4 +58,17 @@ namespace FreeSpace
         }
     }
 
+    [CustomEditor (typeof (IntercepterShip))]
+    public class IntercepterShipEditor : Editor
+    {
+        public override void OnInspectorGUI() {
+            base.OnInspectorGUI ();
+            IntercepterShip shipScript = (IntercepterShip)target;
+
+            if (shipScript.stateMachine != null)
+                if (shipScript.stateMachine.state != null)
+                    EditorGUILayout.TextField ("State", shipScript.stateMachine.state.ToString ());
+        }
+    }
+
 }

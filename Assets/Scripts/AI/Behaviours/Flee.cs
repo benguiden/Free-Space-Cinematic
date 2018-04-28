@@ -47,9 +47,13 @@ namespace FreeSpace {
         protected override void Calculate() {
             if (avoidingBoids != null) {
                 desiredPosition = Vector3.zero;
-                foreach (Transform avoidingBoid in avoidingBoids) {
-                    Vector3 Difference = avoidingBoid.position - transform.position;
-                    desiredPosition += Difference.normalized * (Difference.magnitude / 200f);
+                for (int i=0; i<avoidingBoids.Count; i++) {
+                    if (avoidingBoids[i] != null) {
+                        Vector3 difference = avoidingBoids[i].position - transform.position;
+                        desiredPosition += difference.normalized * (difference.magnitude / 200f);
+                    } else {
+
+                    }
                 }
                 desiredPosition = transform.position - desiredPosition;
             }

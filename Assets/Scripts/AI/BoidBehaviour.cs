@@ -24,7 +24,6 @@ namespace FreeSpace{
         #region Mono Methods
         protected virtual void Awake() {
             boid = GetComponent<BoidActor> ();
-            boid.behaviours.Add (this);
 
             if (enabled)
                 calculationsCo = StartCoroutine (UpdateCalculations ());

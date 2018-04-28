@@ -37,25 +37,17 @@ namespace FreeSpace {
                 yield return null;
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        Vector3 emporerPosition = ShipManager.main.emporer.transform.position;
+                        if (ShipManager.main.emporer == null) {
 
-                        float closestDistance = threatDistance;
-                        Ship threatShip = null;
-
-                        foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {
-                            if ((otherShip.Value.faction != ship.faction)) {
-                                float otherShipDistance = Vector3.Distance (otherShip.Value.transform.position, emporerPosition);
-                                if ((otherShipDistance < closestDistance) && (otherShip.Value != ship)) {
-                                    threatShip = otherShip.Value;
-                                    closestDistance = otherShipDistance;
-                                }
-                            }
-                        }
-
-                        if (threatShip != null) {
-                            stateMachine.ChangeState (new ProtonPersueState (stateMachine, ship, threatShip));
                         } else {
-                            yield return new WaitForSeconds (updateRefresh);
+                            Vector3 emporerPosition = ShipManager.main.emporer.transform.position;
+
+                            Ship threatShip = ShipManager.main.BiggestThreat (ship.transform.position, ship.faction, threatDistance);
+                            if (threatShip != null) {
+                                stateMachine.ChangeState (new ProtonPersueState (stateMachine, ship, threatShip));
+                            } else {
+                                yield return new WaitForSeconds (updateRefresh);
+                            }
                         }
                     }
                 }
@@ -114,7 +106,7 @@ namespace FreeSpace {
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
                         if (target != null) {
-                            if (Vector3.Angle (ship.transform.forward, target.transform.position - ship.transform.position) <= desiredAccuracy) {
+                            if (ship.guns[0].AimingAt (target.boid, desiredAccuracy)) {
                                 ship.guns[0].AttemptShoot ();
                             }
                             yield return null;

@@ -68,6 +68,7 @@ namespace FreeSpace {
             private Ship leaderShip;
             private OffsetPursue offsetBehaviour;
             private float disperceDistance = 200f;
+            private float threatDistance = 500f;
 
             public BansheeFollowLeader(StateMachine _stateMachine, Ship _ship, Ship _leaderShip) : base(_stateMachine, _ship) {
                 leaderShip = _leaderShip;
@@ -106,7 +107,7 @@ namespace FreeSpace {
                             BoidActor leaderTarget = leaderShip.boid.GetBehaviour<Pursue> ().target;
                             if (leaderTarget != null) {
                                 if (Vector3.Distance (leaderShip.transform.position, leaderTarget.transform.position) <= disperceDistance) {
-                                    Ship threatShip = ShipManager.main.BiggestThreat (ship.transform.position, ship.faction, 500f);
+                                    Ship threatShip = ShipManager.main.BiggestThreat (ship.transform.position, ship.faction, threatDistance);
                                     if (threatShip != null) {
                                         stateMachine.ChangeState (new BansheePersueState (stateMachine, ship, threatShip));
                                     } else {
@@ -176,7 +177,7 @@ namespace FreeSpace {
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
                         if (target != null) {
-                            if (Vector3.Angle (ship.transform.forward, target.transform.position - ship.transform.position) <= desiredAccuracy) {
+                            if (ship.guns[0].AimingAt (target.boid, desiredAccuracy)) {
                                 ship.guns[0].AttemptShoot ();
                             }
                             yield return null;

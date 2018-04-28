@@ -19,6 +19,8 @@ namespace FreeSpace
 
         [HideInInspector]
         public Ship sourceShip;
+        [HideInInspector]
+        public Ship.Faction faction;
         #endregion
 
         #region Private Variables
@@ -55,7 +57,7 @@ namespace FreeSpace
             if ((canCauseDamage) && (isActiveAndEnabled)) {
                 if (other.gameObject.tag == "ShipCollider") {
                     ShipCollider shipCollider = other.GetComponent<ShipCollider> ();
-                    if (shipCollider.ship != sourceShip) {
+                    if ((shipCollider.ship != sourceShip) && (shipCollider.ship.faction != faction)) {
                         shipCollider.ship.Damage (damage);
                         canCauseDamage = false;
                         ShipHitVFX (other, shipCollider.ship.GetVFXDamagePrefab ());

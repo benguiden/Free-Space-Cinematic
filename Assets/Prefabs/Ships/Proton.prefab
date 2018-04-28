@@ -55,13 +55,14 @@ GameObject:
   - component: {fileID: 33397451467620916}
   - component: {fileID: 23077086070167118}
   - component: {fileID: 114063213698528018}
+  - component: {fileID: 64957324928286352}
   m_Layer: 0
   m_Name: detail0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1084922137928296
 GameObject:
   m_ObjectHideFlags: 1
@@ -140,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1170052856002994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1096,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 5000
@@ -1688,13 +1689,27 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 84799993c41df9f4889ffe9767522a40, type: 3}
+--- !u!64 &64957324928286352
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058973177726408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300022, guid: efb7a80215208ae4691e80c39ea02aa3, type: 3}
 --- !u!81 &81895203985519894
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721717428615360}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &82147559393563532
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2221,11 +2236,11 @@ MonoBehaviour:
   mass: 1
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  maxSpeed: 100
-  maxAcceleration: 15
+  maxSpeed: 150
+  maxAcceleration: 25
   bankingAmount: 20
   bankingSpeed: 0.08
-  rotationSpeed: 2
+  rotationSpeed: 10
   behaviours: []
 --- !u!114 &114840844234996448
 MonoBehaviour:

@@ -63,6 +63,11 @@ namespace FreeSpace
             foreach (Gun gun in guns) {
                 gun.ship = this;
             }
+
+            if (engineAudioSource != null) {
+                if (engineAudioSource.clip != null)
+                    engineAudioSource.time = Random.Range (0f, engineAudioSource.clip.length);
+            }
         }
 
         private void Start() {

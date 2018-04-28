@@ -29,6 +29,46 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: angleRange.x
+    value: 90
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: angleRange.y
+    value: 180
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: angleRange.z
+    value: 90
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: barrelDirection
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: angularSpeed
+    value: 0.35
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: faction
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: accuracy
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shootingRange
+    value: 1550
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reloadTime
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: refreshTime
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: projectile
     value: 
     objectReference: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d,
@@ -38,26 +78,6 @@ Preset:
     value: 5000
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: angleRange.x
-    value: 30
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: angleRange.y
-    value: 30
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: angleRange.z
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: shootingRange
-    value: 600
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: reloadTime
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: refreshTime
-    value: 0.5
+    propertyPath: damage
+    value: 25
     objectReference: {fileID: 0}

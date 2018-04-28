@@ -15,6 +15,7 @@ namespace FreeSpace
         public float angularSpeed = 0.25f;
 
         [Header ("Shooting")]
+        public Ship.Faction faction = Ship.Faction.Terrans;
         public float accuracy = 0.75f;
         public float shootingRange = 600f;
         public float reloadTime = 1f;
@@ -27,7 +28,7 @@ namespace FreeSpace
         #endregion
 
         #region Private Variables
-        private BoidActor target;
+        private Ship target;
         private bool canShoot = true;
         private Coroutine reloadCo;
         private Vector3 targetPosition;
@@ -53,7 +54,7 @@ namespace FreeSpace
             if (target != null) {
                 float timeToHit = Vector3.Distance (transform.position, target.transform.position) / projectileSpeed;
 
-                targetPosition = target.transform.position + (target.velocity * timeToHit);
+                targetPosition = target.transform.position + (target.boid.velocity * timeToHit);
 
                 LookAtTarget ();
 
@@ -78,21 +79,23 @@ namespace FreeSpace
             }
         }
 
-        private BoidActor CalculateTarget() {
-            BoidActor newTarget = null;
+        private Ship CalculateTarget() {
+            Ship newTarget = null;
             float closestDistance = shootingRange;
-            foreach (BoidActor boidActor in BoidManager.Main ().boidActors) { //Test which enemy boid is closest to turret
-                if ((boidActor != ShipManager.main.emporer.boid) && (boidActor.isActiveAndEnabled)) { //Change to isEnemy
-                    Vector3 boidPosition = boidActor.transform.position;
+            foreach (Ship ship in ShipManager.main.ships.Values) { //Test which enemy boid is closest to turret
+                if ((ship != ShipManager.main.emporer) && (ship.isActiveAndEnabled)) { //Change to isEnemy
+                    if (ship.faction != faction) {
+                        Vector3 shipPosition = ship.transform.position;
 
-                    if ((Mathf.Abs (boidPosition.x - transform.position.x) < shootingRange)      //Calculating the distance to the boid in a box first
-                        && (Mathf.Abs (boidPosition.y - transform.position.y) < shootingRange)   //As to eliminate most boids from the distance calculation
-                        && (Mathf.Abs (boidPosition.z - transform.position.z) < shootingRange)) {//Which uses the very taxing Sqrt() function
+                        if ((Mathf.Abs (shipPosition.x - transform.position.x) < shootingRange)      //Calculating the distance to the boid in a box first
+                            && (Mathf.Abs (shipPosition.y - transform.position.y) < shootingRange)   //As to eliminate most boids from the distance calculation
+                            && (Mathf.Abs (shipPosition.z - transform.position.z) < shootingRange)) {//Which uses the very taxing Sqrt() function
 
-                        float distanceToBoid = Vector3.Distance (transform.position, boidPosition);
-                        if (distanceToBoid < closestDistance) {
-                            newTarget = boidActor;
-                            closestDistance = distanceToBoid;
+                            float distanceToBoid = Vector3.Distance (transform.position, shipPosition);
+                            if (distanceToBoid < closestDistance) {
+                                newTarget = ship;
+                                closestDistance = distanceToBoid;
+                            }
                         }
                     }
                 }

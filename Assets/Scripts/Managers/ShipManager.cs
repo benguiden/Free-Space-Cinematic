@@ -15,11 +15,26 @@ namespace FreeSpace {
 
         #region Private Variables
         private uint shipIDIndex = 0;
+        private Coroutine cinematicShipSo;
         #endregion
 
         #region Mono Methods
         private void Awake() {
             main = this;
+        }
+
+        private void Start() {
+            if (cinematicShipSo != null)
+                StopCoroutine (cinematicShipSo);
+
+            cinematicShipSo = StartCoroutine (ICinematicShips ());
+        }
+
+        private void OnEnable() {
+            if (cinematicShipSo != null)
+                StopCoroutine (cinematicShipSo);
+
+            cinematicShipSo = StartCoroutine (ICinematicShips ());
         }
         #endregion
 
@@ -51,6 +66,42 @@ namespace FreeSpace {
             return threatShip;
         }
         #endregion
+
+        private IEnumerator ICinematicShips() {
+            CameraAngle cameraAngle = new CameraAngle ();
+            cameraAngle.interest = 1f;
+            
+            while ((enabled) && (ships.Count > 0)) {
+                Ship randomShip = GetRandomShip ();
+
+                if (randomShip != null) {
+                    cameraAngle.interestTime = 2.5f;
+                    if (Random.value < 0.25f)
+                        cameraAngle.stationary = true;
+                    if (Random.value < 0.25f)
+                        cameraAngle.localOffset = true;
+                    cameraAngle.focus = GetRandomShip ().transform;
+
+                    Director.main.AddAngle (cameraAngle);
+                }
+
+                yield return new WaitForSeconds (Random.Range (1f, 2.5f));
+            }
+        }
+
+        private Ship GetRandomShip() {
+            if (ships.Count > 0) {
+                int randomIndex = Random.Range (0, ships.Count);
+                foreach (Ship currentShip in ships.Values) {
+                    if (randomIndex > 0)
+                        randomIndex--;
+                    else
+                        return currentShip;
+                }
+            }
+
+            return null;
+        }
 
     }
 

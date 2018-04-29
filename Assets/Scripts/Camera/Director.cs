@@ -92,6 +92,10 @@ namespace FreeSpace
         #endregion
 
         #region Angle Methods
+        public void AddAngle(CameraAngle newAngle) {
+            cameraAngles.Add (newAngle);
+        }
+
         public void NewCameraAngle(CameraAngle newAngle) {
             angleTimeLeft = Random.Range (newAngle.timeRange.x, newAngle.timeRange.y);
             angleFov = Random.Range (newAngle.fovRange.x, newAngle.fovRange.y);
@@ -103,6 +107,8 @@ namespace FreeSpace
                 mainCamera.transform.position = currentAngle.focus.position + angleOffset;
             else
                 mainCamera.transform.position = currentAngle.focus.TransformPoint (angleOffset);
+
+            mainCamera.fieldOfView = angleFov;
 
             lookAtComponent.NewTarget (newAngle.focus);
 
@@ -120,12 +126,34 @@ namespace FreeSpace
                             mainCamera.transform.position = currentAngle.focus.TransformPoint (angleOffset);
                     }
                 } else {
-                    //Change Angles
-                    Debug.Log ("Change Angles");
+                    ChangeAngles ();
                 }
             } else {
-                //Zoom Out
-                Debug.Log ("Zoom Out");
+                ZoomOut ();
+            }
+        }
+
+        private void ZoomOut() {
+            angleTimeLeft = Random.Range (currentAngle.timeRange.x, currentAngle.timeRange.y);
+            angleFov = currentAngle.fovRange.y;
+
+            angleOffset = currentAngle.distanceRange.x * new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), Random.Range (-1f, 1f));
+
+            if (currentAngle.localOffset)
+                mainCamera.transform.position = currentAngle.focus.position + angleOffset;
+            else
+                mainCamera.transform.position = currentAngle.focus.TransformPoint (angleOffset);
+
+            mainCamera.fieldOfView = angleFov;
+
+            lookAtComponent.NewTarget (currentAngle.focus);
+        }
+
+        private void ChangeAngles() {
+            if (cameraAngles.Count == 0) {
+                NewCameraAngle (currentAngle);
+            } else {
+                NewCameraAngle (GetBestAngle ());
             }
         }
         #endregion

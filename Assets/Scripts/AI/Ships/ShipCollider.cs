@@ -14,6 +14,10 @@ namespace FreeSpace {
             gameObject.tag = "ShipCollider";
         }
 
+        private void Start() {
+            
+        }
+
     }
 
 }

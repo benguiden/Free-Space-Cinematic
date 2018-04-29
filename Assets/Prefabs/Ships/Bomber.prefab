@@ -468,7 +468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1332644865375286
 GameObject:
   m_ObjectHideFlags: 1
@@ -2777,7 +2777,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 340441199beed9b4eab94bda3b3b33e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3277,7 +3277,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 1b5889cbd76373b49a6c5f364684d1a0, type: 3}
@@ -4809,7 +4809,9 @@ MonoBehaviour:
     type: 2}
   hullDamageVFXPrefab: {fileID: 1878976106071784, guid: f906039be04c84d43a2643ce1a219dff,
     type: 2}
-  shieldRenderer: {fileID: 0}
+  shieldRenderer: {fileID: 23811679305966732}
+  shieldAlpha: 0.5
+  shieldFlashTime: 0.5
   engineAudioSource: {fileID: 82493172235232528}
   engineBaseVolume: 0.25
   engineBasePitch: 1

@@ -17,6 +17,8 @@ namespace FreeSpace
         public Object destroyVFXPrefab;
         public Object shieldDamageVFXPrefab, hullDamageVFXPrefab;
         public MeshRenderer shieldRenderer;
+        public float shieldAlpha = 0.5f;
+        public float shieldFlashTime = 0.5f;
 
         [Header("Audio")]
         public AudioSource engineAudioSource;
@@ -48,6 +50,7 @@ namespace FreeSpace
 
         #region Private Variables
         protected uint shipID;
+        private Coroutine shieldFlashCo;
         #endregion
 
         #region Mono Methods
@@ -95,13 +98,13 @@ namespace FreeSpace
 
         #region Battle Interaction Methods
         public void Damage(float damageInflicted) {
-            Debug.Log (gameObject.name + " Health: " + (shieldHealth + hullHealth).ToString() + ".\n");
             if (shieldHealth > 0f) {
                 shieldHealth -= damageInflicted;
+                FlashShield ();
                 if (shieldHealth <= 0f) {
                     shieldHealth = 0f;
-                    if (shieldRenderer != null)
-                        shieldRenderer.enabled = false;
+                    shieldCollider.enabled = false;
+                    shieldCollider.gameObject.SetActive (false);
                 }
             } else {
                 hullHealth -= damageInflicted;
@@ -125,8 +128,6 @@ namespace FreeSpace
                 behaviour.enabled = false;
             }
             boid.velocity = Vector3.zero;
-
-            //Camera.main.transform.SetParent (null);
 
             if (mainMesh != null)
                 mainMesh.SetActive (false);
@@ -167,6 +168,38 @@ namespace FreeSpace
                 if (boid.speed > 0.01f)
                     engineAudioSource.Play ();
             }
+        }
+        #endregion
+
+        #region Shield Methods
+        private void FlashShield() {
+            if (shieldRenderer != null) {
+                if (shieldFlashCo != null)
+                    StopCoroutine (shieldFlashCo);
+
+                shieldFlashCo = StartCoroutine (IShieldFlash ());
+            }
+        }
+
+        private IEnumerator IShieldFlash() {
+            if (shieldRenderer != null) {
+                shieldRenderer.enabled = true;
+
+                float timeLeft = shieldFlashTime;
+
+                while (timeLeft > 0f) {
+                    Color shieldColour = shieldRenderer.material.color;
+                    shieldColour.a = shieldAlpha * (timeLeft / shieldFlashTime);
+                    shieldRenderer.material.color = shieldColour;
+                    timeLeft -= Time.deltaTime;
+                    yield return null;
+                }
+
+                shieldRenderer.enabled = false;
+
+            }
+
+            shieldFlashCo = null;
         }
         #endregion
 

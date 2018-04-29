@@ -57,7 +57,7 @@ namespace FreeSpace
             if ((canCauseDamage) && (isActiveAndEnabled)) {
                 if (other.gameObject.tag == "ShipCollider") {
                     ShipCollider shipCollider = other.GetComponent<ShipCollider> ();
-                    if ((shipCollider.ship != sourceShip) && (shipCollider.ship.faction != faction)) {
+                    if ((shipCollider.ship != sourceShip) && (shipCollider.ship.faction != faction) && (shipCollider.enabled)) {
                         shipCollider.ship.Damage (damage);
                         canCauseDamage = false;
                         ShipHitVFX (other, shipCollider.ship.GetVFXDamagePrefab ());

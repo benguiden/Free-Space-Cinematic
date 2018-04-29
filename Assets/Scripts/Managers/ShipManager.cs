@@ -87,6 +87,8 @@ namespace FreeSpace {
 
                 yield return new WaitForSeconds (Random.Range (1f, 2.5f));
             }
+
+            cinematicShipSo = null;
         }
 
         private Ship GetRandomShip() {

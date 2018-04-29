@@ -327,7 +327,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -469,7 +469,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -610,7 +610,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -5932,7 +5932,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -6929,7 +6929,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -7086,6 +7086,8 @@ MonoBehaviour:
   shieldDamageVFXPrefab: {fileID: 0}
   hullDamageVFXPrefab: {fileID: 0}
   shieldRenderer: {fileID: 0}
+  shieldAlpha: 0.5
+  shieldFlashTime: 0.5
   engineAudioSource: {fileID: 0}
   engineBaseVolume: 0.25
   engineBasePitch: 1
@@ -11959,6 +11961,10 @@ Prefab:
     - target: {fileID: 4808118098563496, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664076485557562, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 174302b5ace60d844bc256cf8115dea6, type: 2}
@@ -17101,7 +17107,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1245
+      value: 1042
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -17109,7 +17115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1901
+      value: 3046
       objectReference: {fileID: 0}
     - target: {fileID: 4758712339121954, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17137,7 +17143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1376703576816340, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
@@ -17324,7 +17330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -17637,7 +17643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
@@ -18718,6 +18724,8 @@ MonoBehaviour:
   shieldDamageVFXPrefab: {fileID: 0}
   hullDamageVFXPrefab: {fileID: 0}
   shieldRenderer: {fileID: 0}
+  shieldAlpha: 0.5
+  shieldFlashTime: 0.5
   engineAudioSource: {fileID: 0}
   engineBaseVolume: 0.25
   engineBasePitch: 1

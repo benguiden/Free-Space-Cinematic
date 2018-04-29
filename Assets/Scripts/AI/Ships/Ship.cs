@@ -16,9 +16,12 @@ namespace FreeSpace
         [Header ("Visuals")]
         public Object destroyVFXPrefab;
         public Object shieldDamageVFXPrefab, hullDamageVFXPrefab;
+        public MeshRenderer shieldRenderer;
 
         [Header("Audio")]
         public AudioSource engineAudioSource;
+        public float engineBaseVolume = 0.25f;
+        public float engineBasePitch = 1f;
         [Tooltip ("Put in the range (0,1)")]
         public AnimationCurve engineVolume, enginePitch;
 
@@ -73,6 +76,9 @@ namespace FreeSpace
         private void Start() {
             if (ShipManager.main.emporer != this)
                 shipID = ShipManager.main.AddShip(this);
+
+            if (shieldRenderer != null)
+                shieldRenderer.enabled = true;
         }
 
         private void Update() {
@@ -94,7 +100,8 @@ namespace FreeSpace
                 shieldHealth -= damageInflicted;
                 if (shieldHealth <= 0f) {
                     shieldHealth = 0f;
-                    //Deactivate Shield
+                    if (shieldRenderer != null)
+                        shieldRenderer.enabled = false;
                 }
             } else {
                 hullHealth -= damageInflicted;
@@ -150,8 +157,8 @@ namespace FreeSpace
         #region Audio Methods
         private void UpdateEngineAudio() {
             float engineAmount = boid.speed / boid.maxSpeed;
-            engineAudioSource.volume = engineVolume.Evaluate (engineAmount);
-            engineAudioSource.pitch = enginePitch.Evaluate (engineAmount);
+            engineAudioSource.volume = engineVolume.Evaluate (engineAmount) * engineBaseVolume;
+            engineAudioSource.pitch = enginePitch.Evaluate (engineAmount) * engineBasePitch;
 
             if (engineAudioSource.isPlaying) {
                 if (boid.speed <= 0.01f)

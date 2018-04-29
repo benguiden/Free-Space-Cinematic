@@ -13,11 +13,20 @@ namespace FreeSpace
         private Vector3 targetPosition;
 
         private void Start() {
-            targetPosition = target.position;
+            if (target != null)
+                targetPosition = target.position;
         }
 
         private void Update() {
-            targetPosition = Vector3.Lerp (targetPosition, target.position, Time.deltaTime * 60f * (1f - smoothness));
+            if (target != null) {
+                targetPosition = Vector3.Lerp (targetPosition, target.position, Time.deltaTime * 60f * (1f - smoothness));
+                transform.LookAt (targetPosition);
+            }
+        }
+
+        public void NewTarget(Transform newTarget) {
+            target = newTarget;
+            targetPosition = target.position;
             transform.LookAt (targetPosition);
         }
 

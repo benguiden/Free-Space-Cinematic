@@ -8,7 +8,7 @@ namespace FreeSpace {
 
         public class ProtonPatrolState : ShipState {
 
-            public float threatDistance = 4000f;
+            public float threatDistance = 2500f;
             public OffsetPursue patrolBehaviour;
 
             public ProtonPatrolState(StateMachine _stateMachine, Ship _ship, BoidActor _leader) : base(_stateMachine, _ship) {
@@ -66,10 +66,11 @@ namespace FreeSpace {
 
         public class ProtonPersueState : ShipState {
 
-            public Ship target;
-            public float targetDesiredDistance = 250f;
+            private Ship target;
+            private float targetDesiredDistance = 250f;
             private Pursue pursueBehaviour;
-            public float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            private float maxDistance = 2500f;
+            private float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public ProtonPersueState(StateMachine _stateMachine, Ship _ship, Ship threat) : base(_stateMachine, _ship) {
                 target = threat;
@@ -106,7 +107,9 @@ namespace FreeSpace {
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
                         if (target != null) {
-                            if (ship.guns[0].AimingAt (target.boid, desiredAccuracy)) {
+                            if (Vector3.Distance (ship.transform.position, target.transform.position) >= maxDistance) {
+                                stateMachine.ChangeState (new ProtonPatrolState (stateMachine, ship, ShipManager.main.emporer.boid));
+                            } else if (ship.guns[0].AimingAt (target.boid, desiredAccuracy)) {
                                 ship.guns[0].AttemptShoot ();
                             }
                             yield return null;

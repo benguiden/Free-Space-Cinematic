@@ -21,7 +21,6 @@ namespace FreeSpace
 
         private IEnumerator IActivate(Vector3 explositionPosition, float velocity, float lifeTime) {
             Vector3 newVelocity = transform.TransformDirection (flyDirection).normalized * velocity;
-            Debug.Log (newVelocity);
             while ((lifeTime > 0f) && (isActiveAndEnabled)) {
                 transform.position += newVelocity * Time.deltaTime;
 

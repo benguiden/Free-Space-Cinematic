@@ -1644,10 +1644,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b536fc41f8aa3f48a7729bf7df777e4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cca6f6b3c8fac0c42bff2d506a24d56c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
-  m_Pitch: 0
+  m_Volume: 0.1351425
+  m_Pitch: 0.7463982
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -1655,9 +1655,9 @@ AudioSource:
   Priority: 160
   DopplerLevel: 0.1
   MinDistance: 1
-  MaxDistance: 1000
+  MaxDistance: 250
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1667,21 +1667,21 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -2.207463
-      outSlope: -2.207463
+      inSlope: -4.907407
+      outSlope: -4.907407
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.48316717
+      outWeight: 0.09056604
     - serializedVersion: 3
-      time: 0.34494618
-      value: 0.3698662
-      inSlope: -0.9766287
-      outSlope: -0.9766287
+      time: 0.10050419
+      value: 0.254937
+      inSlope: -1.0017229
+      outSlope: -1.0017229
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.32151464
+      outWeight: 0.2773237
     - serializedVersion: 3
       time: 1
       value: 0
@@ -1891,27 +1891,27 @@ MonoBehaviour:
   shieldFlashTime: 0.5
   engineAudioSource: {fileID: 82147559393563532}
   engineBaseVolume: 0.25
-  engineBasePitch: 0.75
+  engineBasePitch: 1
   engineVolume:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 2.55311
-      outSlope: 2.55311
+      value: 0.5
+      inSlope: 0.16709131
+      outSlope: 0.16709131
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.047413792
+      outWeight: 0.20474137
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.23825449
-      outSlope: 0.23825449
+      inSlope: 0.039389182
+      outSlope: 0.039389182
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.17672414
+      inWeight: 0.13362068
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2

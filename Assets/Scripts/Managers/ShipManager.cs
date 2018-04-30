@@ -28,14 +28,14 @@ namespace FreeSpace {
             if (cinematicShipSo != null)
                 StopCoroutine (cinematicShipSo);
 
-            cinematicShipSo = StartCoroutine (ICinematicShips ());
+            cinematicShipSo = StartCoroutine (ICinematicShips (15f));
         }
 
         private void OnEnable() {
             if (cinematicShipSo != null)
                 StopCoroutine (cinematicShipSo);
 
-            cinematicShipSo = StartCoroutine (ICinematicShips ());
+            cinematicShipSo = StartCoroutine (ICinematicShips (0f));
         }
         #endregion
 
@@ -68,27 +68,32 @@ namespace FreeSpace {
         }
         #endregion
 
-        private IEnumerator ICinematicShips() {
+        private IEnumerator ICinematicShips(float delay) {
+            yield return new WaitForSeconds (delay);
             CameraAngle cameraAngle = new CameraAngle ();
             cameraAngle.interest = 1f;
+            cameraAngle.timeRange = new Vector2 (3f, 6f);
             
             while ((enabled) && (ships.Count > 0)) {
-                if (Random.value >= 0.25f) {
+                if (Random.Range(0f, 1f) >= 0.25f) {
                     Ship randomShip = GetRandomShip();
 
                     if (randomShip != null) {
                         cameraAngle.interestTime = 2.5f;
-                        if (Random.value < 0.25f)
+                        if (Random.Range (0f, 1f) < 0.25f)
                             cameraAngle.stationary = true;
-                        if (Random.value < 0.25f)
+                        else
+                            cameraAngle.stationary = false;
+                        if (Random.Range (0f, 1f) < 0.25f)
                             cameraAngle.localOffset = true;
+                        else
+                            cameraAngle.localOffset = false;
                         cameraAngle.focus = GetRandomShip().transform;
 
                         Director.main.AddAngle(cameraAngle);
                     }
                 } else {
                     Director.main.AddAngle(emporerCameraAngle);
-                    Debug.Log("Emporer Angle");
                 }
 
                 yield return new WaitForSeconds (Random.Range (1f, 2.5f));

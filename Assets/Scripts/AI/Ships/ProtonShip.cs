@@ -18,6 +18,12 @@ namespace FreeSpace
             shipID = ShipManager.main.AddShip (this);
             stateMachine = new ShipStateMachine (this);
 
+            OffsetPursue offsetPursue = GetComponent<OffsetPursue> ();
+            if (offsetPursue != null) {
+                offsetPursue.leader = ShipManager.main.emporer.boid;
+                offsetPursue.RefreshOffset ();
+            }
+
             stateMachine.ChangeState (new ProtonStates.ProtonPatrolState (stateMachine, this, ShipManager.main.emporer.boid));
         }
         #endregion

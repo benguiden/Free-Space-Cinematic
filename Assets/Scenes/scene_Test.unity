@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.116297714, g: 0.05506835, b: 0.024882542, a: 1}
+  m_IndirectSpecularColor: {r: 0.032506213, g: 0.007402111, b: 0.0029051844, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11859,15 +11859,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1032
+      value: 735
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 832
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 133
+      value: 1348
       objectReference: {fileID: 0}
     - target: {fileID: 4120324528758698, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -11913,7 +11913,17 @@ Prefab:
       objectReference: {fileID: 32578147}
     - target: {fileID: 1987087096712412, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053036489930160, guid: ff02d640f202fc84884d64240d2ad75c,
+        type: 2}
+      propertyPath: faction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053036489930160, guid: ff02d640f202fc84884d64240d2ad75c,
+        type: 2}
+      propertyPath: shieldHealth
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff02d640f202fc84884d64240d2ad75c, type: 2}
@@ -17143,7 +17153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1376703576816340, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b65d86a19480ed74a8077bf149a3a7e3, type: 2}
@@ -24658,7 +24668,17 @@ Prefab:
       objectReference: {fileID: 1464476916}
     - target: {fileID: 1419696791476122, guid: f19574676d8850243b24c2d94cc502d2, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076781316228326, guid: f19574676d8850243b24c2d94cc502d2,
+        type: 2}
+      propertyPath: faction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076781316228326, guid: f19574676d8850243b24c2d94cc502d2,
+        type: 2}
+      propertyPath: shieldHealth
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19574676d8850243b24c2d94cc502d2, type: 2}

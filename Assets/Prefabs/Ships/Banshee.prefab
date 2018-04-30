@@ -1525,7 +1525,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1890507c3879cea489cb7f0bbc46a0ed, type: 2}
+  - {fileID: 2100000, guid: 14333055fb0c8004ebefc68866960268, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1919,8 +1919,8 @@ MonoBehaviour:
     type: 2}
   hullDamageVFXPrefab: {fileID: 1878976106071784, guid: f906039be04c84d43a2643ce1a219dff,
     type: 2}
-  shieldRenderer: {fileID: 0}
-  shieldAlpha: 0.5
+  shieldRenderer: {fileID: 23875531134059298}
+  shieldAlpha: 0.75
   shieldFlashTime: 0.5
   engineAudioSource: {fileID: 82900335453768854}
   engineBaseVolume: 0.25

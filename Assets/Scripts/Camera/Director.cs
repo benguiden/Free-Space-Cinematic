@@ -16,7 +16,7 @@ namespace FreeSpace
         public Camera mainCamera;
         public LookAt lookAtComponent;
 
-        [HideInInspector]
+        //[HideInInspector]
         public List<CameraAngle> cameraAngles = new List<CameraAngle> ();
         public CameraAngle currentAngle = null;
         #endregion
@@ -104,9 +104,9 @@ namespace FreeSpace
             angleOffset *= Random.Range (newAngle.distanceRange.x, newAngle.distanceRange.y);
 
             if (currentAngle.localOffset)
-                mainCamera.transform.position = currentAngle.focus.position + angleOffset;
+                mainCamera.transform.position = newAngle.focus.position + angleOffset;
             else
-                mainCamera.transform.position = currentAngle.focus.TransformPoint (angleOffset);
+                mainCamera.transform.position = newAngle.focus.TransformPoint (angleOffset);
 
             mainCamera.fieldOfView = angleFov;
 

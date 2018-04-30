@@ -12,6 +12,10 @@ namespace FreeSpace {
         #endregion
 
         #region Mono Methods
+        protected override void Awake() {
+            base.Awake ();
+        }
+
         private void Start() {
             shipID = ShipManager.main.AddShip (this);
             stateMachine = new ShipStateMachine (this);

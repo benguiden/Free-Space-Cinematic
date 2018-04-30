@@ -20,7 +20,8 @@ namespace FreeSpace
 
         [Header("Feelers")]
         public float feelerRadius = 2.0f;
-        
+
+        public bool forceTypeRandom = true;
         public ForceType forceType = ForceType.normal;
 
         public LayerMask mask = -1;
@@ -36,6 +37,20 @@ namespace FreeSpace
         protected override void Awake() {
             base.Awake ();
             ship = GetComponent<Ship> ();
+        }
+
+        private void Start() {
+            if (forceTypeRandom) {
+                float forceTypeRandom = Random.Range (0f, 1f);
+                if (forceTypeRandom > 0.75f)
+                    forceType = ForceType.incident;
+                else if (forceTypeRandom > 0.5f)
+                    forceType = ForceType.braking;
+                else if (forceTypeRandom > 0.25f)
+                    forceType = ForceType.normal;
+                else
+                    forceType = ForceType.up;
+            }
         }
 
         public void OnEnable() {

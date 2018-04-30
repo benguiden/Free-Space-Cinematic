@@ -11,6 +11,7 @@ namespace FreeSpace {
 
         public Dictionary<uint, Ship> ships = new Dictionary<uint, Ship>();
         public Ship emporer;
+        public CameraAngle emporerCameraAngle;
         #endregion
 
         #region Private Variables
@@ -72,17 +73,22 @@ namespace FreeSpace {
             cameraAngle.interest = 1f;
             
             while ((enabled) && (ships.Count > 0)) {
-                Ship randomShip = GetRandomShip ();
+                if (Random.value >= 0.25f) {
+                    Ship randomShip = GetRandomShip();
 
-                if (randomShip != null) {
-                    cameraAngle.interestTime = 2.5f;
-                    if (Random.value < 0.25f)
-                        cameraAngle.stationary = true;
-                    if (Random.value < 0.25f)
-                        cameraAngle.localOffset = true;
-                    cameraAngle.focus = GetRandomShip ().transform;
+                    if (randomShip != null) {
+                        cameraAngle.interestTime = 2.5f;
+                        if (Random.value < 0.25f)
+                            cameraAngle.stationary = true;
+                        if (Random.value < 0.25f)
+                            cameraAngle.localOffset = true;
+                        cameraAngle.focus = GetRandomShip().transform;
 
-                    Director.main.AddAngle (cameraAngle);
+                        Director.main.AddAngle(cameraAngle);
+                    }
+                } else {
+                    Director.main.AddAngle(emporerCameraAngle);
+                    Debug.Log("Emporer Angle");
                 }
 
                 yield return new WaitForSeconds (Random.Range (1f, 2.5f));

@@ -146,7 +146,7 @@ namespace FreeSpace
 
             mainCamera.fieldOfView = angleFov;
 
-            lookAtComponent.NewTarget (currentAngle.focus);
+            lookAtComponent.NewTarget(currentAngle.focus);
         }
 
         private void ChangeAngles() {

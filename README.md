@@ -1,4 +1,9 @@
 # Free-Space-Cinematic
+
+[![](http://img.youtube.com/vi/Joa9o1-cx0E/0.jpg)](http://www.youtube.com/watch?v=Joa9o1-cx0E "Cinematic")
+
+To use VR Functionality, disable the MainCamera gameobject, enable the CameraRig gameobject.
+
 Cinematic Pitch:
 	The models are ripped from mods of the classic PC
 	game Free Space, sadly I haven't had time to play

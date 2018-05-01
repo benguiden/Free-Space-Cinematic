@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 4086408247652798}
   - component: {fileID: 198668941506676320}
   - component: {fileID: 199827915594225804}
-  - component: {fileID: 114289699001645732}
   m_Layer: 0
   m_Name: SurfaceExplosion_02
   m_TagString: FxTemporaire
@@ -108,7 +107,6 @@ GameObject:
   - component: {fileID: 4696295628841614}
   - component: {fileID: 198482288654057954}
   - component: {fileID: 199682450053440750}
-  - component: {fileID: 114283980961663742}
   m_Layer: 0
   m_Name: SurfaceExplosion_01
   m_TagString: FxTemporaire
@@ -143,7 +141,7 @@ GameObject:
   - component: {fileID: 4957705973459690}
   - component: {fileID: 198680244338193938}
   - component: {fileID: 199986762181853402}
-  - component: {fileID: 114661341129395574}
+  - component: {fileID: 114998710051458552}
   m_Layer: 0
   m_Name: VFX_EmporerExplosion_01
   m_TagString: Untagged
@@ -262,30 +260,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114283980961663742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1728236396893168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
---- !u!114 &114289699001645732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1601336504422630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
 --- !u!114 &114504702758438660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
---- !u!114 &114661341129395574
+--- !u!114 &114998710051458552
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -306,10 +280,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975998929534326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f12bc9a443449f47b767c879c5ec961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
+  componentType: 0
+  onlyDeactivate: 0
 --- !u!198 &198260694441030270
 ParticleSystem:
   m_ObjectHideFlags: 1

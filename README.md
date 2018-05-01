@@ -4,6 +4,8 @@
 
 To use VR Functionality, disable the MainCamera gameobject, enable the CameraRig gameobject.
 
+[![](http://img.youtube.com/vi/ygqOBNI2m8o/0.jpg)](http://www.youtube.com/watch?v=ygqOBNI2m8o "VR")
+
 Cinematic Pitch:
 	The models are ripped from mods of the classic PC
 	game Free Space, sadly I haven't had time to play

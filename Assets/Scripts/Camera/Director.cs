@@ -24,7 +24,8 @@ namespace FreeSpace
         #region Private Variables
         //Current Camera Angle
         private float angleTimeLeft, angleFov;
-        private Vector3 angleOffset;
+        [HideInInspector]
+        public Vector3 angleOffset;
         private Vector3 lastTargetPosition = new Vector3 ();
         #endregion
 
@@ -123,9 +124,9 @@ namespace FreeSpace
                 if (angleTimeLeft > 0f) {
                     if (!currentAngle.stationary) {
                         if (currentAngle.localOffset)
-                            mainCamera.transform.position = currentAngle.focus.position + angleOffset;
+                            mainCamera.transform.position = Vector3.Lerp (mainCamera.transform.position, currentAngle.focus.position + angleOffset, 0.5f);
                         else
-                            mainCamera.transform.position = currentAngle.focus.TransformPoint (angleOffset);
+                            mainCamera.transform.position = Vector3.Lerp (mainCamera.transform.position, currentAngle.focus.TransformPoint (angleOffset), 0.5f);
                     }
                 } else {
                     ChangeAngles ();
@@ -138,7 +139,7 @@ namespace FreeSpace
         private void ZoomOut() {
             currentAngle.focus = (new GameObject ("Ship Explosion Position")).transform;
             currentAngle.focus.position = lastTargetPosition;
-            angleTimeLeft = Random.Range (currentAngle.timeRange.x, currentAngle.timeRange.y);
+            angleTimeLeft = Random.Range (1f, 2f);
             angleFov = currentAngle.fovRange.x;
 
             angleOffset = currentAngle.distanceRange.y * new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), Random.Range (-1f, 1f));

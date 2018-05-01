@@ -11,6 +11,7 @@ namespace FreeSpace {
             private Ship emporer;
             private Arrive arriveBehaviour;
             public float desiredAccuracy = 25f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            private bool missileCam = true;
 
             public BomberAttackState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base(_stateMachine, _ship) {
                 emporer = _emporer;
@@ -44,6 +45,7 @@ namespace FreeSpace {
                                 if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= arriveBehaviour.nearingDistance * 1.1f) {
                                     if (Vector3.Angle (ship.transform.forward, emporer.transform.position - ship.transform.position) <= desiredAccuracy) {
                                         ((BomberShip)ship).missileLauncher.AttemptShoot ();
+                                        ShowMissileCam ();
                                     }
                                 }
                             }
@@ -62,6 +64,23 @@ namespace FreeSpace {
 
             public override string ToString() {
                 return "Attack Emporer";
+            }
+
+            private void ShowMissileCam() {
+                if (missileCam) {
+                    missileCam = false;
+                    CameraAngle newCameraAngle = new CameraAngle ();
+                    newCameraAngle.fovRange = new Vector2 (75f, 85f);
+                    newCameraAngle.distanceRange = new Vector2 (45f, 60f);
+                    newCameraAngle.timeRange = new Vector2 (8f, 10f);
+                    newCameraAngle.interestTime = 15f;
+                    newCameraAngle.interest = 25f;
+                    newCameraAngle.stationary = false;
+                    newCameraAngle.localOffset = false;
+                    MissileLauncher missileLauncher = ((BomberShip)ship).missileLauncher;
+                    newCameraAngle.focus = missileLauncher.missiles[missileLauncher.MissileIndex].transform;
+                    Director.main.AddAngle (newCameraAngle);
+                }
             }
 
         }

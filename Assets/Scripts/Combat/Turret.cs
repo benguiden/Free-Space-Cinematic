@@ -37,6 +37,7 @@ namespace FreeSpace
         #region Mono Methods
         private void Start() {
             InitaliseTargetPosition ();
+            StartCoroutine (CinematicAngle ());
         }
 
         private void OnDrawGizmosSelected() {
@@ -139,6 +140,25 @@ namespace FreeSpace
             canShoot = false;
             if (reloadCo == null)
                 reloadCo = StartCoroutine (IReload ());
+        }
+
+        private IEnumerator CinematicAngle() {
+            yield return new WaitForSeconds (Random.Range (0f, 5f));
+            while (enabled) {
+                if ((Random.Range(0f, 1f) < 0.1f) && (target != null)) {
+                    CameraAngle newCameraAngle = new CameraAngle ();
+                    newCameraAngle.fovRange = new Vector2 (65f, 80f);
+                    newCameraAngle.distanceRange = new Vector2 (35f, 65f);
+                    newCameraAngle.timeRange = new Vector2 (2f, 4f);
+                    newCameraAngle.interestTime = 5f;
+                    newCameraAngle.interest = 1f;
+                    newCameraAngle.stationary = true;
+                    newCameraAngle.localOffset = true;
+                    newCameraAngle.focus = transform;
+                    Director.main.AddAngle (newCameraAngle);
+                }
+                yield return new WaitForSeconds (Random.Range (4.5f, 11.5f));
+            }
         }
         #endregion
 

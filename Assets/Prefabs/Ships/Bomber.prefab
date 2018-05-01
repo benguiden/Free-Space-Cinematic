@@ -5048,6 +5048,7 @@ MonoBehaviour:
   frontFeelerUpdatesPerSecond: 10
   sideFeelerUpdatesPerSecond: 5
   feelerRadius: 2
+  forceTypeRandom: 1
   forceType: 2
   mask:
     serializedVersion: 2
@@ -5103,7 +5104,7 @@ MonoBehaviour:
   weight: 1
   target: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
-  cruiseSpeed: 100
+  cruiseSpeed: 75
   nearingDistance: 1500
 --- !u!114 &114478792322382966
 MonoBehaviour:

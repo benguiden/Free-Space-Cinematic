@@ -48,8 +48,10 @@ namespace FreeSpace
 
         #region Seek Methods
         public void RefreshOffset() {
-            leaderOffset = transform.position - leader.transform.position;
-            leaderOffset = Quaternion.Inverse (leader.transform.rotation) * leaderOffset;
+            if (leader != null) {
+                leaderOffset = transform.position - leader.transform.position;
+                leaderOffset = Quaternion.Inverse (leader.transform.rotation) * leaderOffset;
+            }
         }
 
         public override Vector3 UpdateForce() {

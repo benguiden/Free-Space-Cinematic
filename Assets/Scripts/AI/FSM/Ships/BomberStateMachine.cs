@@ -37,7 +37,9 @@ namespace FreeSpace {
 
                 if (ship != null) {
                     while ((ship.enabled) && (stateMachine.state == this)) {
-                        if (((BomberShip)ship).missileLauncher.MissileIndex <= ((BomberShip)ship).missileLauncher.missiles.Length - 1) {
+                        if (arriveBehaviour != null)
+                            arriveBehaviour.target = ShipManager.main.emporer.transform;
+                        if ((ShipManager.main.emporer == null) || (((BomberShip)ship).missileLauncher.MissileIndex <= ((BomberShip)ship).missileLauncher.missiles.Length - 1)) {
                             if (arriveBehaviour != null) {
                                 if (Vector3.Distance (ship.transform.position, emporer.transform.position) <= arriveBehaviour.nearingDistance * 1.1f) {
                                     if (Vector3.Angle (ship.transform.forward, emporer.transform.position - ship.transform.position) <= desiredAccuracy) {

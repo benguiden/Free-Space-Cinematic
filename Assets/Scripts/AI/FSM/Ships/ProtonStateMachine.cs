@@ -24,6 +24,13 @@ namespace FreeSpace {
                 patrolBehaviour = ship.boid.GetBehaviour<OffsetPursue> ();
                 Pursue pursueBehaviour = ship.boid.GetBehaviour<Pursue> ();
 
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+
+                if (wanderBehaviour != null) {
+                    wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 0.25f;
+                }
+
                 if (patrolBehaviour != null)
                     patrolBehaviour.enabled = true;
 
@@ -78,8 +85,10 @@ namespace FreeSpace {
 
             public override void Enter() {
                 Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
-                if (wanderBehaviour != null)
+                if (wanderBehaviour != null) {
                     wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 10f;
+                }
 
                 pursueBehaviour = ship.boid.GetBehaviour<Pursue> ();
                 if (pursueBehaviour != null) {
@@ -92,6 +101,9 @@ namespace FreeSpace {
 
                 if (targetFlee != null)
                     targetFlee.avoidingBoids.Add(ship.transform);
+
+                target.pursuers++;
+                ship.pursuing = target;
 
                 ship.guns[0].enabled = true;
 
@@ -125,6 +137,9 @@ namespace FreeSpace {
 
                 if (targetFlee != null)
                     targetFlee.avoidingBoids.Remove(ship.transform);
+
+                if (ship.pursuing != null)
+                    ship.pursuing.pursuers--;
             }
 
             public override string ToString() {

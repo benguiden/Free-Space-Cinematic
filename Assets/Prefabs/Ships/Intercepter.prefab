@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 114906013060175062}
   - component: {fileID: 114883956890629662}
   - component: {fileID: 114754271634050132}
+  - component: {fileID: 114431208180565492}
   m_Layer: 8
   m_Name: Intercepter
   m_TagString: Untagged
@@ -1386,6 +1387,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyDirection: {x: 0, y: -1, z: 0}
+--- !u!114 &114431208180565492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562773890175968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262acd13d406eb14680d2e017a9db9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculationUpdateSpeed: 1
+  weight: 0.25
+  wanderType: 2
+  cruiseSpeed: 10
+  distance: 100
+  radius: 50
+  frequency: 0.25
+  amplitude: 90
+  axis: 1
 --- !u!114 &114440603965110814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1583,7 +1604,7 @@ MonoBehaviour:
   calculationUpdateSpeed: 1
   weight: 1
   target: {fileID: 0}
-  desiredDistance: 300
+  desiredDistance: 75
 --- !u!114 &114906013060175062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1603,6 +1624,7 @@ MonoBehaviour:
   frontFeelerUpdatesPerSecond: 10
   sideFeelerUpdatesPerSecond: 5
   feelerRadius: 2
+  forceTypeRandom: 1
   forceType: 2
   mask:
     serializedVersion: 2

@@ -2037,7 +2037,7 @@ MonoBehaviour:
   calculationUpdateSpeed: 1
   weight: 1
   target: {fileID: 0}
-  desiredDistance: 150
+  desiredDistance: 75
 --- !u!114 &114361094515010932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2072,6 +2072,7 @@ MonoBehaviour:
   frontFeelerUpdatesPerSecond: 10
   sideFeelerUpdatesPerSecond: 5
   feelerRadius: 2
+  forceTypeRandom: 1
   forceType: 2
   mask:
     serializedVersion: 2
@@ -2120,7 +2121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculationUpdateSpeed: 1
-  weight: 0.25
+  weight: 10
   wanderType: 2
   cruiseSpeed: 5
   distance: 100

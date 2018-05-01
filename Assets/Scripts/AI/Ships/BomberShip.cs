@@ -20,6 +20,11 @@ namespace FreeSpace {
             stateMachine = new ShipStateMachine(this);
             stateMachine.ChangeState(new BomberStates.BomberAttackState(stateMachine, this, ShipManager.main.emporer));
         }
+
+        private void OnEnable() {
+            if (ShipManager.main != null)
+                stateMachine.ChangeState (new BomberStates.BomberAttackState (stateMachine, this, ShipManager.main.emporer));
+        }
         #endregion
 
     }

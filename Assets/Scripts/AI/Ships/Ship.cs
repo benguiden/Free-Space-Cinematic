@@ -46,11 +46,18 @@ namespace FreeSpace
         //References
         [HideInInspector]
         public BoidActor boid;
+
+        //Enemies
+        [HideInInspector]
+        public Ship pursuing;
+        [HideInInspector]
+        public int pursuers;
         #endregion
 
         #region Private Variables
         protected uint shipID;
         private Coroutine shieldFlashCo;
+        
         #endregion
 
         #region Mono Methods
@@ -151,15 +158,22 @@ namespace FreeSpace
 
         protected void DestroyShip() {
             ShipManager.main.ships.Remove (shipID);
+            if (pursuing != null)
+                pursuing.pursuers--;
             Destroy (gameObject);
         }
         #endregion
 
         #region Audio Methods
         private void UpdateEngineAudio() {
-            float engineAmount = boid.speed / boid.maxSpeed;
-            engineAudioSource.volume = engineVolume.Evaluate (engineAmount) * engineBaseVolume;
-            engineAudioSource.pitch = enginePitch.Evaluate (engineAmount) * engineBasePitch;
+            if (boid.maxSpeed > 0f) {
+                float engineAmount = boid.speed / boid.maxSpeed;
+                engineAudioSource.volume = engineVolume.Evaluate (engineAmount) * engineBaseVolume;
+                engineAudioSource.pitch = enginePitch.Evaluate (engineAmount) * engineBasePitch;
+            } else {
+                Debug.Log (this);
+                Debug.Break ();
+            }
 
             if (engineAudioSource.isPlaying) {
                 if (boid.speed <= 0.01f)

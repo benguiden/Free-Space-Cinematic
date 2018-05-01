@@ -19,6 +19,13 @@ namespace FreeSpace {
             public override void Enter() {
                 updateRefresh = 0.5f;
 
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+
+                if (wanderBehaviour != null) {
+                    wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 0.25f;
+                }
+
                 offsetPursueBehaviour = ship.boid.GetBehaviour<OffsetPursue> ();
 
                 if ((offsetPursueBehaviour == null) || (escortingShip == null))
@@ -66,7 +73,8 @@ namespace FreeSpace {
             }
 
             private void AttackEmporer() {
-                stateMachine.ChangeState (new IntercepterEmporerState (stateMachine, ship, ShipManager.main.emporer));
+                if (ShipManager.main != null)
+                    stateMachine.ChangeState (new IntercepterEmporerState (stateMachine, ship, ShipManager.main.emporer));
             }
 
         }
@@ -90,6 +98,13 @@ namespace FreeSpace {
                     pursueBehaviour.enabled = true;
                     pursueBehaviour.target = emporer.boid;
                     pursueBehaviour.desiredDistance = emporerDistance;
+                }
+
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+
+                if (wanderBehaviour != null) {
+                    wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 10f;
                 }
 
                 ship.guns[0].enabled = true;
@@ -156,10 +171,20 @@ namespace FreeSpace {
                     pursueBehaviour.desiredDistance = desiredDistance;
                 }
 
+                Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
+
+                if (wanderBehaviour != null) {
+                    wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 10f;
+                }
+
                 Flee targetFlee = target.boid.GetBehaviour<Flee> ();
 
                 if (targetFlee != null)
                     targetFlee.avoidingBoids.Add (ship.transform);
+
+                target.pursuers++;
+                ship.pursuing = target;
 
                 ship.guns[0].enabled = true;
 
@@ -197,6 +222,14 @@ namespace FreeSpace {
             public override void Exit() {
                 if (pursueBehaviour != null)
                     pursueBehaviour.enabled = false;
+
+                Flee targetFlee = target.boid.GetBehaviour<Flee> ();
+
+                if (targetFlee != null)
+                    targetFlee.avoidingBoids.Remove (ship.transform);
+
+                if (ship.pursuing != null)
+                    ship.pursuing.pursuers--;
             }
 
             public override string ToString() {
@@ -215,6 +248,41 @@ namespace FreeSpace {
                     else
                         stateMachine.ChangeState (new IntercepterEmporerState (stateMachine, ship, ShipManager.main.emporer));
                 }
+            }
+
+        }
+
+        public class IntercepterFleeState : ShipState
+        {
+
+            private Ship emporer;
+            private Flee fleeBehaviour;
+
+            public IntercepterFleeState(StateMachine _stateMachine, Ship _ship, Ship _emporer) : base (_stateMachine, _ship) {
+                emporer = _emporer;
+            }
+
+            public override void Enter() {
+                ship.StartCoroutine (IUpdate ());
+
+                fleeBehaviour = ship.boid.GetBehaviour<Flee> ();
+
+                if (fleeBehaviour != null) {
+                    fleeBehaviour.avoidingBoids.Add (emporer.transform);
+                    fleeBehaviour.enabled = true;
+                }
+            }
+
+            public override void Update() { }
+
+            public override IEnumerator IUpdate() {
+                yield return null;
+            }
+
+            public override void Exit() { }
+
+            public override string ToString() {
+                return "Fleeing";
             }
 
         }

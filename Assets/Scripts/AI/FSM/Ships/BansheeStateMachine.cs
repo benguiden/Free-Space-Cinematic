@@ -26,8 +26,10 @@ namespace FreeSpace {
                 if (pathFollower != null)
                     pathFollower.enabled = true;
 
-                if (wanderBehaviour != null)
+                if (wanderBehaviour != null) {
                     wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 0.25f;
+                }
 
                 if (pursueBehaviour != null)
                     pursueBehaviour.enabled = false;
@@ -85,8 +87,10 @@ namespace FreeSpace {
                 if (pathFollower != null)
                     pathFollower.enabled = false;
 
-                if (wanderBehaviour != null)
-                    wanderBehaviour.enabled = false;
+                if (wanderBehaviour != null) {
+                    wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 0.25f;
+                }
 
                 if (pursueBehaviour != null)
                     pursueBehaviour.enabled = false;
@@ -150,8 +154,10 @@ namespace FreeSpace {
             public override void Enter() {
                 Wander wanderBehaviour = ship.boid.GetBehaviour<Wander> ();
 
-                if (wanderBehaviour != null)
+                if (wanderBehaviour != null) {
                     wanderBehaviour.enabled = true;
+                    wanderBehaviour.weight = 10f;
+                }
 
                 pursueBehaviour = ship.boid.GetBehaviour<Pursue>();
                 pursueBehaviour.enabled = true;
@@ -162,6 +168,9 @@ namespace FreeSpace {
 
                 if (targetFlee != null)
                     targetFlee.avoidingBoids.Add(ship.transform);
+
+                target.pursuers++;
+                ship.pursuing = target;
 
                 ship.guns[0].enabled = true;
 
@@ -193,6 +202,9 @@ namespace FreeSpace {
 
                 if (targetFlee != null)
                     targetFlee.avoidingBoids.Remove(ship.transform);
+
+                if (ship.pursuing != null)
+                    ship.pursuing.pursuers--;
             }
 
             public override string ToString() {

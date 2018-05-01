@@ -160,6 +160,12 @@ namespace FreeSpace
             ShipManager.main.ships.Remove (shipID);
             if (pursuing != null)
                 pursuing.pursuers--;
+
+            if (VRController.main != null) {
+                if (VRController.main.transform.parent = transform)
+                    VRController.main.transform.parent = null;
+            }
+
             if (this == ShipManager.main.emporer) {
                 ShipManager.main.ExplodeEmporer ();
                 foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {

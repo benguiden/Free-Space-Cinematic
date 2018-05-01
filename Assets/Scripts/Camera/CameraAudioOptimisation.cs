@@ -29,13 +29,15 @@ public class CameraAudioOptimisation : MonoBehaviour {
 
     private IEnumerator IUpdate(float updateRate) {
         yield return new WaitForSeconds (Random.Range (0f, updateRate));
-        while ((enabled) && (Camera.main != null)) {
-            float cameraDistance = Vector3.Distance (transform.position, Camera.main.transform.position);
-            if ((cameraDistance > audioSource.maxDistance) && (audioSource.isPlaying)) {
-                audioSource.Pause ();
-            } else if ((cameraDistance <= audioSource.maxDistance) && (!audioSource.isPlaying)) {
-                audioSource.priority = (int)cameraDistance;
-                audioSource.UnPause ();
+        while ((enabled) && (Camera.main != null) && (FreeSpace.Director.main != null)) {
+            if (FreeSpace.Director.main.isActiveAndEnabled) {
+                float cameraDistance = Vector3.Distance (transform.position, Camera.main.transform.position);
+                if ((cameraDistance > audioSource.maxDistance) && (audioSource.isPlaying)) {
+                    audioSource.Pause ();
+                } else if ((cameraDistance <= audioSource.maxDistance) && (!audioSource.isPlaying)) {
+                    audioSource.priority = (int)cameraDistance;
+                    audioSource.UnPause ();
+                }
             }
             yield return new WaitForSeconds (updateRate);
         }

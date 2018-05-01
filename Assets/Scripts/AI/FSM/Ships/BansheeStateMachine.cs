@@ -145,7 +145,7 @@ namespace FreeSpace {
             public Ship target;
             public float targetDesiredDistance = 150f;
             private Pursue pursueBehaviour;
-            public float desiredAccuracy = 5f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            public float desiredAccuracy = 25f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public BansheePersueState(StateMachine _stateMachine, Ship _ship, Ship threat) : base(_stateMachine, _ship) {
                 target = threat;

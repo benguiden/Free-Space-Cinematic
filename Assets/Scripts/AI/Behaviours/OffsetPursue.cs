@@ -64,7 +64,8 @@ namespace FreeSpace
 
         protected override void Calculate() {
             if (leader != null) {
-                desiredSpeed = boid.GetArriveSpeed (leader.transform.position, leaderOffset.magnitude, leader.speed, boid.maxSpeed, true);
+                bool faceTarget = false;
+                desiredSpeed = boid.GetArriveSpeed (leader.transform.position, leaderOffset.magnitude, leader.speed, boid.maxSpeed, true, ref faceTarget);
 
                 desiredPosition = leader.transform.TransformPoint (leaderOffset);
 

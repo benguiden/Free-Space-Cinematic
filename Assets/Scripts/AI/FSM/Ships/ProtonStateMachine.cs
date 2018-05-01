@@ -77,7 +77,7 @@ namespace FreeSpace {
             private float targetDesiredDistance = 250f;
             private Pursue pursueBehaviour;
             private float maxDistance = 2500f;
-            private float desiredAccuracy = 10f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            private float desiredAccuracy = 25f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public ProtonPersueState(StateMachine _stateMachine, Ship _ship, Ship threat) : base(_stateMachine, _ship) {
                 target = threat;

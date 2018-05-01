@@ -29,8 +29,11 @@ namespace FreeSpace{
             }
         }
 
-        //[HideInInspector]
+        [HideInInspector]
         public List<BoidBehaviour> behaviours = new List<BoidBehaviour> ();
+
+        [HideInInspector]
+        public Transform rotationTarget = null;
         #endregion
 
         #region Mono Methods
@@ -100,7 +103,7 @@ namespace FreeSpace{
             return desiredVelocity - velocity;
         }
 
-        public float GetArriveSpeed(Vector3 targetPosition, float desiredDistance, float desiredSpeed, float catchUpSpeed,bool slowDownToDistance) {
+        public float GetArriveSpeed(Vector3 targetPosition, float desiredDistance, float desiredSpeed, float catchUpSpeed, bool slowDownToDistance, ref bool insideDesiredDistance) {
             /* This method returns the desired speed of a boid, by slowing down the boid gradually when the boid is within 1 & 1/5th of the way there.
              * This also allows for the boid to arrive at a desired speed, for instance a pursue behaviour target's speed.
              * It also allows for the boid to slow down when too close to the target so it can get back to it's desired distance, again good for the pursue behaviour.
@@ -119,7 +122,9 @@ namespace FreeSpace{
                 if (distanceToTarget >= calculatedDistance) {
                     float sigmoid = (distanceToTarget - calculatedDistance) / (calculatedDistance * 0.2f);
                     newSpeed = desiredSpeed + ((maxSpeed - desiredSpeed) * sigmoid);
+                    insideDesiredDistance = false;
                 } else {
+                    insideDesiredDistance = true;
                     if (slowDownToDistance) //Slowing down below desired speed when to close to target and ahead of desired distance
                         newSpeed = desiredSpeed * (distanceToTarget / calculatedDistance);
                     else
@@ -135,13 +140,20 @@ namespace FreeSpace{
             velocity = Vector3.ClampMagnitude (velocity, maxSpeed);
 
             Vector3 newUp = Bank ();
-            if (speed > 0.1f)
-                transform.LookAt (transform.position + LerpForward().normalized, newUp);
+            if (rotationTarget == null) {
+                if (speed > 0.1f)
+                    transform.LookAt (transform.position + LerpForward ().normalized, newUp);
+            } else {
+                transform.LookAt (transform.position + LerpForward (rotationTarget).normalized, newUp);
+                rotationTarget = null;
+            }
             
             velocity *= (1.0f - (0.1f/*damping*/ * Time.deltaTime));
 
             transform.position += velocity * Time.deltaTime;
         }
+
+
 
         private Vector3 Bank() {
             Vector3 globalUp = new Vector3 (0f, 0.2f, 0f);
@@ -161,6 +173,13 @@ namespace FreeSpace{
             } else {
                 return transform.forward;
             }
+        }
+
+        private Vector3 LerpForward(Transform target) {
+            Quaternion currentRotation = Quaternion.LookRotation (transform.forward);
+            Quaternion desiredRotation = Quaternion.LookRotation ((target.position - transform.position).normalized);
+            desiredRotation = Quaternion.Lerp (currentRotation, desiredRotation, Time.deltaTime * rotationSpeed);
+            return desiredRotation * Vector3.forward;
         }
         #endregion
     }

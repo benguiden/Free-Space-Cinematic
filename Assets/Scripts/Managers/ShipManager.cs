@@ -61,7 +61,8 @@ namespace FreeSpace {
 
             foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {
                 if ((otherShip.Value.faction != friendlyFaction) && (otherShip.Value != emporer) && (otherShip.Value.isActiveAndEnabled)) {
-                    float otherShipDistance = Vector3.Distance (otherShip.Value.transform.position, threatPosition);
+                    float otherShipDistance = Vector3.Distance (otherShip.Value.transform.position, threatPosition); //The biggest this variable the less dangerous the ship is
+                    otherShipDistance += otherShip.Value.pursuers * 250f; //The more pursuers the ship has the less the ship's dangerous
                     if (otherShipDistance < closestDistance) {
                         threatShip = otherShip.Value;
                         closestDistance = otherShipDistance;

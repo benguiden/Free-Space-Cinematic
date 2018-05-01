@@ -12,6 +12,7 @@ namespace FreeSpace
         #region Public Variables
         [Header ("Pursuing")]
         public BoidActor target;
+        public bool slowDownAtArrive = true;
 
         [Header ("Movement")]
         public float desiredDistance = 50f;
@@ -49,7 +50,12 @@ namespace FreeSpace
 
         protected override void Calculate() {
             if (target != null) {
-                desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, boid.maxSpeed, true);
+                bool faceTarget = false;
+                desiredSpeed = boid.GetArriveSpeed (target.transform.position, desiredDistance, target.speed, boid.maxSpeed, slowDownAtArrive, ref faceTarget);
+
+                if (faceTarget) {
+                    boid.rotationTarget = target.transform;
+                }
 
                 float timeToTarget = Vector3.Distance (transform.position, target.transform.position) / desiredSpeed;
                 desiredPosition = target.transform.position + (timeToTarget * target.velocity);

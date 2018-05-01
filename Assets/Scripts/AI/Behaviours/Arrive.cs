@@ -50,7 +50,12 @@ namespace FreeSpace
             else
                 desiredPosition = targetPosition;
 
-            desiredSpeed = boid.GetArriveSpeed (desiredPosition, nearingDistance, 0f, cruiseSpeed, false);
+            bool faceTarget = false;
+            desiredSpeed = boid.GetArriveSpeed (desiredPosition, nearingDistance, 0f, cruiseSpeed, false, ref faceTarget);
+
+            if (faceTarget) {
+                boid.rotationTarget = target.transform;
+            }
         }
         #endregion
 

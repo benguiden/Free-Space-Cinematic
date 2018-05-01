@@ -1984,6 +1984,8 @@ MonoBehaviour:
   stateMachine:
     ship: {fileID: 114076781316228326}
   boid: {fileID: 114831097250785018}
+  pursuing: {fileID: 0}
+  pursuers: 0
 --- !u!114 &114084683696893294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2183,6 +2185,7 @@ MonoBehaviour:
   bankingSpeed: 0.08
   rotationSpeed: 10
   behaviours: []
+  rotationTarget: {fileID: 0}
 --- !u!114 &114840844234996448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2221,6 +2224,7 @@ MonoBehaviour:
   calculationUpdateSpeed: 1
   weight: 1
   target: {fileID: 0}
+  slowDownAtArrive: 0
   desiredDistance: 75
 --- !u!198 &198369164747506608
 ParticleSystem:

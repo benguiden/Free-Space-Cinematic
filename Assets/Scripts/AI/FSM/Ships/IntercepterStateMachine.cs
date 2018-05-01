@@ -156,7 +156,7 @@ namespace FreeSpace {
             private Pursue pursueBehaviour;
             private float desiredDistance = 100f;
             private float maxDistance = 30000f;
-            public float desiredAccuracy = 5f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
+            public float desiredAccuracy = 25f; //The threshold in degrees for the facing angle between the target ship to be under before shooting
 
             public IntercepterPursueState(StateMachine _stateMachine, Ship _ship, Ship _target) : base (_stateMachine, _ship) {
                 target = _target;

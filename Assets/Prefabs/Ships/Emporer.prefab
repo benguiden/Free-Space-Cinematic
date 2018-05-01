@@ -9961,6 +9961,7 @@ MonoBehaviour:
   bankingSpeed: 1
   rotationSpeed: 1
   behaviours: []
+  rotationTarget: {fileID: 0}
 --- !u!114 &114179193426974238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10037,9 +10038,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10083,9 +10084,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10105,9 +10106,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10127,9 +10128,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10202,6 +10203,8 @@ MonoBehaviour:
   stateMachine:
     ship: {fileID: 0}
   boid: {fileID: 0}
+  pursuing: {fileID: 0}
+  pursuers: 0
 --- !u!114 &114737345945160068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10218,9 +10221,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10252,9 +10255,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10274,9 +10277,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10296,9 +10299,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10318,9 +10321,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10340,9 +10343,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10378,9 +10381,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25
@@ -10400,9 +10403,9 @@ MonoBehaviour:
   angularSpeed: 0.35
   faction: 0
   accuracy: 2
-  shootingRange: 1550
-  reloadTime: 1
-  refreshTime: 0.5
+  shootingRange: 2500
+  reloadTime: 1.5
+  refreshTime: 0.75
   projectile: {fileID: 1900083126810368, guid: 32f20a51d93987d4c82d1c2e7368050d, type: 2}
   projectileSpeed: 5000
   damage: 25

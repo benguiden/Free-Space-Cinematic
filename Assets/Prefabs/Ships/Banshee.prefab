@@ -1899,6 +1899,7 @@ MonoBehaviour:
   bankingSpeed: 1
   rotationSpeed: 1
   behaviours: []
+  rotationTarget: {fileID: 0}
 --- !u!114 &114053036489930160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2010,6 +2011,8 @@ MonoBehaviour:
   stateMachine:
     ship: {fileID: 0}
   boid: {fileID: 0}
+  pursuing: {fileID: 0}
+  pursuers: 0
   leader: {fileID: 0}
 --- !u!114 &114151178221326060
 MonoBehaviour:
@@ -2037,6 +2040,7 @@ MonoBehaviour:
   calculationUpdateSpeed: 1
   weight: 1
   target: {fileID: 0}
+  slowDownAtArrive: 0
   desiredDistance: 75
 --- !u!114 &114361094515010932
 MonoBehaviour:

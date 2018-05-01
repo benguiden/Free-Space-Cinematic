@@ -25,6 +25,7 @@ namespace FreeSpace
         //Current Camera Angle
         private float angleTimeLeft, angleFov;
         private Vector3 angleOffset;
+        private Vector3 lastTargetPosition = new Vector3 ();
         #endregion
 
         #region Mono Methods
@@ -117,6 +118,7 @@ namespace FreeSpace
 
         private void UpdateCurrentAngle() {
             if (currentAngle.focus != null) {
+                lastTargetPosition = currentAngle.focus.position;
                 angleTimeLeft -= Time.deltaTime;
                 if (angleTimeLeft > 0f) {
                     if (!currentAngle.stationary) {
@@ -134,10 +136,12 @@ namespace FreeSpace
         }
 
         private void ZoomOut() {
+            currentAngle.focus = (new GameObject ("Ship Explosion Position")).transform;
+            currentAngle.focus.position = lastTargetPosition;
             angleTimeLeft = Random.Range (currentAngle.timeRange.x, currentAngle.timeRange.y);
-            angleFov = currentAngle.fovRange.y;
+            angleFov = currentAngle.fovRange.x;
 
-            angleOffset = currentAngle.distanceRange.x * new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), Random.Range (-1f, 1f));
+            angleOffset = currentAngle.distanceRange.y * new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), Random.Range (-1f, 1f));
 
             if (currentAngle.localOffset)
                 mainCamera.transform.position = currentAngle.focus.position + angleOffset;

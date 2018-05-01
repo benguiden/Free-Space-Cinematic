@@ -33,7 +33,14 @@ namespace FreeSpace {
                 stateMachine.ChangeState (new IntercepterStates.IntercepterEmporerState (stateMachine, this, ShipManager.main.emporer));
             } else {
                 stateMachine.ChangeState (new IntercepterStates.IntercepterEscortState (stateMachine, this, leader.boid));
-                boid.GetBehaviour<OffsetPursue> ().RefreshOffset ();
+                OffsetPursue offsetPursue = boid.GetBehaviour<OffsetPursue> ();
+                if (offsetPursue != null) {
+                    offsetPursue.RefreshOffset ();
+                } else {
+                    offsetPursue = boid.GetComponent<OffsetPursue> ();
+                    if (offsetPursue != null)
+                        offsetPursue.RefreshOffset ();
+                }
             }
         }
         #endregion

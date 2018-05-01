@@ -567,6 +567,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4387561125584686}
+  - component: {fileID: 114867839106597992}
   - component: {fileID: 82147559393563532}
   m_Layer: 8
   m_Name: EngineAudio
@@ -1674,8 +1675,8 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.09056604
     - serializedVersion: 3
-      time: 0.10050419
-      value: 0.254937
+      time: 0.31161717
+      value: 0.37807542
       inSlope: -1.0017229
       outSlope: -1.0017229
       tangentMode: 0
@@ -1890,8 +1891,8 @@ MonoBehaviour:
   shieldAlpha: 0.75
   shieldFlashTime: 0.5
   engineAudioSource: {fileID: 82147559393563532}
-  engineBaseVolume: 0.25
-  engineBasePitch: 1
+  engineBaseVolume: 0.35
+  engineBasePitch: 1.1
   engineVolume:
     serializedVersion: 2
     m_Curve:
@@ -2198,6 +2199,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 0}
+--- !u!114 &114867839106597992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964475851513576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13795207327202b499ff2259f050c601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114967555897281866
 MonoBehaviour:
   m_ObjectHideFlags: 1

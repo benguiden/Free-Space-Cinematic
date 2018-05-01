@@ -160,7 +160,15 @@ namespace FreeSpace
             ShipManager.main.ships.Remove (shipID);
             if (pursuing != null)
                 pursuing.pursuers--;
-            Destroy (gameObject);
+            if (this == ShipManager.main.emporer) {
+                ShipManager.main.ExplodeEmporer ();
+                foreach (KeyValuePair<uint, Ship> otherShip in ShipManager.main.ships) {
+                    otherShip.Value.gameObject.SetActive (false);
+                }
+                gameObject.SetActive (false);
+            } else {
+                Destroy (gameObject);
+            }
         }
         #endregion
 
@@ -170,9 +178,6 @@ namespace FreeSpace
                 float engineAmount = boid.speed / boid.maxSpeed;
                 engineAudioSource.volume = engineVolume.Evaluate (engineAmount) * engineBaseVolume;
                 engineAudioSource.pitch = enginePitch.Evaluate (engineAmount) * engineBasePitch;
-            } else {
-                Debug.Log (this);
-                Debug.Break ();
             }
 
             if (engineAudioSource.isPlaying) {

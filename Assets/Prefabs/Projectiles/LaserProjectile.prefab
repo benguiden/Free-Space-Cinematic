@@ -126,12 +126,12 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 758d79145aeac2f4bbd3f2138cc3437c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
-  m_Pitch: 0.8
+  m_Pitch: 0.65
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 215
+  Priority: 92
   DopplerLevel: 0.007
   MinDistance: 1
   MaxDistance: 1000
@@ -178,7 +178,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.95
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -229,10 +229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4ccaaddc4e17e468c4b21b5c375ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfxPrefab: {fileID: 1878976106071784, guid: f906039be04c84d43a2643ce1a219dff, type: 2}
   damage: 25
   speed: 5000
   lengthK: 10
   sizeK: 1
   lifetime: 1
   sourceShip: {fileID: 0}
+  faction: 0

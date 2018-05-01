@@ -19,6 +19,8 @@ namespace FreeSpace {
         private uint shipIDIndex = 0;
         private Coroutine cinematicShipSo;
         private int sequenceState = 0;//Show emporer and Terrans, 1 - Just show Vasudans, 2 - Show Both
+
+        private Vector3 emporerPosition = new Vector3 ();
         #endregion
 
         #region Mono Methods
@@ -41,6 +43,11 @@ namespace FreeSpace {
                 StopCoroutine (cinematicShipSo);
 
             cinematicShipSo = StartCoroutine (ICinematicShips (0.1f));
+        }
+
+        private void Update() {
+            if (emporer != null)
+                emporerPosition = emporer.transform.position;
         }
         #endregion
 
@@ -201,6 +208,24 @@ namespace FreeSpace {
                 newCameraAngle.focus = randomShip.transform;
                 Director.main.NewCameraAngle (newCameraAngle);
             }
+        }
+
+        public void ExplodeEmporer() {
+            Debug.Log ("Emporer Destroyed");
+            sequenceState = 2;
+
+            CameraAngle newCameraAngle = new CameraAngle ();
+            newCameraAngle.distanceRange = new Vector2 (2500f, 2500f);
+            newCameraAngle.fovRange = new Vector2 (45f, 60f);
+            newCameraAngle.timeRange = new Vector2 (10f, 10f);
+            newCameraAngle.interestTime = 5f;
+            newCameraAngle.stationary = true;
+            newCameraAngle.localOffset = true;
+            newCameraAngle.focus = (new GameObject ("Emporer Explosion")).transform;
+            newCameraAngle.focus.position = emporerPosition;
+
+            Director.main.cameraAngles = new List<CameraAngle> ();
+            Director.main.NewCameraAngle (newCameraAngle);
         }
 
     }

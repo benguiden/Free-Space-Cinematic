@@ -10158,7 +10158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 0
-  hullHealth: 50000
+  hullHealth: 10000
   shieldHealth: 0
   destroyVFXPrefab: {fileID: 1034737708808064, guid: a634b696c0ec35642a6f48e08f041491,
     type: 2}

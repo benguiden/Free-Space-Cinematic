@@ -4814,7 +4814,7 @@ MonoBehaviour:
   shieldAlpha: 0.75
   shieldFlashTime: 0.5
   engineAudioSource: {fileID: 82493172235232528}
-  engineBaseVolume: 0.35
+  engineBaseVolume: 0.45
   engineBasePitch: 1.1
   engineVolume:
     serializedVersion: 2
